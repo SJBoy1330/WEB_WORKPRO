@@ -130,6 +130,13 @@ $route['perusahaan/(:any)'] = 'perusahaan/controller_ctl/$1';
 $route['perusahaan/(:any)/(:any)'] = 'perusahaan/controller_ctl/$1/$2';
 
 
+$route['karyawan']  = 'karyawan/controller_ctl';
+
+$route['karyawan/(:any)'] = 'karyawan/controller_ctl/$1';
+
+$route['karyawan/(:any)/(:any)'] = 'karyawan/controller_ctl/$1/$2';
+
+
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;

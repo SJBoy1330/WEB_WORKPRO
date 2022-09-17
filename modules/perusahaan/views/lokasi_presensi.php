@@ -283,6 +283,17 @@
             <!--end::Modal header-->
             <!--begin::Modal body-->
             <div class="modal-body pb-lg-10 px-lg-10">
+                <div class="card-toolbar">
+                    <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                        <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                            </svg>
+                        </span>
+                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table align-middle gs-0 gy-4">
                         <!--begin::Table head-->
@@ -329,6 +340,9 @@
                         <!--end::Table body-->
                     </table>
                 </div>
+                <label class="form-label">Pilih Karyawan</label>
+                <input class="form-control form-control-solid d-flex align-items-center" value="" id="kt_tagify_users" />
+                <button class="btn btn-sm btn-primary mt-3">Simpan</button>
             </div>
             <!--end::Modal body-->
             <div class="modal-footer py-5 d-flex justify-content-end align-items-center">
