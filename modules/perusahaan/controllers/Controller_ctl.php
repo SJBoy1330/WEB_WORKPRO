@@ -1,12 +1,12 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Controller_ctl extends MY_Controller
+class Controller_ctl extends MY_Frontend
 {
 	public function __construct()
 	{
 		// Load the constructer from MY_Controller
 		parent::__construct();
-        is_logged_in();
+		is_logged_in();
 	}
 
 
