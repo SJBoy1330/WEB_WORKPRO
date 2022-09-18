@@ -210,22 +210,22 @@
             <!--begin::Modal body-->
             <div class="modal-body pb-lg-10 px-lg-10">
                 <div class="d-flex flex-column mb-5 fv-row">
-                        <!--begin::Label-->
-                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                            <span class="required">Karyawan</span>
-                        </label>
-                        <!--end::Label-->
-                        <div class="position-relative d-flex align-items-center">
-                            <div style="width:100vw;">
-                                <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih karyawan">
-                                    <option></option>
-                                    <option value="1">Eka Dharma Rasiawan</option>
-                                    <option value="2">Rinaldi Usman</option>
-                                    <option value="2">Reza Prasetio</option>
-                                </select>
-                            </div>
+                    <!--begin::Label-->
+                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                        <span class="required">Karyawan</span>
+                    </label>
+                    <!--end::Label-->
+                    <div class="position-relative d-flex align-items-center">
+                        <div style="width:100vw;">
+                            <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih karyawan">
+                                <option></option>
+                                <option value="1">Eka Dharma Rasiawan</option>
+                                <option value="2">Rinaldi Usman</option>
+                                <option value="2">Reza Prasetio</option>
+                            </select>
                         </div>
                     </div>
+                </div>
                 <div class="fv-row mb-5">
                     <!--begin::Label-->
                     <label class="fs-6 fw-bold mb-2">

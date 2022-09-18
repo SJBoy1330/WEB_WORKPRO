@@ -28,9 +28,7 @@ if (isset($js_add) && is_array($js_add)) {
 }
 
 ?>
-<script src="<?= base_url(); ?>assets/js/bootstrap-clockpicker.min.js"></script>
-<script src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
-<!--end::Javascript-->
+
 </body>
 <!--end::Body-->
 

@@ -144,6 +144,41 @@ $route['jadwal_kerja/(:any)'] = 'jadwal_kerja/controller_ctl/$1';
 $route['jadwal_kerja/(:any)/(:any)'] = 'jadwal_kerja/controller_ctl/$1/$2';
 
 
+$route['presensi']  = 'presensi/controller_ctl';
+
+$route['presensi/(:any)'] = 'presensi/controller_ctl/$1';
+
+$route['presensi/(:any)/(:any)'] = 'presensi/controller_ctl/$1/$2';
+
+
+$route['persetujuan']  = 'persetujuan/controller_ctl';
+
+$route['persetujuan/(:any)'] = 'persetujuan/controller_ctl/$1';
+
+$route['persetujuan/(:any)/(:any)'] = 'persetujuan/controller_ctl/$1/$2';
+
+
+$route['manajemen']  = 'manajemen/controller_ctl';
+
+$route['manajemen/(:any)'] = 'manajemen/controller_ctl/$1';
+
+$route['manajemen/(:any)/(:any)'] = 'manajemen/controller_ctl/$1/$2';
+
+
+$route['laporan']  = 'laporan/controller_ctl';
+
+$route['laporan/(:any)'] = 'laporan/controller_ctl/$1';
+
+$route['laporan/(:any)/(:any)'] = 'laporan/controller_ctl/$1/$2';
+
+
+$route['informasi']  = 'informasi/controller_ctl';
+
+$route['informasi/(:any)'] = 'informasi/controller_ctl/$1';
+
+$route['informasi/(:any)/(:any)'] = 'informasi/controller_ctl/$1/$2';
+
+
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;

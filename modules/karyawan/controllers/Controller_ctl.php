@@ -15,6 +15,9 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'Daftar Karyawan';
 
+		// LOAD JS
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/karyawan/karyawan.js"></script>';
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
