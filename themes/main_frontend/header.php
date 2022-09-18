@@ -39,6 +39,9 @@ License: For each use you must have a valid license purchased only from above li
     <link href="<?= base_url(); ?>assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
 
+    <!-- Link Assets CSS Clockpicker -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>assets/css/bootstrap-clockpicker.min.css">
+
     <!-- Link Font Awesome -->
     <script src="https://kit.fontawesome.com/a2309adc07.js" crossorigin="anonymous"></script>
     <?php
@@ -50,6 +53,7 @@ License: For each use you must have a valid license purchased only from above li
         echo (isset($css_add) && ($css_add != "") ? $css_add : "");
     }
     ?>
+    
 </head>
 <!--end::Head-->
 <!--begin::Body-->

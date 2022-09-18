@@ -137,6 +137,13 @@ $route['karyawan/(:any)'] = 'karyawan/controller_ctl/$1';
 $route['karyawan/(:any)/(:any)'] = 'karyawan/controller_ctl/$1/$2';
 
 
+$route['jadwal_kerja']  = 'jadwal_kerja/controller_ctl';
+
+$route['jadwal_kerja/(:any)'] = 'jadwal_kerja/controller_ctl/$1';
+
+$route['jadwal_kerja/(:any)/(:any)'] = 'jadwal_kerja/controller_ctl/$1/$2';
+
+
 $route['404_override'] = '';
 
 $route['translate_uri_dashes'] = FALSE;
