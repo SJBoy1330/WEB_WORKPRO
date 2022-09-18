@@ -41,6 +41,15 @@ License: For each use you must have a valid license purchased only from above li
 
     <!-- Link Font Awesome -->
     <script src="https://kit.fontawesome.com/a2309adc07.js" crossorigin="anonymous"></script>
+    <?php
+    if (isset($css_add) && is_array($css_add)) {
+        foreach ($css_add as $css) {
+            echo $css;
+        }
+    } else {
+        echo (isset($css_add) && ($css_add != "") ? $css_add : "");
+    }
+    ?>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -76,7 +85,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </button>
                                     <!--end::Heaeder navs toggle-->
                                     <!--begin::Logo-->
-                                    <a href="<?= base_url('home');?>" class="d-flex align-items-center">
+                                    <a href="<?= base_url('home'); ?>" class="d-flex align-items-center">
                                         <img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-white.png" class="h-25px h-lg-30px" />
                                     </a>
                                     <!--end::Logo-->
@@ -84,7 +93,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Header tabs-->
                                         <div class="header-tabs overflow-auto mx-4 ms-lg-10 mb-5 mb-lg-0" id="kt_header_tabs" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_header_navs_wrapper', lg: '#kt_brand_tabs'}">
                                             <ul class="nav flex-nowrap">
-                                                 <li class="nav-item">
+                                                <li class="nav-item">
                                                     <a class="nav-link active" data-bs-toggle="tab" href="#kt_header_navs_tab_0">Dashboard</a>
                                                 </li>
                                                 <li class="nav-item">
@@ -327,7 +336,7 @@ License: For each use you must have a valid license purchased only from above li
                                                     </span>
                                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                                         <div class="menu-item">
-                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-building fs-2"></i>
                                                                 </span>
@@ -335,7 +344,7 @@ License: For each use you must have a valid license purchased only from above li
                                                             </a>
                                                         </div>
                                                         <div class="menu-item">
-                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan/lokasi_presensi')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan/lokasi_presensi') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-map-location-dot fs-2"></i>
                                                                 </span>
@@ -343,7 +352,7 @@ License: For each use you must have a valid license purchased only from above li
                                                             </a>
                                                         </div>
                                                         <div class="menu-item">
-                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan/user')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan/user') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-user fs-3"></i>
                                                                 </span>
@@ -358,7 +367,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <span class="menu-arrow"></span>
                                                     </span>
                                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-user-tie fs-3"></i>
@@ -440,6 +449,62 @@ License: For each use you must have a valid license purchased only from above li
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+                                                    <span class="menu-link py-3">
+                                                        <span class="menu-title">Presensi</span>
+                                                        <span class="menu-arrow"></span>
+                                                    </span>
+                                                    <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
+                                                        <div class="menu-item menu-lg-down-accordion">
+                                                            <span class="menu-link py-3">
+                                                                <span class="menu-icon">
+                                                                    <i class="fa-duotone fa-draw-polygon fs-3"></i>
+                                                                </span>
+                                                                <span class="menu-title">Pola Kerja</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="menu-item menu-lg-down-accordion">
+                                                            <span class="menu-link py-3">
+                                                                <span class="menu-icon">
+                                                                    <i class="fa-duotone fa-calendar-circle-user fs-3"></i>
+                                                                </span>
+                                                                <span class="menu-title">Shift</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="menu-item menu-lg-down-accordion">
+                                                            <span class="menu-link py-3">
+                                                                <span class="menu-icon">
+                                                                    <i class="fa-duotone fa-calendar-day fs-3"></i>
+                                                                </span>
+                                                                <span class="menu-title">Hari Libur</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="menu-item menu-lg-down-accordion">
+                                                            <span class="menu-link py-3">
+                                                                <span class="menu-icon">
+                                                                    <i class="fa-duotone fa-people-arrows fs-3"></i>
+                                                                </span>
+                                                                <span class="menu-title">Tukar Shift</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="menu-item menu-lg-down-accordion">
+                                                            <span class="menu-link py-3">
+                                                                <span class="menu-icon">
+                                                                    <i class="fa-duotone fa-timer fs-3"></i>
+                                                                </span>
+                                                                <span class="menu-title">Lembur</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="menu-item menu-lg-down-accordion">
+                                                            <span class="menu-link py-3">
+                                                                <span class="menu-icon">
+                                                                    <i class="fa-duotone fa-envelope-open-text fs-3"></i>
+                                                                </span>
+                                                                <span class="menu-title">Izin Kerja</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <!--end::Menu-->
                                         </div>
@@ -448,7 +513,7 @@ License: For each use you must have a valid license purchased only from above li
                                     <!--end::Tab panel-->
                                     <!--begin::Tab panel-->
                                     <div class="tab-pane fade" id="kt_header_navs_tab_2">
-                                    <div class="header-menu flex-column align-items-stretch flex-lg-row">
+                                        <div class="header-menu flex-column align-items-stretch flex-lg-row">
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
@@ -506,7 +571,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <span class="menu-arrow"></span>
                                                     </span>
                                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-memo-circle-info fs-3"></i>
@@ -514,7 +579,7 @@ License: For each use you must have a valid license purchased only from above li
                                                                 <span class="menu-title">Data Karyawan</span>
                                                             </span>
                                                         </div>
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-memo-circle-info fs-3"></i>
@@ -522,7 +587,7 @@ License: For each use you must have a valid license purchased only from above li
                                                                 <span class="menu-title">Rekap Presensi</span>
                                                             </span>
                                                         </div>
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-memo-circle-info fs-3"></i>
@@ -530,7 +595,7 @@ License: For each use you must have a valid license purchased only from above li
                                                                 <span class="menu-title">Rekap Reimbursment</span>
                                                             </span>
                                                         </div>
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-memo-circle-info fs-3"></i>
@@ -538,7 +603,7 @@ License: For each use you must have a valid license purchased only from above li
                                                                 <span class="menu-title">Rekap Kunjungan</span>
                                                             </span>
                                                         </div>
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-memo-circle-info fs-3"></i>
@@ -546,7 +611,7 @@ License: For each use you must have a valid license purchased only from above li
                                                                 <span class="menu-title">Rekap Prospek</span>
                                                             </span>
                                                         </div>
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-memo-circle-info fs-3"></i>
@@ -554,7 +619,7 @@ License: For each use you must have a valid license purchased only from above li
                                                                 <span class="menu-title">Rekap Izin Kerja</span>
                                                             </span>
                                                         </div>
-                                                        <div  class="menu-item menu-lg-down-accordion">
+                                                        <div class="menu-item menu-lg-down-accordion">
                                                             <span class="menu-link py-3">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-memo-circle-info fs-3"></i>

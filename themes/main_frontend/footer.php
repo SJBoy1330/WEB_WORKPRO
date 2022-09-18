@@ -17,6 +17,17 @@
 <script src="<?= base_url(); ?>assets/js/custom/modals/create-app.js"></script>
 <script src="<?= base_url(); ?>assets/js/custom/modals/users-search.js"></script>
 <!--end::Page Custom Javascript-->
+<?php
+
+if (isset($js_add) && is_array($js_add)) {
+    foreach ($js_add as $js) {
+        echo $js;
+    }
+} else {
+    echo (isset($js_add) && ($js_add != "") ? $js_add : "");
+}
+
+?>
 <!--end::Javascript-->
 </body>
 <!--end::Body-->
