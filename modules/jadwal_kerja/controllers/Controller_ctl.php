@@ -58,7 +58,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Tukar Shift';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/hari_libur.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/tukar_shift.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('tukar_shift', $mydata, TRUE);
@@ -71,7 +71,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Lembur';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/hari_libur.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/lembur.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('lembur', $mydata, TRUE);
@@ -84,7 +84,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Izin Kerja';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/hari_libur.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/izin_kerja.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('izin_kerja', $mydata, TRUE);
