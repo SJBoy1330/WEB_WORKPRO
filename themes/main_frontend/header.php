@@ -150,11 +150,6 @@
                                                 <a href="#" class="menu-link px-5">Profil</a>
                                             </div>
                                             <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="#" class="menu-link px-5">Memo</a>
-                                            </div>
-                                            <!--end::Menu item-->
                                             <!--begin::Menu separator-->
                                             <div class="separator my-2"></div>
                                             <!--end::Menu separator-->
@@ -209,11 +204,6 @@
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
                                                         <span class="menu-title">Kalender</span>
-                                                    </span>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <span class="menu-title">Memo</span>
                                                     </span>
                                                 </div>
                                             </div>
@@ -441,6 +431,11 @@
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
                                                         <span class="menu-title">Pengumuman</span>
+                                                    </span>
+                                                </div>
+                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
+                                                    <span class="menu-link py-3">
+                                                        <span class="menu-title">Broadcast</span>
                                                     </span>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
