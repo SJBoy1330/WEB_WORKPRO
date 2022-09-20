@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<!--
-Author: Keenthemes
-Product Name: Metronic - Bootstrap 5 HTML, VueJS, React, Angular & Laravel Admin Dashboard Theme
-Purchase: https://1.envato.market/EA4JP
-Website: http://www.keenthemes.com
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
 <html lang="en">
 <!--begin::Head-->
 
@@ -22,10 +11,7 @@ License: For each use you must have a valid license purchased only from above li
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+    <meta property="og:title" content="WorkPro ~ Platform digital terbaik untuk presensi" />
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/media/logos/logo_workpro.png" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
@@ -149,9 +135,7 @@ License: For each use you must have a valid license purchased only from above li
                                                     <!--end::Avatar-->
                                                     <!--begin::Username-->
                                                     <div class="d-flex flex-column">
-                                                        <div class="fw-bolder d-flex align-items-center fs-5">Max Smith
-                                                            <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
-                                                        </div>
+                                                        <div class="fw-bolder d-flex align-items-center fs-5">Max Smith</div>
                                                         <a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
                                                     </div>
                                                     <!--end::Username-->
@@ -163,134 +147,12 @@ License: For each use you must have a valid license purchased only from above li
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="../../demo20/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+                                                <a href="#" class="menu-link px-5">Profil</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="../../demo20/dist/apps/projects/list.html" class="menu-link px-5">
-                                                    <span class="menu-text">My Projects</span>
-                                                    <span class="menu-badge">
-                                                        <span class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start">
-                                                <a href="#" class="menu-link px-5">
-                                                    <span class="menu-title">My Subscription</span>
-                                                    <span class="menu-arrow"></span>
-                                                </a>
-                                                <!--begin::Menu sub-->
-                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/referrals.html" class="menu-link px-5">Referrals</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/billing.html" class="menu-link px-5">Billing</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/statements.html" class="menu-link px-5">Payments</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/statements.html" class="menu-link d-flex flex-stack px-5">Statements
-                                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="View your statements"></i></a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu separator-->
-                                                    <div class="separator my-2"></div>
-                                                    <!--end::Menu separator-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <div class="menu-content px-3">
-                                                            <label class="form-check form-switch form-check-custom form-check-solid">
-                                                                <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
-                                                                <span class="form-check-label text-muted fs-7">Notifications</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                </div>
-                                                <!--end::Menu sub-->
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="../../demo20/dist/account/statements.html" class="menu-link px-5">My Statements</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start">
-                                                <a href="#" class="menu-link px-5">
-                                                    <span class="menu-title position-relative">Language
-                                                        <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
-                                                            <img class="w-15px h-15px rounded-1 ms-2" src="<?= base_url(); ?>assets/media/flags/united-states.svg" alt="" /></span></span>
-                                                </a>
-                                                <!--begin::Menu sub-->
-                                                <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/settings.html" class="menu-link d-flex px-5 active">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1" src="<?= base_url(); ?>assets/media/flags/united-states.svg" alt="" />
-                                                            </span>English</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1" src="<?= base_url(); ?>assets/media/flags/spain.svg" alt="" />
-                                                            </span>Spanish</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1" src="<?= base_url(); ?>assets/media/flags/germany.svg" alt="" />
-                                                            </span>German</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1" src="<?= base_url(); ?>assets/media/flags/japan.svg" alt="" />
-                                                            </span>Japanese</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                    <!--begin::Menu item-->
-                                                    <div class="menu-item px-3">
-                                                        <a href="../../demo20/dist/account/settings.html" class="menu-link d-flex px-5">
-                                                            <span class="symbol symbol-20px me-4">
-                                                                <img class="rounded-1" src="<?= base_url(); ?>assets/media/flags/france.svg" alt="" />
-                                                            </span>French</a>
-                                                    </div>
-                                                    <!--end::Menu item-->
-                                                </div>
-                                                <!--end::Menu sub-->
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5 my-1">
-                                                <a href="../../demo20/dist/account/settings.html" class="menu-link px-5">Account Settings</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-5">
-                                                <a href="../../demo20/dist/authentication/flows/basic/sign-in.html" class="menu-link px-5">Sign Out</a>
+                                                <a href="#" class="menu-link px-5">Memo</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu separator-->
@@ -298,13 +160,7 @@ License: For each use you must have a valid license purchased only from above li
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <div class="menu-content px-5">
-                                                    <label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success" for="kt_user_menu_dark_mode_toggle">
-                                                        <input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode" id="kt_user_menu_dark_mode_toggle" data-kt-url="../../demo20/dist/index.html" />
-                                                        <span class="pulse-ring ms-n1"></span>
-                                                        <span class="form-check-label text-gray-600 fs-7">Dark Mode</span>
-                                                    </label>
-                                                </div>
+                                                <a href="#" class="menu-link px-5">Keluar</a>
                                             </div>
                                             <!--end::Menu item-->
                                         </div>
@@ -338,6 +194,11 @@ License: For each use you must have a valid license purchased only from above li
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
                                                         <span class="menu-title">Presensi</span>
+                                                    </span>
+                                                </div>
+                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
+                                                    <span class="menu-link py-3">
+                                                        <span class="menu-title">Persetujuan</span>
                                                     </span>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
