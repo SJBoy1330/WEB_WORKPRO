@@ -16,6 +16,25 @@
 <script src="<?= base_url(); ?>assets/js/custom/modals/create-campaign.js"></script>
 <script src="<?= base_url(); ?>assets/js/custom/modals/create-app.js"></script>
 <script src="<?= base_url(); ?>assets/js/custom/modals/users-search.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/custom/tinymce/tinymce.bundle.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
+</script>
 <!--end::Page Custom Javascript-->
 <?php
 

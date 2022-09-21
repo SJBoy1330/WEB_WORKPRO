@@ -6,8 +6,8 @@
             <!--begin::Header-->
             <div class="card-header border-0 pt-5">
                 <h3 class="card-title align-items-start flex-column">
-                    <span class="card-label fw-bolder fs-3 mb-1">Grup Karyawan</span>
-                    <span class="text-muted mt-1 fw-bold fs-7">Grup Karyawan</span>
+                    <span class="card-label fw-bolder fs-3 mb-1">Divisi</span>
+                    <span class="text-muted mt-1 fw-bold fs-7">Divisi</span>
                 </h3>
                 <div class="card-toolbar">
                     <div class="d-flex align-items-center position-relative my-1 pe-2">
@@ -68,7 +68,7 @@
                                 </td>
                                 <td>
                                     <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                </td>>
+                                </td>
                                 <td class="text-end">
                                     <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" href="#modalTambah" role="button">
                                         <i class="fa-duotone fa-pencil fs-5"></i>

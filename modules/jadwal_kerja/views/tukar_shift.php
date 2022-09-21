@@ -481,39 +481,39 @@
                 <!--end::Wrapper-->
                 <div class="btn-group w-100 tab mb-7">
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'presensi')">
+                    <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
                     <!--end::Input-->
                     Presensi</label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'tukar-shift')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
                     <!--end::Input-->
                     Tukar Shift</label>
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'reimbursement')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
                     <!--end::Input-->
                     Reimbursement</label>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'lembur')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
                     <!--end::Input-->
                     Lembur</label>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'izin-kerja')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
                     <!--end::Input-->
                     Izin Kerja</label>
                     <!--end::Radio-->
                 </div>
 
-                <div id="presensi" class="tabcontent mb-7">
+                <div id="content-presensi" class="tabcontent mb-7">
                     <div class="card-toolbar">
                         <div class="d-flex align-items-center position-relative mb-3 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">

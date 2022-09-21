@@ -42,7 +42,7 @@ class Controller_ctl extends MY_Frontend
 			$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/get_location.js"></script>';
 		}
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/home.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/dashboard/dashboard.js"></script>';
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

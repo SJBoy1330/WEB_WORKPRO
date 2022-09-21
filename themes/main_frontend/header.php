@@ -188,22 +188,17 @@
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
-                                                        <span class="menu-title">Presensi</span>
+                                                        <a href="#pantauan" class="menu-title" data-kt-scroll-toggle>Pantauan</a>
                                                     </span>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
-                                                        <span class="menu-title">Persetujuan</span>
+                                                        <a href="#karyawan" class="menu-title" data-kt-scroll-toggle>Karyawan</a>
                                                     </span>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
-                                                        <span class="menu-title">Karyawan</span>
-                                                    </span>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <span class="menu-title">Kalender</span>
+                                                        <a href="#kalender" class="menu-title" data-kt-scroll-toggle>Kalender</a>
                                                     </span>
                                                 </div>
                                             </div>
@@ -249,20 +244,20 @@
                                                     </span>
                                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <span class="menu-link py-3">
+                                                            <a class="menu-link py-3" href="<?= base_url('karyawan')?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-user-tie fs-3"></i>
                                                                 </span>
                                                                 <span class="menu-title">Daftar Karyawan</span>
-                                                            </span>
+                                                            </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <span class="menu-link py-3">
+                                                            <a class="menu-link py-3" href="<?= base_url('karyawan/divisi')?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-group-arrows-rotate fs-3"></i>
                                                                 </span>
                                                                 <span class="menu-title">Divisi</span>
-                                                            </span>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -273,45 +268,45 @@
                                                     </span>
                                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <span class="menu-link py-3">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja')?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-draw-polygon fs-3"></i>
                                                                 </span>
                                                                 <span class="menu-title">Pola Kerja</span>
-                                                            </span>
+                                                            </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <span class="menu-link py-3">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/shift')?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-calendar-circle-user fs-3"></i>
                                                                 </span>
                                                                 <span class="menu-title">Shift</span>
-                                                            </span>
+                                                            </a>
                                                         </div>
 
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <span class="menu-link py-3">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/tukar_shift')?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-people-arrows fs-3"></i>
                                                                 </span>
                                                                 <span class="menu-title">Tukar Shift</span>
-                                                            </span>
+                                                            </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <span class="menu-link py-3">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/hari_libur')?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-calendar-day fs-3"></i>
                                                                 </span>
                                                                 <span class="menu-title">Hari Libur</span>
-                                                            </span>
+                                                            </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <span class="menu-link py-3">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/lembur')?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-timer fs-3"></i>
                                                                 </span>
                                                                 <span class="menu-title">Lembur</span>
-                                                            </span>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
