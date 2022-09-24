@@ -378,19 +378,19 @@ function hash_my_password($id_sekolah, $username, $password)
 function is_logged_in()
 {
 
-  $obj = &get_instance();
+  // $obj = &get_instance();
 
-  $base_url = $obj->config->item('base_url');
+  // $base_url = $obj->config->item('base_url');
 
-  $ci = get_instance();
+  // $ci = get_instance();
 
-  if ($ci->session->userdata('lms_staf_id_staf')) {
-    if (!in_array($ci->session->userdata('lms_staf_role'), ['staf', 'keuangan', 'admin', 'operator'])) {
-      redirect('auth/login');
-    }
-  } else {
-    redirect('auth/login');
-  }
+  // if ($ci->session->userdata('lms_staf_id_staf')) {
+  //   if (!in_array($ci->session->userdata('lms_staf_role'), ['staf', 'keuangan', 'admin', 'operator'])) {
+  //     redirect('auth');
+  //   }
+  // } else {
+  //   redirect('auth');
+  // }
 }
 
 

@@ -8,7 +8,7 @@ class Controller_ctl extends MY_Frontend
 		parent::__construct();
 		$this->id_sekolah = $this->session->userdata('lms_staf_id_sekolah');
 		$this->id_staf = $this->session->userdata('lms_staf_id_staf');
-		is_logged_in();
+		// is_logged_in();
 	}
 
 
