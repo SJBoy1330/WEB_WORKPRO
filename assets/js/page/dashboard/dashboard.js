@@ -15,7 +15,7 @@ google.charts.load("current", {packages:["corechart"]});
         pieSliceText: 'label',
         pieStartAngle: 100,
         'width' :360,
-        'height' :398,
+        'height' :350,
         colors: ['#FFB600', '#FFC83E', '#FFD56E', '#FFE196', '#FDE8B4']
     };
 

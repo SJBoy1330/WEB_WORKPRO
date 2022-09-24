@@ -43,6 +43,32 @@
                             <div id="piechart"></div>
                         </div>
                         <!--end::Item-->
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="symbol symbol-30px d-flex align-items-center mb-3">
+                                    <div class="symbol-label fs-2 fw-bold me-3" style="background-color: #FFB600;"></div>
+                                    <span class="text-muted fw-bolder fs-6">Hadir</span>
+                                </div>
+                                <div class="symbol symbol-30px d-flex align-items-center mb-3">
+                                    <div class="symbol-label fs-2 fw-bold me-3" style="background-color: #FFC83E;"></div>
+                                    <span class="text-muted fw-bolder fs-6">Izin</span>
+                                </div>
+                                <div class="symbol symbol-30px d-flex align-items-center mb-3">
+                                    <div class="symbol-label fs-2 fw-bold me-3" style="background-color: #FFD56E;"></div>
+                                    <span class="text-muted fw-bolder fs-6">Alpha</span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="symbol symbol-30px d-flex align-items-center mb-3">
+                                    <div class="symbol-label fs-2 fw-bold me-3" style="background-color: #FFE196;"></div>
+                                    <span class="text-muted fw-bolder fs-6">Pulang Awal</span>
+                                </div>
+                                <div class="symbol symbol-30px d-flex align-items-center mb-3">
+                                    <div class="symbol-label fs-2 fw-bold me-3" style="background-color: #FDE8B4;"></div>
+                                    <span class="text-muted fw-bolder fs-6">Terlambat</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--end::Body-->
                 </div>
@@ -61,43 +87,42 @@
                         </h3>
                     </div>
                     <!--end::Header-->
+                    <div class="btn-group w-100 tab mt-5 px-10">
+                        <!--begin::Radio-->
+                        <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
+                        <!--end::Input-->
+                        Presensi</label>
+                        <!--end::Radio-->
+                        <!--begin::Radio-->
+                        <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
+                        <!--end::Input-->
+                        Tukar Shift</label>
+                        <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
+                        <!--end::Input-->
+                        Reimbursement</label>
+                        <!--end::Radio-->
+                        <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
+                        <!--end::Input-->
+                        Lembur</label>
+                        <!--end::Radio-->
+                        <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
+                        <!--end::Input-->
+                        Izin Kerja</label>
+                        <!--end::Radio-->
+                    </div>
                     <!--begin::Body-->
                     <div class="card-body pt-5" style="overflow-y: scroll; height: 375px;">                            
                         <!--end::Wrapper-->
-                        <div class="btn-group w-100 tab mb-7">
-                            <!--begin::Radio-->
-                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
-                            <!--begin::Input-->
-                            <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
-                            <!--end::Input-->
-                            Presensi</label>
-                            <!--end::Radio-->
-                            <!--begin::Radio-->
-                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                            <!--begin::Input-->
-                            <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
-                            <!--end::Input-->
-                            Tukar Shift</label>
-                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                            <!--begin::Input-->
-                            <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
-                            <!--end::Input-->
-                            Reimbursement</label>
-                            <!--end::Radio-->
-                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                            <!--begin::Input-->
-                            <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
-                            <!--end::Input-->
-                            Lembur</label>
-                            <!--end::Radio-->
-                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                            <!--begin::Input-->
-                            <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
-                            <!--end::Input-->
-                            Izin Kerja</label>
-                            <!--end::Radio-->
-                        </div>
-
                         <div id="content-presensi" class="tabcontent mb-7">
                             <div class="card-header border-0 pb-3 px-0">
                                 <div class="d-flex align-items-center position-relative my-1 pe-2">
@@ -231,6 +256,132 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">2</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin 2</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Shift</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>09:30
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>15:50
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-danger fw-bolder d-block fs-6">30 menit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-success fw-bolder d-block fs-6">10 menit</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">2</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin 2</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Shift</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>09:30
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>15:50
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-danger fw-bolder d-block fs-6">30 menit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-success fw-bolder d-block fs-6">10 menit</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">2</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin 2</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Shift</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>09:30
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>15:50
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-danger fw-bolder d-block fs-6">30 menit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-success fw-bolder d-block fs-6">10 menit</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>
@@ -271,6 +422,158 @@
                                     <!--end::Table head-->
                                     <!--begin::Table body-->
                                     <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
@@ -395,6 +698,182 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Nginep Hotel</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">1</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Menunggu</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Nginep Hotel</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">1</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Menunggu</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Nginep Hotel</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">1</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Menunggu</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Nginep Hotel</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">1</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Menunggu</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>
@@ -436,6 +915,170 @@
                                     <!--end::Table head-->
                                     <!--begin::Table body-->
                                     <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
@@ -563,6 +1206,182 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>
@@ -570,6 +1389,23 @@
                         </div>
                     </div>
                     <!--end::Body-->
+                    <div class="card-footer py-5 d-flex justify-content-end align-items-center">
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">»</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
                 <!--end::List Widget 4-->
             </div>
