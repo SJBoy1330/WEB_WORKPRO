@@ -63,497 +63,511 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-5" style="overflow-y: scroll; height: 375px;">                            
-                            <!--end::Wrapper-->
-                            <div class="btn-group w-100 tab mb-7">
-                                <!--begin::Radio-->
-                                <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
-                                <!--begin::Input-->
-                                <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
-                                <!--end::Input-->
-                                Presensi</label>
-                                <!--end::Radio-->
-                                <!--begin::Radio-->
-                                <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                                <!--begin::Input-->
-                                <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
-                                <!--end::Input-->
-                                Tukar Shift</label>
-                                <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                                <!--begin::Input-->
-                                <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
-                                <!--end::Input-->
-                                Reimbursement</label>
-                                <!--end::Radio-->
-                                <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                                <!--begin::Input-->
-                                <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
-                                <!--end::Input-->
-                                Lembur</label>
-                                <!--end::Radio-->
-                                <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                                <!--begin::Input-->
-                                <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
-                                <!--end::Input-->
-                                Izin Kerja</label>
-                                <!--end::Radio-->
-                            </div>
+                        <!--end::Wrapper-->
+                        <div class="btn-group w-100 tab mb-7">
+                            <!--begin::Radio-->
+                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
+                            <!--begin::Input-->
+                            <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
+                            <!--end::Input-->
+                            Presensi</label>
+                            <!--end::Radio-->
+                            <!--begin::Radio-->
+                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
+                            <!--end::Input-->
+                            Tukar Shift</label>
+                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
+                            <!--end::Input-->
+                            Reimbursement</label>
+                            <!--end::Radio-->
+                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
+                            <!--end::Input-->
+                            Lembur</label>
+                            <!--end::Radio-->
+                            <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
+                            <!--end::Input-->
+                            Izin Kerja</label>
+                            <!--end::Radio-->
+                        </div>
 
-                            <div id="content-presensi" class="tabcontent mb-7">
-                                <div class="card-toolbar">
-                                    <div class="d-flex align-items-center position-relative mb-3 pe-2">
-                                        <span class="svg-icon svg-icon-1 position-absolute ms-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
-                                    </div>
+                        <div id="content-presensi" class="tabcontent mb-7">
+                            <div class="card-header border-0 pb-3 px-0">
+                                <div class="d-flex align-items-center position-relative my-1 pe-2">
+                                    <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table align-middle gs-0 gy-4">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                            <tr class="fw-bolder text-muted bg-light">
-                                                <th class="ps-4 w-25px rounded-start">
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox" value="1">
-                                                    </div>
-                                                </th>
-                                                <th class="w-50px">No</th>
-                                                <th class="min-w-125px text-center">Nama</th>
-                                                <th class="min-w-125px text-center">Masuk</th>
-                                                <th class="min-w-125px text-center">Pulang</th>
-                                                <th class="min-w-125px text-center">Terlambat</th>
-                                                <th class="min-w-125px text-center">Pulang Cepat</th>
-                                                <th class="min-w-125px text-center">Tipe Kerja</th>
-                                                <th class="pe-4 min-w-175px text-end rounded-end">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <!--end::Table head-->
-                                        <!--begin::Table body-->
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">
-                                                        <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>09:30
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">
-                                                        <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>16:30
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">20 menit</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">10 menit</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Flat</span>
-                                                </td>
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                        <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <span class="text-dark fw-bolder fs-6">2</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin 2</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">
-                                                        <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>09:30
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">
-                                                        <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>15:50
-                                                    </span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">30 menit</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">10 menit</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Shift</span>
-                                                </td>
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                        <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <!--end::Table body-->
-                                    </table>
+                                <div class="card-toolbar">
+                                    <span class="text-muted fw-normal fs-6 me-5"><i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i> Dalam Jangkauan</span>
+                                    <span class="text-muted fw-normal fs-6 me-3"><i class="fa-duotone fa-location-dot text-warning fs-3 me-2"></i> Diluar Jangkauan</span>
+                                    <button type="button" class="btn btn-icon btn-sm btn-light-success btn-active-primary">
+                                        <span class="svg-icon svg-icon-2 me-0">
+                                            <i class="fa-duotone fa-file-excel fs-3"></i>
+                                        </span>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
+                                        <span class="svg-icon svg-icon-2 me-0">
+                                            <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                        </span>
+                                        Hapus</button>
                                 </div>
                             </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle gs-0 gy-4">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <tr class="fw-bolder text-muted bg-light">
+                                            <th class="ps-4 w-25px rounded-start">
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                </div>
+                                            </th>
+                                            <th class="w-50px">No</th>
+                                            <th class="min-w-125px text-center">Nama</th>
+                                            <th class="min-w-125px text-center">Tipe Kerja</th>
+                                            <th class="min-w-125px text-center">Masuk</th>
+                                            <th class="min-w-125px text-center">Pulang</th>
+                                            <th class="min-w-125px text-center">Terlambat</th>
+                                            <th class="min-w-125px text-center">Pulang Cepat</th>
+                                            <th class="pe-4 min-w-125px text-end rounded-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <!--end::Table head-->
+                                    <!--begin::Table body-->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Flat</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>09:30
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>16:30
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-danger fw-bolder d-block fs-6">20 menit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-success fw-bolder d-block fs-6">10 menit</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">2</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin 2</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Shift</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>09:30
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">
+                                                    <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>15:50
+                                                </span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-danger fw-bolder d-block fs-6">30 menit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-success fw-bolder d-block fs-6">10 menit</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                            </div>
+                        </div>
 
-                            <div id="tukar-shift" class="tabcontent mb-7">
-                                <div class="card-toolbar">
-                                    <div class="d-flex align-items-center position-relative mb-3 pe-2">
-                                        <span class="svg-icon svg-icon-1 position-absolute ms-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table align-middle gs-0 gy-4">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                            <tr class="fw-bolder text-muted bg-light">
-                                                <th class="ps-4 w-25px rounded-start">
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox" value="1">
-                                                    </div>
-                                                </th>
-                                                <th class="w-50px">No</th>
-                                                <th class="min-w-125px text-center">Kode</th>
-                                                <th class="min-w-125px text-center">Pemohon</th>
-                                                <th class="min-w-125px text-center">Pengganti</th>
-                                                <th class="min-w-125px text-center">Penyetuju</th>
-                                                <th class="min-w-125px text-center">Status</th>
-                                                <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <!--end::Table head-->
-                                        <!--begin::Table body-->
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
-                                                </td>
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-eye fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-pen fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                        <i class="fa-duotone fa-trash fs-5"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <!--end::Table body-->
-                                    </table>
+                        <div id="tukar-shift" class="tabcontent mb-7">
+                            <div class="card-toolbar">
+                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                                    <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                                 </div>
                             </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle gs-0 gy-4">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <tr class="fw-bolder text-muted bg-light">
+                                            <th class="ps-4 w-25px rounded-start">
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                </div>
+                                            </th>
+                                            <th class="w-50px">No</th>
+                                            <th class="min-w-125px text-center">Kode</th>
+                                            <th class="min-w-125px text-center">Pemohon</th>
+                                            <th class="min-w-125px text-center">Pengganti</th>
+                                            <th class="min-w-125px text-center">Penyetuju</th>
+                                            <th class="min-w-125px text-center">Status</th>
+                                            <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <!--end::Table head-->
+                                    <!--begin::Table body-->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                            </div>
+                        </div>
 
-                            <div id="reimbursement" class="tabcontent mb-7">
-                                <div class="card-toolbar">
-                                    <div class="d-flex align-items-center position-relative mb-3 pe-2">
-                                        <span class="svg-icon svg-icon-1 position-absolute ms-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table align-middle gs-0 gy-4">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                            <tr class="fw-bolder text-muted bg-light">
-                                                <th class="ps-4 w-25px rounded-start">
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox" value="1">
-                                                    </div>
-                                                </th>
-                                                <th class="w-50px">No</th>
-                                                <th class="min-w-125px text-center">Kode</th>
-                                                <th class="min-w-125px text-center">Tanggal</th>
-                                                <th class="min-w-125px text-center">Nama</th>
-                                                <th class="min-w-125px text-center">Kategori</th>
-                                                <th class="min-w-175px text-center">Jumlah Penyetuju</th>
-                                                <th class="min-w-125px text-center">Status</th>
-                                                <th class="min-w-125px text-center">Dokumen</th>
-                                                <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <!--end::Table head-->
-                                        <!--begin::Table body-->
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Nginep Hotel</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">1</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-sm btn-light-warning">Menunggu</a>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                </td>
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-eye fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-pen fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                        <i class="fa-duotone fa-trash fs-5"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <!--end::Table body-->
-                                    </table>
+                        <div id="reimbursement" class="tabcontent mb-7">
+                            <div class="card-toolbar">
+                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                                    <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                                 </div>
                             </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle gs-0 gy-4">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <tr class="fw-bolder text-muted bg-light">
+                                            <th class="ps-4 w-25px rounded-start">
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                </div>
+                                            </th>
+                                            <th class="w-50px">No</th>
+                                            <th class="min-w-125px text-center">Kode</th>
+                                            <th class="min-w-125px text-center">Tanggal</th>
+                                            <th class="min-w-125px text-center">Nama</th>
+                                            <th class="min-w-125px text-center">Kategori</th>
+                                            <th class="min-w-175px text-center">Jumlah Penyetuju</th>
+                                            <th class="min-w-125px text-center">Status</th>
+                                            <th class="min-w-125px text-center">Dokumen</th>
+                                            <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <!--end::Table head-->
+                                    <!--begin::Table body-->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Nginep Hotel</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">1</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Menunggu</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                            </div>
+                        </div>
 
-                            <div id="lembur" class="tabcontent mb-7">
-                                <div class="card-toolbar">
-                                    <div class="d-flex align-items-center position-relative mb-3 pe-2">
-                                        <span class="svg-icon svg-icon-1 position-absolute ms-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table align-middle gs-0 gy-4">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                            <tr class="fw-bolder text-muted bg-light">
-                                                <th class="ps-4 w-25px rounded-start">
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox" value="1">
-                                                    </div>
-                                                </th>
-                                                <th class="w-50px">No</th>
-                                                <th class="min-w-125px text-center">Kode</th>
-                                                <th class="min-w-150px text-center">Tanggal Lembur</th>
-                                                <th class="min-w-125px text-center">Nama</th>
-                                                <th class="min-w-125px text-center">Penyetuju</th>
-                                                <th class="min-w-175px text-center">Status</th>
-                                                <th class="min-w-125px text-center">Dokumen</th>
-                                                <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <!--end::Table head-->
-                                        <!--begin::Table body-->
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                </td>
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-eye fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-pen fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                        <i class="fa-duotone fa-trash fs-5"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <!--end::Table body-->
-                                    </table>
+                        <div id="lembur" class="tabcontent mb-7">
+                            <div class="card-toolbar">
+                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                                    <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                                 </div>
                             </div>
-                            
-                            <div id="izin-kerja" class="tabcontent mb-7">
-                                <div class="card-toolbar">
-                                    <div class="d-flex align-items-center position-relative mb-3 pe-2">
-                                        <span class="svg-icon svg-icon-1 position-absolute ms-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                                <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table align-middle gs-0 gy-4">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                            <tr class="fw-bolder text-muted bg-light">
-                                                <th class="ps-4 w-25px rounded-start">
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox" value="1">
-                                                    </div>
-                                                </th>
-                                                <th class="w-50px">No</th>
-                                                <th class="min-w-125px text-center">Kode</th>
-                                                <th class="min-w-150px text-center">Tanggal Izin</th>
-                                                <th class="min-w-125px text-center">Nama</th>
-                                                <th class="min-w-125px text-center">Kategori</th>
-                                                <th class="min-w-175px text-center">Penyetuju</th>
-                                                <th class="min-w-125px text-center">Status</th>
-                                                <th class="min-w-125px text-center">Dokumen</th>
-                                                <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <!--end::Table head-->
-                                        <!--begin::Table body-->
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                </td>
-                                                <td class="text-end">
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-eye fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                        <i class="fa-duotone fa-pen fs-5"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                        <i class="fa-duotone fa-trash fs-5"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                        <!--end::Table body-->
-                                    </table>
+                            <div class="table-responsive">
+                                <table class="table align-middle gs-0 gy-4">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <tr class="fw-bolder text-muted bg-light">
+                                            <th class="ps-4 w-25px rounded-start">
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                </div>
+                                            </th>
+                                            <th class="w-50px">No</th>
+                                            <th class="min-w-125px text-center">Kode</th>
+                                            <th class="min-w-150px text-center">Tanggal Lembur</th>
+                                            <th class="min-w-125px text-center">Nama</th>
+                                            <th class="min-w-125px text-center">Penyetuju</th>
+                                            <th class="min-w-175px text-center">Status</th>
+                                            <th class="min-w-125px text-center">Dokumen</th>
+                                            <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <!--end::Table head-->
+                                    <!--begin::Table body-->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div id="izin-kerja" class="tabcontent mb-7">
+                            <div class="card-toolbar">
+                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                                    <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                            <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                        </svg>
+                                    </span>
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                                 </div>
                             </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle gs-0 gy-4">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <tr class="fw-bolder text-muted bg-light">
+                                            <th class="ps-4 w-25px rounded-start">
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                </div>
+                                            </th>
+                                            <th class="w-50px">No</th>
+                                            <th class="min-w-125px text-center">Kode</th>
+                                            <th class="min-w-150px text-center">Tanggal Izin</th>
+                                            <th class="min-w-125px text-center">Nama</th>
+                                            <th class="min-w-125px text-center">Kategori</th>
+                                            <th class="min-w-175px text-center">Penyetuju</th>
+                                            <th class="min-w-125px text-center">Status</th>
+                                            <th class="min-w-125px text-center">Dokumen</th>
+                                            <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <!--end::Table head-->
+                                    <!--begin::Table body-->
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">12345</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-pen fs-5"></i>
+                                                </a>
+                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <!--end::Body-->
                 </div>

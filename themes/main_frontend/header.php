@@ -323,9 +323,9 @@
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('presensi')?>">
                                                         <span class="menu-title">Data Presensi</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
@@ -377,9 +377,9 @@
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/data_karyawan')?>">
                                                         <span class="menu-title">Data Karyawan</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">

@@ -14,9 +14,9 @@ google.charts.load("current", {packages:["corechart"]});
         legend: 'none',
         pieSliceText: 'label',
         pieStartAngle: 100,
-        'width' :398,
+        'width' :360,
         'height' :398,
-        colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6']
+        colors: ['#FFB600', '#FFC83E', '#FFD56E', '#FFE196', '#FDE8B4']
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
