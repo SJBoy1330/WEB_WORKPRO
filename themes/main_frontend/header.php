@@ -328,9 +328,9 @@
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('presensi/izin_kerja')?>">
                                                         <span class="menu-title">Izin Kerja</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <!--end::Menu-->
@@ -382,34 +382,34 @@
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_presensi')?>">
                                                         <span class="menu-title">Rekap Presensi</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_reimbursement')?>">
                                                         <span class="menu-title">Rekap Reimbursement</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_kunjungan')?>">
                                                         <span class="menu-title">Rekap Kunjungan</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_prospek')?>">
                                                         <span class="menu-title">Rekap Prospek</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_izin_kerja')?>">
                                                         <span class="menu-title">Rekap Izin Kerja</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_lembur')?>">
                                                         <span class="menu-title">Rekap Lembur</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <!--end::Menu-->

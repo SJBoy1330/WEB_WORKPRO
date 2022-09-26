@@ -22,4 +22,17 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function izin_kerja()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Izin Kerja';
+
+		// LOAD JS
+		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('izin_kerja', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
 }
