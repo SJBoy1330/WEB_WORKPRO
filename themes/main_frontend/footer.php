@@ -16,7 +16,13 @@
 <script src="<?= base_url(); ?>assets/js/custom/modals/create-campaign.js"></script>
 <script src="<?= base_url(); ?>assets/js/custom/modals/create-app.js"></script>
 <script src="<?= base_url(); ?>assets/js/custom/modals/users-search.js"></script>
-<script src="<?= base_url(); ?>assets/plugins/custom/tinymce/tinymce.bundle.js"></script>
+
+<script src="<?= base_url(); ?>assets/plugins/custom/ckeditor/ckeditor-classic.bundle.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/custom/ckeditor/ckeditor-inline.bundle.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/custom/ckeditor/ckeditor-balloon.bundle.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/custom/ckeditor/ckeditor-balloon-block.bundle.js"></script>
+<script src="<?= base_url(); ?>assets/plugins/custom/ckeditor/ckeditor-document.bundle.js"></script>
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script type="text/javascript">

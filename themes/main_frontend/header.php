@@ -360,9 +360,9 @@
                                                     </span>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/role')?>">
                                                         <span class="menu-title">Role</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <!--end::Menu-->
@@ -424,9 +424,9 @@
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('informasi')?>">
                                                         <span class="menu-title">Pengumuman</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
@@ -434,9 +434,9 @@
                                                     </span>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('informasi/bantuan')?>">
                                                         <span class="menu-title">Bantuan</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <!--end::Menu-->
