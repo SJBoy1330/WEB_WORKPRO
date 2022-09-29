@@ -29,7 +29,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Kunjungan';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/kunjungan.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('kunjungan', $mydata, TRUE);
@@ -42,10 +42,23 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Reimbursement';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/reimbursement.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('reimbursement', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function reimbursement_kategori()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Kategori Reimbursement';
+
+		// LOAD JS
+		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('reimbursement_kategori', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 

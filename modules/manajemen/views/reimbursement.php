@@ -39,6 +39,22 @@
                             <div class="px-7 py-5">
                                 <div class="mb-10">
                                     <!--begin::Label-->
+                                    <label class="form-label fw-bold">Kategori</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <div>
+                                        <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih range waktu" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                            <option></option>
+                                            <option value="1">Transportasi</option>
+                                            <option value="2">Kesehatan</option>
+                                            <option value="2">Alat Tulis</option>
+                                            <option value="2">Lainnya</option>  
+                                        </select>
+                                    </div>
+                                    <!--end::Input-->
+                                </div>
+                                <div class="mb-10">
+                                    <!--begin::Label-->
                                     <label class="form-label fw-bold">Range Waktu</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
@@ -67,6 +83,9 @@
                         <!--end::Menu 1-->
                         <!--end::Menu-->
                     </div>
+                    <a href="<?= base_url('manajemen/reimbursement_kategori')?>" class="btn btn-sm btn-light btn-active-primary me-2">
+                        Kategori
+                    </a>
                     <button type="button" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#modalTambah">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-plus fs-3"></i>
@@ -96,12 +115,13 @@
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
+                                <th class="min-w-125px">Kode</th>
                                 <th class="min-w-125px">Tanggal</th>
-                                <th class="min-w-125px">Divisi</th>
                                 <th class="min-w-150px text-center">Nama</th>
-                                <th class="min-w-125px text-center">Outlet</th>
-                                <th class="min-w-100px text-center">Alamat</th>
+                                <th class="min-w-125px text-center">Kategori</th>
+                                <th class="min-w-100px text-center">Jumlah Penyetuju</th>
                                 <th class="min-w-100px text-center">Dokumen</th>
+                                <th class="min-w-100px text-center">Persetujuan</th>
                                 <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
                             </tr>
                         </thead>
@@ -120,22 +140,27 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="text-dark fw-bolder d-block fs-6">2020-08-30</span>
+                                    <span class="text-dark fw-bolder d-block fs-6">112233</span>
                                 </td>
                                 <td>
-                                    <span class="text-dark fw-bolder d-block fs-6">Divisi Superadmin</span>
+                                    <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
                                 </td>
                                 <td class="text-center">
                                     <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="text-dark fw-bolder d-block fs-6">Outlet Superadmin</span>
+                                    <span class="text-dark fw-bolder d-block fs-6">Kategori Superadmin</span>
                                 </td>
                                 <td class="text-center">
-                                    <span class="text-dark fw-bolder d-block fs-6">Jl. Superadmin n0 123</span>
+                                    <span class="text-dark fw-bolder d-block fs-6">10</span>
                                 </td>
                                 <td class="text-center">
                                     <a href="#" class="btn btn-sm btn-icon btn-light"><i class="fa-duotone fa-file fs-3"></i></a>
+                                </td>
+                                <td class="text-center">
+                                    <label class="form-check form-check-custom form-check-solid justify-content-center">
+                                        <input class="form-check-input h-20px w-20px" type="checkbox" name="">
+                                    </label>
                                 </td>
                                 <td class="text-end">
                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
@@ -186,7 +211,7 @@
             <!--begin::Modal header-->
             <div class="modal-header">
                 <!--begin::Modal title-->
-                <h2>Tambah Data Kunjungan</h2>
+                <h2>Tambah Data Reimbursement</h2>
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -208,23 +233,9 @@
                     <div class="fv-row mb-5">
                         <!--begin::Label-->
                         <label class="fs-6 fw-bold mb-2">
-                            <span class="required">Nama Outlet</span>
+                            <span class="required">Karyawan</span>
                         </label>
-                        <!--end::Label-->
-                        <div class="position-relative d-flex align-items-center">
-                            <!--begin::Icon-->
-                            <span class="svg-icon svg-icon-2 position-absolute mx-4">
-                                <i class="fa-duotone fa-input-numeric fs-5"></i>
-                            </span>
-                            <!--end::Icon-->
-                            <input type="number" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan nik" autocomplete="off">
-                        </div>
-                        <div class="text-danger mx-4 fw-bold"></div>
-                    </div>
-                    <div class="fv-row mb-5">
-                        <label class="form-label fw-bold">Pilih Karyawan</label>
-                        <!--end::Label-->
-                        <!--begin::Input-->
+                        
                         <div>
                             <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih karyawan">
                                 <option></option>
@@ -232,39 +243,18 @@
                                 <option value="2">Rinaldi Usman</option>
                             </select>
                         </div>
+                        <div class="text-danger mx-4 fw-bold"></div>
                     </div>
-                    <div class="fv-row d-flex mb-5">
-                        <div class="col-6 pe-3">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-bold mb-2">
-                                <span class="required">Longitude</span>
-                            </label>
-                            <!--end::Label-->
-                            <div class="position-relative d-flex align-items-center">
-                                <!--begin::Icon-->
-                                <span class="svg-icon svg-icon-2 position-absolute mx-4">
-                                    <i class="fa-duotone fa-location-dot fs-5"></i>
-                                </span>
-                                <!--end::Icon-->
-                                <input type="number" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan longitude outlet" autocomplete="off">
-                            </div>
-                            <div class="text-danger mx-4 fw-bold"></div>
-                        </div>
-                        <div class="col-6 ps-3">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-bold mb-2">
-                                <span class="required">Latitude</span>
-                            </label>
-                            <!--end::Label-->
-                            <div class="position-relative d-flex align-items-center">
-                                <!--begin::Icon-->
-                                <span class="svg-icon svg-icon-2 position-absolute mx-4">
-                                    <i class="fa-duotone fa-location-dot fs-5"></i>
-                                </span>
-                                <!--end::Icon-->
-                                <input type="number" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan latitude outlet" autocomplete="off">
-                            </div>
-                            <div class="text-danger mx-4 fw-bold"></div>
+                    <div class="fv-row mb-5">
+                        <label class="form-label fw-bold">Kategori</label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <div>
+                            <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih kategori">
+                                <option></option>
+                                <option value="1">Eka Dharma Rasiawan</option>
+                                <option value="2">Rinaldi Usman</option>
+                            </select>
                         </div>
                     </div>
                     <div class="fv-row mb-5">
@@ -284,17 +274,20 @@
                         <div class=" text-danger mx-4 fw-bold"></div>
                     </div>
                     <div class="fv-row mb-5">
-                        <div class="col-12">
-                            <!--begin::Label-->
-                            <label class="fs-6 fw-bold mb-2">
-                                <span class="required">Alasan</span>
-                            </label>
-                            <!--end::Label-->
-                            <div class="position-relative d-flex align-items-center">
-                                <textarea class="form-control form-control-solid" name="alasan" rows="6" placeholder="Masukkan alasan"></textarea>
-                            </div>
-                            <div class="text-danger mx-4 fw-bold"></div>
+                        <!--begin::Label-->
+                        <label class="fs-6 fw-bold mb-2">
+                            <span class="required">Jumlah</span>
+                        </label>
+                        <!--end::Label-->
+                        <div class="position-relative d-flex align-items-center">
+                            <!--begin::Icon-->
+                            <span class="svg-icon svg-icon-2 position-absolute mx-4">
+                                <i class="fa-duotone fa-money-bill-simple-wave fs-5"></i>
+                            </span>
+                            <!--end::Icon-->
+                            <input type="number" class="form-control form-control-solid ps-12" placeholder="Masukkan jumlah"/>
                         </div>
+                        <div class=" text-danger mx-4 fw-bold"></div>
                     </div>
                     <div class="fv-row mb-5">
                         <div class="col-12">
@@ -310,55 +303,7 @@
                         </div>
                     </div>
                     <div class="fv-row d-flex mb-5">
-                        <div class="col-12 d-flex flex-column pe-3">
-                            <label class="fs-6 fw-bold mb-2">
-                                <span class="required">Tanda Tangan</span>
-                            </label>
-                            <div class="position-relative d-flex aling-items-center mb-5">   
-                                <!--begin::Image input-->
-                                <div class="image-input image-input-empty shadow-sm" data-kt-image-input="true" style="background-image: url(<?= base_url()?>assets/media/svg/files/blank-image.svg)">
-                                    <!--begin::Image preview wrapper-->
-                                    <div class="image-input-wrapper w-125px h-125px"></div>
-                                    <!--end::Image preview wrapper-->
-
-                                    <!--begin::Edit button-->
-                                    <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
-                                        data-kt-image-input-action="change"
-                                        data-bs-toggle="tooltip"
-                                        data-bs-dismiss="click"
-                                        title="Ganti gambar">
-                                        <i class="bi bi-pencil-fill fs-7"></i>
-
-                                        <!--begin::Inputs-->
-                                        <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                                        <input type="hidden" name="avatar_remove" />
-                                        <!--end::Inputs-->
-                                    </label>
-                                    <!--end::Edit button-->
-
-                                    <!--begin::Cancel button-->
-                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
-                                        data-kt-image-input-action="cancel"
-                                        data-bs-toggle="tooltip"
-                                        data-bs-dismiss="click"
-                                        title="Batalkan gambar">
-                                        <i class="bi bi-x fs-2"></i>
-                                    </span>
-                                    <!--end::Cancel button-->
-
-                                    <!--begin::Remove button-->
-                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
-                                        data-kt-image-input-action="remove"
-                                        data-bs-toggle="tooltip"
-                                        data-bs-dismiss="click"
-                                        title="Hapus gambar">
-                                        <i class="bi bi-x fs-2"></i>
-                                    </span>
-                                    <!--end::Remove button-->
-                                </div>
-                                <!--end::Image input-->
-                            </div>
-
+                        <div class="col-12">
                             <!--begin::Dropzone-->
                             <div class="dropzone dropzone-queue mb-2" id="kt_dropzonejs_example_3">
                                 <!--begin::Controls-->

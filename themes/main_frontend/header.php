@@ -350,14 +350,14 @@
                                                     </span>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/kunjungan')?>">
                                                         <span class="menu-title">Kunjungan</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
+                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/reimbursement')?>">
                                                         <span class="menu-title">Reimbursement</span>
-                                                    </span>
+                                                    </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <a class="menu-link py-3" href="<?= base_url('manajemen/role')?>">
