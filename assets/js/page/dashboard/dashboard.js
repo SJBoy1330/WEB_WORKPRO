@@ -27,6 +27,8 @@ tinymce.init({
     selector: '#kt_docs_tinymce_basic'
 });
 
+$("#kt_datepicker_1").flatpickr();
+
 const element = document.getElementById("kt_docs_fullcalendar_populated");
 
 var todayDate = moment().startOf("day");
@@ -62,6 +64,9 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
     editable: true,
     dayMaxEvents: true, // allow "more" link when too many events
     navLinks: true,
+    events: [
+        ...
+    ],
 
     eventContent: function (info) {
         var element = $(info.el);
@@ -72,14 +77,12 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
                 element.data("placement", "top");
                 KTApp.initPopover(element);
             } else if (element.hasClass("fc-time-grid-event")) {
-                element.find(".fc-title").append("<div class='fc-description'> + info.event.extendedProps.description + </div>");
+                element.find(".fc-title").append("<div class="fc-description">" + info.event.extendedProps.description + "</div>");
             } else if (element.find(".fc-list-item-title").lenght !== 0) {
-                element.find(".fc-list-item-title").append("<div class='fc-description'> + info.event.extendedProps.description + </div>");
+                element.find(".fc-list-item-title").append("<div class="fc-description">" + info.event.extendedProps.description + "</div>");
             }
         }
     }
 });
 
 calendar.render();
-
-$("#kt_datepicker_1").flatpickr();
