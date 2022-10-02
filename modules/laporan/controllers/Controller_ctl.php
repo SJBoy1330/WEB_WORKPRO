@@ -100,5 +100,18 @@ class Controller_ctl extends MY_Frontend
 		$this->data['content'] = $this->load->view('rekap_lembur', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
+
+	public function detail_presensi()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Detail Presensi';
+
+		// LOAD JS
+		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('detail_presensi', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
     
 }

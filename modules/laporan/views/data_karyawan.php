@@ -26,7 +26,7 @@
                         </span>
                         <!--end::Svg Icon-->Filter</a>
                         <!--begin::Menu 1-->
-                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61bc33c4ee0dc">
+                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-500px" data-kt-menu="true" id="kt_menu_61bc33c4ee0dc">
                             <!--begin::Header-->
                             <div class="px-7 py-5">
                                 <div class="fs-5 text-dark fw-bolder">Opsi Filter</div>
@@ -37,24 +37,49 @@
                             <!--end::Menu separator-->
                             <!--begin::Form-->
                             <div class="px-7 py-5">
-                                <!--begin::Input group-->
-                                <div class="mb-5">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-bold">Grup</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div>
-                                        <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
-                                            <option></option>
-                                            <option value="1">Grup A</option>
-                                            <option value="2">Grup B</option>
-                                            <option value="2">Grup C</option>
-                                            <option value="2">Grup D</option>
-                                        </select>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <!--begin::Input group-->
+                                        <div class="mb-5">
+                                            <!--begin::Label-->
+                                            <label class="form-label fw-bold">Nama Karyawan</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <div>
+                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih grup" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                                    <option></option>
+                                                    <option value="1">Eka Dharma Rasiawan</option>
+                                                    <option value="2">Rinaldi Usman</option>
+                                                    <option value="2">Reza Prasetio</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
                                     </div>
-                                    <!--end::Input-->
+                                    <div class="col-6">
+                                        <!--begin::Input group-->
+                                        <div class="mb-5">
+                                            <!--begin::Label-->
+                                            <label class="form-label fw-bold">Grup</label>
+                                            <!--end::Label-->
+                                            <!--begin::Input-->
+                                            <div>
+                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                                    <option></option>
+                                                    <option value="1">Grup A</option>
+                                                    <option value="2">Grup B</option>
+                                                    <option value="2">Grup C</option>
+                                                    <option value="2">Grup D</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Input-->
+                                        </div>
+                                        <!--end::Input group-->
+                                    </div>
                                 </div>
-                                <!--end::Input group-->
+                                
+                                
                                 <!--begin::Input group-->
                                 <div class="mb-5">
                                     <!--begin::Label-->
