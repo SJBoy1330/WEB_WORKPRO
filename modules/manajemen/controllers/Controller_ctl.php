@@ -13,13 +13,13 @@ class Controller_ctl extends MY_Frontend
 	public function index()
 	{
 		// LOAD TITLE
-		$mydata['title'] = 'Prospek';
+		$mydata['title'] = 'Role';
 
 		// LOAD JS
 		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
 
 		// LOAD VIEW
-		$this->data['content'] = $this->load->view('prospek', $mydata, TRUE);
+		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 
@@ -72,6 +72,32 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('role', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function status_prospek()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Role';
+
+		// LOAD JS
+		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('status_prospek', $mydata, TRUE);
+		$this->display($this->input->get('routing'));
+	}
+
+	public function sumber_prospek()
+	{
+		// LOAD TITLE
+		$mydata['title'] = 'Role';
+
+		// LOAD JS
+		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+
+		// LOAD VIEW
+		$this->data['content'] = $this->load->view('sumber_prospek', $mydata, TRUE);
 		$this->display($this->input->get('routing'));
 	}
 }
