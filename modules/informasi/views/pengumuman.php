@@ -207,62 +207,107 @@
 <!-- Modal Tambah -->
 <div class="modal fade" id="modalTambah" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
-    <div class="modal-dialog modal-dialog-centered mw-650px">
+    <div class="modal-dialog modal-dialog-centered mw-750px">
         <!--begin::Modal content-->
         <div class="modal-content">
             <!--begin::Modal header-->
             <div class="modal-header">
                 <!--begin::Modal title-->
-                <h2>Tambah Lokasi Presensi</h2>
+                <h2>Tambah Pengumuman</h2>
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
                     <span class="svg-icon svg-icon-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
                             <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
                         </svg>
                     </span>
-                    <!--end::Svg Icon-->
                 </div>
                 <!--end::Close-->
             </div>
             <!--end::Modal header-->
             <!--begin::Modal body-->
             <div class="modal-body pb-lg-10 px-lg-10">
-                <div class="fv-row mb-5">
-                    <!--begin::Label-->
-                    <label class="fs-6 fw-bold mb-2" for="judul">
-                        <span class="required">Judul</span>
-                    </label>
-                    <!--end::Label-->
-                    <div class="position-relative d-flex align-items-center">
-                        <!--begin::Icon-->
-                        <span class="svg-icon svg-icon-2 position-absolute mx-4">
-                            <i class="fa-duotone fa-h1 fs-5"></i>
-                        </span>
-                        <!--end::Icon-->
-                        <input type="text" name="judul" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan judul" aria-placeholder="">
-                    </div>
-                </div>
+                <form class="form" action="#" method="post">
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="fv-row mb-5">
+                                <div class="container me-3">
+                                    <div class="sub-container d-flex justify-content-center align-items-center mb-5">
+                                        <button class="btn btn-light btn-hover-scale" style="width: 60px; height: 60px;">
+                                            <i class="fa-duotone fa-text d-flex justify-content-center align-items-center fs-1 pe-0"></i>
+                                        </button> 
+                                    </div> 
+                                    <div class="sub-container d-flex justify-content-center align-items-center mb-5">
+                                        <button class="btn btn-light btn-hover-scale" style="width: 60px; height: 60px;">
+                                            <i class="fa-duotone fa-images d-flex justify-content-center align-items-center fs-1 pe-0"></i>
+                                        </button> 
+                                    </div> 
+                                    <div class="sub-container d-flex justify-content-center align-items-center">
+                                        <button class="btn btn-light btn-hover-scale" style="width: 60px; height: 60px;">
+                                            <i class="fa-duotone fa-link d-flex justify-content-center align-items-center fs-1 pe-0"></i>
+                                        </button> 
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-10">
+                            <div class="fv-row mb-5">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="judul">
+                                    <span class="required">Judul</span>
+                                </label>
+                                <!--end::Label-->
+                                <div class="position-relative d-flex align-items-center">
+                                    <!--begin::Icon-->
+                                    <span class="svg-icon svg-icon-2 position-absolute mx-4">
+                                        <i class="fa-duotone fa-h1 fs-5"></i>
+                                    </span>
+                                    <!--end::Icon-->
+                                    <input type="text" name="judul" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan judul" aria-placeholder="">
+                                </div>
+                            </div>
+                            <div class="fv-row mb-5">
+                                <textarea name="kt_docs_ckeditor_classic" id="kt_docs_ckeditor_classic"></textarea>
+                            </div>
+                            <div class="fv-row mb-5">
+                                <!--begin::Dropzone-->
+                                <div class="dropzone" id="kt_dropzonejs_example_1">
+                                    <!--begin::Message-->
+                                    <div class="dz-message needsclick">
+                                        <!--begin::Icon-->
+                                        <i class="bi bi-file-earmark-arrow-up text-primary fs-3x"></i>
+                                        <!--end::Icon-->
 
-                <div class="fv-row mb-5">
-                    <!--begin::Label-->
-                    <label class="fs-6 fw-bold mb-2" for="keterangan">
-                        <span class="required">keterangan</span>
-                    </label>
-                    <!--end::Label-->
-                    <div class="position-relative d-flex align-items-center">
-                        <!--begin::Input-->
-                        <textarea class="form-control form-control-solid" name="keterangan" placeholder="Masukkan keterangan" rows="5" aria-placeholder=""></textarea>
-                        <!--end::Input-->
+                                        <!--begin::Info-->
+                                        <div class="ms-4">
+                                            <h3 class="fs-5 fw-bolder text-gray-900 mb-1">Drop files here or click to upload.</h3>
+                                            <span class="fs-7 fw-bold text-gray-400">Upload up to 10 files</span>
+                                        </div>
+                                        <!--end::Info-->
+                                    </div>
+                                </div>
+                                <!--end::Dropzone-->
+                            </div>
+                            <div class="fv-row mb-5">
+                                <!--begin::Label-->
+                                <label class="fs-6 fw-bold mb-2" for="link">
+                                    <span class="required">Link</span>
+                                </label>
+                                <!--end::Label-->
+                                <div class="position-relative d-flex align-items-center">
+                                    <!--begin::Icon-->
+                                    <span class="svg-icon svg-icon-2 position-absolute mx-4">
+                                        <i class="fa-duotone fa-link fs-5"></i>
+                                    </span>
+                                    <!--end::Icon-->
+                                    <input type="text" name="link" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan link" aria-placeholder="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="fv-row mb-5">
-                    <textarea name="kt_docs_ckeditor_classic" id="kt_docs_ckeditor_classic"></textarea>
-                </div>
+                </form>
                 <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Continue
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

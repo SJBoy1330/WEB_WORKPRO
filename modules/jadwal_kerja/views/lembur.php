@@ -212,6 +212,7 @@
             <!--begin::Modal body-->
             <form class="form" action="#" method="post">
                 <div class="modal-body pb-lg-10 px-lg-10">
+                    
                     <div class="fv-row d-flex mb-5">
                         <div class="col-6 pe-3">
                             <!--begin::Label-->
