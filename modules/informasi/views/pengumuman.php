@@ -265,7 +265,7 @@
                                         <i class="fa-duotone fa-h1 fs-5"></i>
                                     </span>
                                     <!--end::Icon-->
-                                    <input type="text" name="judul" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan judul" aria-placeholder="">
+                                    <input type="text" name="judul" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan judul" autocomplete="off">
                                 </div>
                             </div>
                             <div class="fv-row mb-5">
@@ -302,7 +302,7 @@
                                         <i class="fa-duotone fa-link fs-5"></i>
                                     </span>
                                     <!--end::Icon-->
-                                    <input type="text" name="link" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan link" aria-placeholder="">
+                                    <input type="text" name="link" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan link" autocomplete="off">
                                 </div>
                             </div>
                         </div>
