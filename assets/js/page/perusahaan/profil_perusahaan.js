@@ -1,0 +1,1 @@
+$("#kt_datepicker_2").flatpickr();

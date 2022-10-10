@@ -16,7 +16,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Perusahaan';
 
 		// LOAD JS
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/profil_perusahaan.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
