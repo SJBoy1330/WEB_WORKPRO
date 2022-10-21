@@ -1,15 +1,3 @@
-$("#kt_datepicker_1").flatpickr({
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-});
-
-$("#kt_datepicker_2").flatpickr({
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-});
-
 $("#kt_datepicker_3").flatpickr();
 
 function openCity(evt, cityName) {

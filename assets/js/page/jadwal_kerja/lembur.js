@@ -1,4 +1,5 @@
 $("#kt_datepicker_1").flatpickr();
+
 $("#kt_datepicker_2").flatpickr();
 
 function openCity(evt, cityName) {

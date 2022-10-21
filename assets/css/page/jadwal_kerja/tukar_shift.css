@@ -1,0 +1,26 @@
+.fv-row.inputan{
+    display: flex !important;
+}
+
+.col-md-6.col-sm-12.left{
+    padding-right: 0.75rem !important;
+}
+
+.col-md-6.col-sm-12.right{
+    padding-left: 0.75rem !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .fv-row.inputan{
+        display: flex !important;
+        flex-direction:column;
+    }
+
+    .col-md-6.col-sm-12.left{
+        padding-right: 0rem !important;
+    }
+    
+    .col-md-6.col-sm-12.right{
+        padding-left: 0rem !important;
+    }
+}

@@ -57,6 +57,9 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'Tukar Shift';
 
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/jadwal_kerja/tukar_shift.css') . '">';
+
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/tukar_shift.js"></script>';
 

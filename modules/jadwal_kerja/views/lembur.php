@@ -15,7 +15,7 @@
                     <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                 </div>
                 <div class="card-toolbar">
-                    <div class="me-2">
+                    <div class="me-2 mb-2">
                         <!--begin::Menu-->
                         <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
@@ -69,19 +69,19 @@
                         <!--end::Menu 1-->
                         <!--end::Menu-->
                     </div>
-                    <button type="button" class="btn btn-sm btn-light btn-active-primary me-2" data-bs-toggle="modal" data-bs-target="#modalJadwalShift">
+                    <button type="button" class="btn btn-sm btn-light btn-active-primary me-2 mb-2" data-bs-toggle="modal" data-bs-target="#modalJadwalShift">
                         <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
                             <i class="fa-duotone fa-thumbs-up fs-3"></i>
                         </span>
                         Persetujuan</a>
                     </button>
-                    <button type="button" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    <button type="button" class="btn btn-sm btn-light btn-active-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-plus fs-3"></i>
                         </span>
                         Tambah
                     </button>
-                    <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-light-danger me-2 mb-2" id="deleteall" style="display: none;">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
                         </span>
@@ -389,7 +389,7 @@
                 <div class="d-flex flex-column flex-grow-1">
                     <!--begin::Stats-->
                     <div class="d-flex justify-content-between flex-wrap">
-                        <div class="d-flex">
+                        <div class="d-flex justify-content-center align-items-center flex-wrap">
                             <!--begin::Stat-->
                             <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                                 <!--begin::Number-->
@@ -468,7 +468,7 @@
                         </div>
                         <div class="text-end">
                             <!--begin::Menu-->
-                            <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder position-relative bottom-0" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                            <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder position-relative bottom-0 mb-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
                             <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -540,7 +540,7 @@
                 </div>
                 
                 <!--end::Wrapper-->
-                <div class="btn-group w-100 tab mb-7">
+                <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
                     <!--begin::Input-->

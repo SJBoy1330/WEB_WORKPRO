@@ -17,7 +17,7 @@
                 <div class="card-toolbar">
                     <div class="me-2">
                         <!--begin::Menu-->
-                        <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                        <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder mb-2" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
                         <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -146,19 +146,19 @@
                         <!--end::Menu 1-->
                         <!--end::Menu-->
                     </div>
-                    <a class="btn btn-sm btn-light btn-active-primary me-2" href="<?= base_url('manajemen/sumber_prospek');?>">
+                    <a class="btn btn-sm btn-light btn-active-primary me-2 mb-2" href="<?= base_url('manajemen/sumber_prospek');?>">
                         Sumber
                     </a>
-                    <a class="btn btn-sm btn-light btn-active-primary me-2" href="<?= base_url('manajemen/status_prospek');?>">
+                    <a class="btn btn-sm btn-light btn-active-primary me-2 mb-2" href="<?= base_url('manajemen/status_prospek');?>">
                         Status</a>
                     </a>
-                    <button type="button" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    <button type="button" class="btn btn-sm btn-light btn-active-primary mb-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-plus fs-3"></i>
                         </span>
                         Tambah
                     </button>
-                    <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-light-danger me-2 mb-2" id="deleteall" style="display: none;">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
                         </span>
