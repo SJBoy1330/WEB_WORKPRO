@@ -1,0 +1,11 @@
+@media only screen and (max-width: 600px) {
+    .mapouter{
+        width: 325px;
+    }
+    .gmap_canvas{
+        width: 325px;
+    }
+    .gmap_iframe {
+        width: 325px !important;
+    }
+}

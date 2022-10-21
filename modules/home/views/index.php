@@ -23,7 +23,7 @@
 <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start container-xxl">
     <!--begin::Post-->
     <div class="content flex-row-fluid" id="kt_content">
-        <div class="row g-5 g-lg-10" id="pantauan" data-kt-scroll-offset="{default: 100, lg: 200}">
+        <div class="row g-5 g-lg-10 mb-5" id="pantauan" data-kt-scroll-offset="{default: 100, lg: 200}">
             <!--begin::Col-->
             <div class="col-xl-4 mb-xl-10">
                 <!--begin::List Widget 4-->
@@ -87,7 +87,7 @@
                         </h3>
                     </div>
                     <!--end::Header-->
-                    <div class="btn-group w-100 tab mt-5 px-10">
+                    <div class="btn-group w-100 tab mt-5 px-10 tab-presensi">
                         <!--begin::Radio-->
                         <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
                         <!--begin::Input-->
@@ -1604,10 +1604,10 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body d-flex pt-5">
-                        <div class="col-7 pe-7">
+                        <div class="col-xl-7 pe-xl-7">
                             <div id="kt_docs_fullcalendar_populated"></div>
                         </div>
-                        <div class="col-5 ps-7">
+                        <div class="col-xl-5 ps-xl-7">
                             <h3 class="card-title d-flex align-items-start flex-column flex-wrap mb-3">
                                 <span class="card-label fw-bolder text-dark fs-1">Keterangan</span>
                             </h3>

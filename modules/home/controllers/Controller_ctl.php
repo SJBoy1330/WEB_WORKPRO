@@ -41,6 +41,8 @@ class Controller_ctl extends MY_Frontend
 			</script>';
 			$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/get_location.js"></script>';
 		}
+		// LOAD CSS
+		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/dashboard/home.css') . '">';
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/dashboard/dashboard.js"></script>';
 		// LOAD VIEW

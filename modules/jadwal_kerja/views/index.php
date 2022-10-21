@@ -394,7 +394,7 @@
                         <!--end::Menu-->
                     </div>
                 </div>
-                <div class="btn-group w-100 tab mb-7">
+                <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
                     <!--begin::Input-->
