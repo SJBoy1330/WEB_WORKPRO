@@ -1433,7 +1433,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Superadmin</a>
                                     <span class="text-muted fw-bold d-block fs-7">HRD</span>
@@ -1453,7 +1453,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Eka Dharmawan Rasiawan</a>
                                     <span class="text-muted fw-bold d-block fs-7">CEO</span>
@@ -1473,7 +1473,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Rinaldi Usman</a>
                                     <span class="text-muted fw-bold d-block fs-7">CTO</span>
@@ -1492,7 +1492,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Reza Prasetio</a>
                                     <span class="text-muted fw-bold d-block fs-7">VP Operation</span>
@@ -1511,7 +1511,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Santo Romadhoni</a>
                                     <span class="text-muted fw-bold d-block fs-7">Senior Developer</span>
@@ -1530,7 +1530,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Sidatata Al Jennar</a>
                                     <span class="text-muted fw-bold d-block fs-7">Senior Developer</span>
@@ -1549,7 +1549,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Sidatata Al Jennar</a>
                                     <span class="text-muted fw-bold d-block fs-7">Senior Developer</span>
@@ -1568,7 +1568,7 @@
                             </div>
                             <!--end::Symbol-->
                             <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap">
+                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                 <div class="flex-grow-1 me-2">
                                     <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Saka Dana Asmara</a>
                                     <span class="text-muted fw-bold d-block fs-7">UI Designer</span>
