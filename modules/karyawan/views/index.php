@@ -181,7 +181,7 @@
                                 </td>
                                 <td class="text-end">
                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                        <i class="fa-duotone fa-eye fs-5"></i>
+                                        <i class="fa-duotone fa-pencil fs-5"></i>
                                     </a>
                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                         <i class="fa-duotone fa-trash fs-5"></i>
