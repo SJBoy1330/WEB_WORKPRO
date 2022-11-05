@@ -321,8 +321,13 @@
                         </div>
                     </div>
                     <div class="col-2 d-flex justify-content-center align-items-center">
-                        <div class="mb-5">
-                            <input class="form-control form-control-solid" placeholder="Tanggal" id="kt_datepicker_2"/>
+                        <div class="position-relative d-flex align-items-center mb-5">
+                            <!--begin::Icon-->
+                            <span class="svg-icon svg-icon-2 position-absolute mx-4">
+                                <i class="fa-duotone fa-calendar-days fs-5"></i>
+                            </span>
+                            <!--end::Icon-->
+                            <input class="form-control form-control-solid ps-12" placeholder="Tanggal" id="kt_datepicker_2"/>
                         </div>
                     </div>
                 </div>

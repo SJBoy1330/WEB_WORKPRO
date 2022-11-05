@@ -1411,7 +1411,7 @@
             </div>
             <!--end::Col-->
         </div>
-        <div class="row g-5 g-lg-10" id="karyawan" data-kt-scroll-offset="{default: 100, lg: 150}">
+        <div class="row g-5 g-lg-10 mb-5" id="karyawan" data-kt-scroll-offset="{default: 100, lg: 150}">
             <!--begin::Col-->
             <div class="col-xl-12 mb-xl-10">
                 <!--begin::List Widget 4-->
@@ -1587,7 +1587,7 @@
             </div>
             <!--end::Col-->
         </div>
-        <div class="row g-5 g-lg-10" id="kalender" data-kt-scroll-offset="{default: 100, lg: 150}">
+        <div class="row g-5 g-lg-10 mb-5" id="kalender" data-kt-scroll-offset="{default: 100, lg: 150}">
             <div class="col-12">
                 <!--begin::List Widget 4-->
                 <div class="card">
@@ -1605,7 +1605,7 @@
                     <!--begin::Body-->
                     <div class="card-body d-flex pt-5">
                         <div class="col-xl-7 pe-xl-7">
-                            <div id="kt_docs_fullcalendar_populated"></div>
+                            <div id="kt_docs_fullcalendar_basic"></div>
                         </div>
                         <div class="col-xl-5 ps-xl-7">
                             <h3 class="card-title d-flex align-items-start flex-column flex-wrap mb-3">

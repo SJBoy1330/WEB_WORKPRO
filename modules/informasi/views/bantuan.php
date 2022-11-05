@@ -30,7 +30,7 @@
                     <!--begin::Wrapper-->
                     <div class="flex-equal d-flex justify-content-center align-items-end ms-5">
                         <!--begin::Illustration-->
-                        <img src="<?= base_url(); ?>assets/media/illustrations/sketchy-1/20.png" alt="" class="mw-100 mh-125px mh-lg-275px mb-lg-n12" />
+                        <img src="<?= base_url(); ?>assets/media/illustrations/FAQs.gif" alt="" width="300"/>
                         <!--end::Illustration-->
                     </div>
                     <!--end::Wrapper-->
