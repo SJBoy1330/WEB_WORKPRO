@@ -147,12 +147,9 @@
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="#" class="menu-link px-5">Profil</a>
+                                                <a href="<?= base_url('profil');?>" class="menu-link px-5">Profil</a>
                                             </div>
                                             <!--end::Menu item-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator my-2"></div>
-                                            <!--end::Menu separator-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
                                                 <a href="#" class="menu-link px-5">Keluar</a>
