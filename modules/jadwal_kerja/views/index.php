@@ -213,7 +213,7 @@
                         <div class="text-danger mx-4 fw-bold" data-field=""></div>
                     </div>
                 </div>
-                
+
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
@@ -251,10 +251,178 @@
                                     <span class="text-dark fw-bolder d-block fs-6">Senin</span>
                                 </td>
                                 <td class="text-center">
-                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8"/>
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8" />
                                 </td>
                                 <td class="text-center">
-                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9"/>
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9" />
+                                </td>
+                                <td class="text-center">
+                                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih jam kerja">
+                                        <option></option>
+                                        <option value="1">Kerja</option>
+                                        <option value="2">Libur</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                        <input class="form-check-input deletebox" type="checkbox" value="2" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bolder fs-6">1</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-dark fw-bolder d-block fs-6">Selasa</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8" />
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9" />
+                                </td>
+                                <td class="text-center">
+                                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih jam kerja">
+                                        <option></option>
+                                        <option value="1">Kerja</option>
+                                        <option value="2">Libur</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bolder fs-6">3</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-dark fw-bolder d-block fs-6">Rabu</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8" />
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9" />
+                                </td>
+                                <td class="text-center">
+                                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih jam kerja">
+                                        <option></option>
+                                        <option value="1">Kerja</option>
+                                        <option value="2">Libur</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bolder fs-6">4</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-dark fw-bolder d-block fs-6">Kamis</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8" />
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9" />
+                                </td>
+                                <td class="text-center">
+                                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih jam kerja">
+                                        <option></option>
+                                        <option value="1">Kerja</option>
+                                        <option value="2">Libur</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bolder fs-6">5</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-dark fw-bolder d-block fs-6">Jumat</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8" />
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9" />
+                                </td>
+                                <td class="text-center">
+                                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih jam kerja">
+                                        <option></option>
+                                        <option value="1">Kerja</option>
+                                        <option value="2">Libur</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bolder fs-6">6</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-dark fw-bolder d-block fs-6">Sabtu</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8" />
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9" />
+                                </td>
+                                <td class="text-center">
+                                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih jam kerja">
+                                        <option></option>
+                                        <option value="1">Kerja</option>
+                                        <option value="2">Libur</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bolder fs-6">7</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-dark fw-bolder d-block fs-6">Sabtu</span>
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_8" />
+                                </td>
+                                <td class="text-center">
+                                    <input class="form-control form-control-solid" placeholder="00:00" id="kt_datepicker_9" />
                                 </td>
                                 <td class="text-center">
                                     <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih jam kerja">
@@ -271,7 +439,7 @@
                 </div>
                 <!--end::Table container-->
 
-                <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Continue
+                <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Simpan
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
@@ -318,13 +486,14 @@
                     <div class="me-2">
                         <!--begin::Menu-->
                         <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                        <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                        <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->Filter</a>
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+                            <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->Filter
+                        </a>
                         <!--begin::Menu 1-->
                         <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61bc33c4ee0dc">
                             <!--begin::Header-->
@@ -397,49 +566,56 @@
                 <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'senin')">
-                    <!--end::Input-->
-                    Senin</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'senin')">
+                        <!--end::Input-->
+                        Senin
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'selasa')">
-                    <!--end::Input-->
-                    Selasa</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'selasa')">
+                        <!--end::Input-->
+                        Selasa
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'rabu')">
-                    <!--end::Input-->
-                    Rabu</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'rabu')">
+                        <!--end::Input-->
+                        Rabu
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'kamis')">
-                    <!--end::Input-->
-                    Kamis</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'kamis')">
+                        <!--end::Input-->
+                        Kamis
+                    </label>
                     <!--end::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'jumat')">
-                    <!--end::Input-->
-                    Jum'at</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'jumat')">
+                        <!--end::Input-->
+                        Jum'at
+                    </label>
                     <!--end::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'sabtu')">
-                    <!--end::Input-->
-                    Sabtu</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'sabtu')">
+                        <!--end::Input-->
+                        Sabtu
+                    </label>
                     <!--end::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'minggu')">
-                    <!--end::Input-->
-                    Minggu</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'minggu')">
+                        <!--end::Input-->
+                        Minggu
+                    </label>
                     <!--end::Radio-->
                 </div>
 

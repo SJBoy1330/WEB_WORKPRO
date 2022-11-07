@@ -72,7 +72,7 @@
                                     </button>
                                     <!--end::Heaeder navs toggle-->
                                     <!--begin::Logo-->
-                                    <a href="<?= base_url('home'); ?>" class="d-flex align-items-center">
+                                    <a href="<?= base_url('home'); ?>" class="d-flex align-items-center <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>">
                                         <img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-white.png" class="h-25px h-lg-30px" />
                                     </a>
                                     <!--end::Logo-->
@@ -81,22 +81,22 @@
                                         <div class="header-tabs overflow-auto mx-4 ms-lg-10 mb-5 mb-lg-0" id="kt_header_tabs" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_header_navs_wrapper', lg: '#kt_brand_tabs'}">
                                             <ul class="nav flex-nowrap">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" data-bs-toggle="tab" href="#dashboard">Dashboard</a>
+                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" data-bs-toggle="tab" href="#dashboard">Dashboard</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#master">Master</a>
+                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'perusahaan', $this->uri->segment(2), array())) ?> <?= (set_active($this->uri->segment(1), 'karyawan', $this->uri->segment(2), array('divisi'))) ?> <?= (set_active($this->uri->segment(1), 'jadwal_kerja', $this->uri->segment(2), array('shift', 'tukar_shift', 'hari_libur', 'lembur'))) ?>" data-bs-toggle="tab" href="#master">Master</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#presensi">Presensi</a>
+                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'presensi', $this->uri->segment(2), array('izin_kerja'))) ?>" data-bs-toggle="tab" href="#presensi">Presensi</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#managemen">Managemen</a>
+                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'manajemen', $this->uri->segment(2), array('prospek', 'kunjungan', 'reimbursement', 'role'))) ?>" data-bs-toggle="tab" href="#managemen">Managemen</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#laporan">Laporan</a>
+                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'laporan', $this->uri->segment(2), array('data_karyawan', 'rekap_presensi', 'rekap_reimbursement', 'rekap_kunjungan', 'rekap_prospek', 'rekap_izin_kerja', 'rekap_lembur'))) ?>" data-bs-toggle="tab" href="#laporan">Laporan</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-bs-toggle="tab" href="#informasi">Informasi</a>
+                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'informasi', $this->uri->segment(2), array('bantuan'))) ?>" data-bs-toggle="tab" href="#informasi">Informasi</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -181,7 +181,7 @@
                                 <!--begin::Header tab content-->
                                 <div class="tab-content" data-kt-scroll="true" data-kt-scroll-activate="{default: true, lg: false}" data-kt-scroll-height="auto" data-kt-scroll-offset="70px">
                                     <!--begin::Tab panel-->
-                                    <div class="tab-pane fade active show" id="dashboard">
+                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" id="dashboard">
                                         <!--begin::Menu wrapper-->
                                         <div class="header-menu flex-column align-items-stretch flex-lg-row">
                                             <!--begin::Menu-->
@@ -208,7 +208,7 @@
                                     </div>
                                     <!--end::Tab panel-->
                                     <!--begin::Tab panel-->
-                                    <div class="tab-pane fade" id="master">
+                                    <div class="tab-pane  <?= (set_active_tab($this->uri->segment(1), 'jadwal_kerja', $this->uri->segment(2), array('shift', 'tukar_shift', 'hari_libur', 'lembur'))) ?> <?= (set_active_tab($this->uri->segment(1), 'karyawan', $this->uri->segment(2), array('divisi'))) ?> <?= (set_active_tab($this->uri->segment(1), 'perusahaan', $this->uri->segment(2), array('lokasi_presensi'))) ?>" id="master">
                                         <!--begin::Menu wrapper-->
                                         <div class="header-menu flex-column align-items-stretch flex-lg-row">
                                             <!--begin::Menu-->
@@ -232,7 +232,7 @@
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-map-location-dot fs-2"></i>
                                                                 </span>
-                                                                <span class="menu-title">Lokasi Presensi</span>
+                                                                <span class="menu-title">Cabang</span>
                                                             </a>
                                                         </div>
                                                     </div>
@@ -244,7 +244,7 @@
                                                     </span>
                                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('karyawan')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('karyawan') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-user-tie fs-3"></i>
                                                                 </span>
@@ -252,7 +252,7 @@
                                                             </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('karyawan/divisi')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('karyawan/divisi') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-group-arrows-rotate fs-3"></i>
                                                                 </span>
@@ -268,7 +268,7 @@
                                                     </span>
                                                     <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-draw-polygon fs-3"></i>
                                                                 </span>
@@ -276,7 +276,7 @@
                                                             </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/shift')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/shift') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-calendar-circle-user fs-3"></i>
                                                                 </span>
@@ -285,7 +285,7 @@
                                                         </div>
 
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/tukar_shift')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/tukar_shift') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-people-arrows fs-3"></i>
                                                                 </span>
@@ -293,7 +293,7 @@
                                                             </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/hari_libur')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/hari_libur') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-calendar-day fs-3"></i>
                                                                 </span>
@@ -301,7 +301,7 @@
                                                             </a>
                                                         </div>
                                                         <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/lembur')?>">
+                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/lembur') ?>">
                                                                 <span class="menu-icon">
                                                                     <i class="fa-duotone fa-timer fs-3"></i>
                                                                 </span>
@@ -317,18 +317,18 @@
                                     </div>
                                     <!--end::Tab panel-->
                                     <!--begin::Tab panel-->
-                                    <div class="tab-pane fade" id="presensi">
+                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'presensi', $this->uri->segment(2), array('izin_kerja'))) ?>" id="presensi">
                                         <!--begin::Menu wrapper-->
                                         <div class="header-menu flex-column align-items-stretch flex-lg-row">
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('presensi')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('presensi') ?>">
                                                         <span class="menu-title">Data Presensi</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('presensi/izin_kerja')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('presensi/izin_kerja') ?>">
                                                         <span class="menu-title">Izin Kerja</span>
                                                     </a>
                                                 </div>
@@ -339,28 +339,28 @@
                                     </div>
                                     <!--end::Tab panel-->
                                     <!--begin::Tab panel-->
-                                    <div class="tab-pane fade" id="managemen">
+                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'manajemen', $this->uri->segment(2), array('prospek', 'kunjungan', 'reimbursement', 'role'))) ?>" id="managemen">
                                         <!--begin::Menu wrapper-->
                                         <div class="header-menu flex-column align-items-stretch flex-lg-row">
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('manajemen') ?>">
                                                         <span class="menu-title">Prospek</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/kunjungan')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/kunjungan') ?>">
                                                         <span class="menu-title">Kunjungan</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/reimbursement')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/reimbursement') ?>">
                                                         <span class="menu-title">Reimbursement</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/role')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/role') ?>">
                                                         <span class="menu-title">Role</span>
                                                     </a>
                                                 </div>
@@ -371,43 +371,43 @@
                                     </div>
                                     <!--end::Tab panel-->
                                     <!--begin::Tab panel-->
-                                    <div class="tab-pane fade" id="laporan">
+                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'laporan', $this->uri->segment(2), array('data_karyawan', 'rekap_presensi', 'rekap_reimbursement', 'rekap_kunjungan', 'rekap_prospek', 'rekap_izin_kerja', 'rekap_lembur'))) ?>" id="laporan">
                                         <!--begin::Menu wrapper-->
                                         <div class="header-menu flex-column align-items-stretch flex-lg-row">
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/data_karyawan')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/data_karyawan') ?>">
                                                         <span class="menu-title">Data Karyawan</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_presensi')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_presensi') ?>">
                                                         <span class="menu-title">Rekap Presensi</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_reimbursement')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_reimbursement') ?>">
                                                         <span class="menu-title">Rekap Reimbursement</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_kunjungan')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_kunjungan') ?>">
                                                         <span class="menu-title">Rekap Kunjungan</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_prospek')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_prospek') ?>">
                                                         <span class="menu-title">Rekap Prospek</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_izin_kerja')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_izin_kerja') ?>">
                                                         <span class="menu-title">Rekap Izin Kerja</span>
                                                     </a>
                                                 </div>
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_lembur')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_lembur') ?>">
                                                         <span class="menu-title">Rekap Lembur</span>
                                                     </a>
                                                 </div>
@@ -418,23 +418,23 @@
                                     </div>
                                     <!--end::Tab panel-->
                                     <!--begin::Tab panel-->
-                                    <div class="tab-pane fade" id="informasi">
+                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'informasi', $this->uri->segment(2), array('bantuan'))) ?>" id="informasi">
                                         <!--begin::Menu wrapper-->
                                         <div class="header-menu flex-column align-items-stretch flex-lg-row">
                                             <!--begin::Menu-->
                                             <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('informasi')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('informasi') ?>">
                                                         <span class="menu-title">Pengumuman</span>
                                                     </a>
                                                 </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
+                                                <!-- <div class="menu-item menu-lg-down-accordion me-lg-1">
                                                     <span class="menu-link py-3">
                                                         <span class="menu-title">Broadcast</span>
                                                     </span>
-                                                </div>
+                                                </div> -->
                                                 <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('informasi/bantuan')?>">
+                                                    <a class="menu-link py-3" href="<?= base_url('informasi/bantuan') ?>">
                                                         <span class="menu-title">Bantuan</span>
                                                     </a>
                                                 </div>

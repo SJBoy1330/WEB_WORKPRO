@@ -6,12 +6,13 @@
         <div class="page-title d-flex flex-column align-items-start me-3 gap-2">
             <!--begin::Title-->
             <h1 class="d-flex text-dark fw-bolder m-0 fs-3">Dashboard
-            <!--begin::Separator-->
-            <span class="h-20px border-gray-400 border-start mx-3"></span>
-            <!--end::Separator-->
-            <!--begin::Description-->
-            <small class="text-gray-500 fs-7 fw-bold my-1"></small>
-            <!--end::Description--></h1>
+                <!--begin::Separator-->
+                <span class="h-20px border-gray-400 border-start mx-3"></span>
+                <!--end::Separator-->
+                <!--begin::Description-->
+                <small class="text-gray-500 fs-7 fw-bold my-1"></small>
+                <!--end::Description-->
+            </h1>
             <!--end::Title-->
         </div>
         <!--end::Page title-->
@@ -90,38 +91,43 @@
                     <div class="btn-group w-100 tab mt-5 px-10 tab-presensi">
                         <!--begin::Radio-->
                         <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
-                        <!--begin::Input-->
-                        <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
-                        <!--end::Input-->
-                        Presensi</label>
+                            <!--begin::Input-->
+                            <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
+                            <!--end::Input-->
+                            Presensi
+                        </label>
                         <!--end::Radio-->
                         <!--begin::Radio-->
                         <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                        <!--begin::Input-->
-                        <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
-                        <!--end::Input-->
-                        Tukar Shift</label>
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
+                            <!--end::Input-->
+                            Tukar Shift
+                        </label>
                         <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                        <!--begin::Input-->
-                        <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
-                        <!--end::Input-->
-                        Reimbursement</label>
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
+                            <!--end::Input-->
+                            Reimbursement
+                        </label>
                         <!--end::Radio-->
                         <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                        <!--begin::Input-->
-                        <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
-                        <!--end::Input-->
-                        Lembur</label>
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
+                            <!--end::Input-->
+                            Lembur
+                        </label>
                         <!--end::Radio-->
                         <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                        <!--begin::Input-->
-                        <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
-                        <!--end::Input-->
-                        Izin Kerja</label>
+                            <!--begin::Input-->
+                            <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
+                            <!--end::Input-->
+                            Izin Kerja
+                        </label>
                         <!--end::Radio-->
                     </div>
                     <!--begin::Body-->
-                    <div class="card-body pt-5" style="overflow-y: scroll; height: 375px;">                            
+                    <div class="card-body pt-5" style="overflow-y: scroll; height: 375px;">
                         <!--end::Wrapper-->
                         <div id="content-presensi" class="tabcontent mb-7">
                             <div class="card-header border-0 pb-3 px-0">
@@ -449,14 +455,11 @@
                                                 <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -487,14 +490,11 @@
                                                 <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -525,14 +525,11 @@
                                                 <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -563,14 +560,11 @@
                                                 <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -601,14 +595,11 @@
                                                 <a href="#" class="btn btn-sm btn-light-success">Berhasil</a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -669,7 +660,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -687,14 +678,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -713,7 +701,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -731,14 +719,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -757,7 +742,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -775,14 +760,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -801,7 +783,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -819,14 +801,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -845,7 +824,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -863,14 +842,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -930,7 +906,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -945,14 +921,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -971,7 +944,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -986,14 +959,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1012,7 +982,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1027,14 +997,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1053,7 +1020,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1068,14 +1035,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1094,7 +1058,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1109,14 +1073,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1125,7 +1086,7 @@
                                 </table>
                             </div>
                         </div>
-                        
+
                         <div id="izin-kerja" class="tabcontent mb-7">
                             <div class="card-toolbar">
                                 <div class="d-flex align-items-center position-relative mb-3 pe-2">
@@ -1177,7 +1138,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1195,14 +1156,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1221,7 +1179,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1239,14 +1197,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1265,7 +1220,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1283,14 +1238,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1309,7 +1261,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1327,14 +1279,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1353,7 +1302,7 @@
                                                 <span class="text-dark fw-bolder d-block fs-6">12345</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-dark fw-bolder d-block fs-6">2022-08-30</span>
+                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
                                             </td>
                                             <td class="text-center">
                                                 <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
@@ -1371,14 +1320,11 @@
                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
                                             </td>
                                             <td class="text-end">
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-eye fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                 </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                                    <i class="fa-duotone fa-pen fs-5"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                                    <i class="fa-duotone fa-trash fs-5"></i>
+                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
                                                 </a>
                                             </td>
                                         </tr>
@@ -1611,15 +1557,57 @@
                             <h3 class="card-title d-flex align-items-start flex-column flex-wrap mb-3">
                                 <span class="card-label fw-bolder text-dark fs-1">Keterangan</span>
                             </h3>
-                            <div class="card shadow-sm">
+                            <div class="card shadow-sm mb-4">
                                 <div class="card-body p-6 d-flex justify-content-between align-items-center">
                                     <div class="d-flex align-items-center">
                                         <div class="me-2">
                                             <i class="fa-duotone fa-memo-circle-info fs-1"></i>
                                         </div>
                                         <div class="ms-2">
-                                            <h3 class="mb-0">Keterangan</h3>
-                                            <span class="text-muted mt-0 mb-0 fw-bold fs-7">21 September 2022</span>
+                                            <h3 class="mb-0">Hari libur nasional</h3>
+                                            <span class="text-muted mt-0 mb-0 fw-bold fs-7">01 November 2022</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
+                                            <i class="fa-duotone fa-pen fs-5"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
+                                            <i class="fa-duotone fa-trash fs-5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body p-6 d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-2">
+                                            <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                                        </div>
+                                        <div class="ms-2">
+                                            <h3 class="mb-0">Hari libur nasional</h3>
+                                            <span class="text-muted mt-0 mb-0 fw-bold fs-7">02 November 2022</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
+                                            <i class="fa-duotone fa-pen fs-5"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
+                                            <i class="fa-duotone fa-trash fs-5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-body p-6 d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <div class="me-2">
+                                            <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                                        </div>
+                                        <div class="ms-2">
+                                            <h3 class="mb-0">Hari libur nasional</h3>
+                                            <span class="text-muted mt-0 mb-0 fw-bold fs-7">02 November 2022</span>
                                         </div>
                                     </div>
                                     <div>
@@ -1636,8 +1624,8 @@
                     </div>
                     <!--end::Body-->
                 </div>
-                <!--end::List Widget 4--> 
-            </div>                                                  
+                <!--end::List Widget 4-->
+            </div>
         </div>
     </div>
     <!--end::Post-->
@@ -1653,7 +1641,7 @@
             <!--begin::Modal header-->
             <div class="modal-header">
                 <!--begin::Modal title-->
-                <h2>Tambah Data Demo</h2>
+                <h2>Kirim Notifikasi</h2>
                 <!--end::Modal title-->
                 <!--begin::Close-->
                 <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
@@ -1671,8 +1659,8 @@
             <!--end::Modal header-->
             <!--begin::Modal body-->
             <div class="modal-body pb-lg-10 px-lg-10">
-                <div class="fv-row d-flex mb-5">
-                    <div class="col-6 pe-3">
+                <div class="fv-row mb-5">
+                    <div class="col-12 pe-3">
                         <!--begin::Label-->
                         <label class="fs-6 fw-bold mb-2" for="judul">
                             <span class="required">Judul</span>
@@ -1687,21 +1675,24 @@
                             <input type="text" name="judul" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan judul" aria-placeholder="">
                         </div>
                     </div>
-                
-                    <div class="col-6 ps-3">
+
+                    <div class="col-12 pe-3">
                         <div class="mb-10">
                             <!--begin::Label-->
-                            <label class="form-label fw-bold">Karyawan</label>
+                            <label class="form-label fw-bold">Keterangan</label>
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div>
-                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih karyawan"> 
+                                <!-- <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih karyawan">
                                     <option></option>
                                     <option value="1">Superadmin</option>
                                     <option value="2">Eka Dharma Rasiawan</option>
                                     <option value="2">Reza Prasetio</option>
                                     <option value="2">Rinaldi Usman</option>
-                                </select>
+                                </select> -->
+
+
+                                <textarea class="form-control form-control-solid" id="" cols="10" rows="10" placeholder="Masukkan keterangan"></textarea>
                             </div>
                             <!--end::Input-->
                         </div>
@@ -1720,7 +1711,7 @@
                             <li>List item 3</li>
                             <li>List item 4</li>
                         </ul>
-                    </textarea>          
+                    </textarea>
                 </div>
                 <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Continue
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
@@ -1781,21 +1772,21 @@
                             <input type="text" name="judul" class="form-control form-control-solid ps-12" value="" placeholder="Masukkan keterangan" aria-placeholder="">
                         </div>
                     </div>
-                
+
                     <div class="col-6 ps-3">
                         <div class="mb-10">
                             <!--begin::Label-->
-                            <label class="form-label fw-bold">Karyawan</label>
+                            <label class="form-label fw-bold">Tanggal</label>
                             <!--end::Label-->
                             <!--begin::Input-->
                             <div class="position-relative d-flex align-items-center">
-                                <input class="form-control form-control-solid" placeholder="Masukkan tanggal" id="kt_datepicker_1"/>
+                                <input class="form-control form-control-solid" placeholder="Masukkan tanggal" id="kt_datepicker_1" />
                             </div>
                             <!--end::Input-->
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Continue
+                <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Tambah
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>

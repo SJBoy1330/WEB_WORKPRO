@@ -151,6 +151,20 @@ function set_active($uri1, $controller, $uri2 = "", $arrtarget = array())
   }
 }
 
+function set_active_tab($uri1, $controller, $uri2 = "", $arrtarget = array())
+{
+
+  if ($uri1 == $controller) {
+    if ($uri2 != "") {
+      if (in_array($uri2, $arrtarget)) {
+        return "active show";
+      }
+    } else {
+      return "active show";
+    }
+  }
+}
+
 function encrypt_path($filename)
 {
 

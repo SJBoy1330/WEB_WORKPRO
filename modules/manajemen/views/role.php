@@ -18,11 +18,12 @@
                     <div class="me-2">
                         <!--begin::Menu-->
                         <a data-bs-toggle="modal" href="#modalTambah" role="button" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder">
-                        <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                        <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                            <i class="fa-duotone fa-plus fs-5"></i>
-                        </span>
-                        <!--end::Svg Icon-->Role</a>
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+                            <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+                                <i class="fa-duotone fa-plus fs-5"></i>
+                            </span>
+                            <!--end::Svg Icon-->Role
+                        </a>
                     </div>
                     <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
                         <span class="svg-icon svg-icon-2 me-0">
@@ -146,7 +147,7 @@
                             </label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input class="form-control form-control-solid" placeholder="Masukkan nama role" name="" autocomplete="off"/>
+                            <input class="form-control form-control-solid" placeholder="Masukkan nama role" name="" autocomplete="off" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -164,7 +165,8 @@
                                         <!--begin::Table row-->
                                         <tr>
                                             <td class="text-gray-800">Supernya Superadmin
-                                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Allows a full access to the system"></i></td>
+                                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Allows a full access to the system"></i>
+                                            </td>
                                             <td>
                                                 <!--begin::Checkbox-->
                                                 <label class="form-check form-check-sm form-check-custom form-check-solid me-9">
@@ -178,7 +180,7 @@
                                         <!--begin::Table row-->
                                         <tr>
                                             <!--begin::Label-->
-                                            <td class="text-gray-800">User Management</td>
+                                            <td class="text-gray-800">Dashboard</td>
                                             <!--end::Label-->
                                             <!--begin::Input group-->
                                             <td>
@@ -186,37 +188,233 @@
                                                 <div class="d-flex">
                                                     <!--begin::Checkbox-->
                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-10">
-                                                        <input class="form-check-input" type="checkbox"/>
+                                                        <input class="form-check-input" type="checkbox" />
                                                         <span class="form-check-label">Baca</span>
                                                     </label>
                                                     <!--end::Checkbox-->
                                                     <!--begin::Checkbox-->
                                                     <label class="form-check form-check-custom form-check-solid me-10">
-                                                        <input class="form-check-input" type="checkbox"/>
+                                                        <input class="form-check-input" type="checkbox" />
                                                         <span class="form-check-label">Tambah</span>
                                                     </label>
                                                     <!--end::Checkbox-->
                                                     <!--begin::Checkbox-->
                                                     <label class="form-check form-check-custom form-check-solid me-10">
-                                                        <input class="form-check-input" type="checkbox"/>
+                                                        <input class="form-check-input" type="checkbox" />
                                                         <span class="form-check-label">Update</span>
                                                     </label>
                                                     <!--end::Checkbox-->
                                                     <!--begin::Checkbox-->
                                                     <label class="form-check form-check-custom form-check-solid me-10">
-                                                        <input class="form-check-input" type="checkbox"/>
+                                                        <input class="form-check-input" type="checkbox" />
                                                         <span class="form-check-label">Hapus</span>
                                                     </label>
                                                     <!--end::Checkbox-->
                                                     <!--begin::Checkbox-->
                                                     <label class="form-check form-check-custom form-check-solid me-10">
-                                                        <input class="form-check-input" type="checkbox"/>
+                                                        <input class="form-check-input" type="checkbox" />
                                                         <span class="form-check-label">Print</span>
                                                     </label>
                                                     <!--end::Checkbox-->
                                                     <!--begin::Checkbox-->
                                                     <label class="form-check form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox"/>
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Administrasi</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                </div>
+                                                <!--end::Wrapper-->
+                                            </td>
+                                            <!--end::Input group-->
+                                        </tr>
+                                        <tr>
+                                            <!--begin::Label-->
+                                            <td class="text-gray-800">Master</td>
+                                            <!--end::Label-->
+                                            <!--begin::Input group-->
+                                            <td>
+                                                <!--begin::Wrapper-->
+                                                <div class="d-flex">
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-sm form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Baca</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Tambah</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Update</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Hapus</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Print</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Administrasi</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                </div>
+                                                <!--end::Wrapper-->
+                                            </td>
+                                            <!--end::Input group-->
+                                        </tr>
+                                        <tr>
+                                            <!--begin::Label-->
+                                            <td class="text-gray-800">Presensi</td>
+                                            <!--end::Label-->
+                                            <!--begin::Input group-->
+                                            <td>
+                                                <!--begin::Wrapper-->
+                                                <div class="d-flex">
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-sm form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Baca</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Tambah</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Update</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Hapus</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Print</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Administrasi</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                </div>
+                                                <!--end::Wrapper-->
+                                            </td>
+                                            <!--end::Input group-->
+                                        </tr>
+                                        <tr>
+                                            <!--begin::Label-->
+                                            <td class="text-gray-800">Izin</td>
+                                            <!--end::Label-->
+                                            <!--begin::Input group-->
+                                            <td>
+                                                <!--begin::Wrapper-->
+                                                <div class="d-flex">
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-sm form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Baca</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Tambah</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Update</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Hapus</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Print</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Administrasi</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                </div>
+                                                <!--end::Wrapper-->
+                                            </td>
+                                            <!--end::Input group-->
+                                        </tr>
+                                        <tr>
+                                            <!--begin::Label-->
+                                            <td class="text-gray-800">Shift</td>
+                                            <!--end::Label-->
+                                            <!--begin::Input group-->
+                                            <td>
+                                                <!--begin::Wrapper-->
+                                                <div class="d-flex">
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-sm form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Baca</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Tambah</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Update</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Hapus</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid me-10">
+                                                        <input class="form-check-input" type="checkbox" />
+                                                        <span class="form-check-label">Print</span>
+                                                    </label>
+                                                    <!--end::Checkbox-->
+                                                    <!--begin::Checkbox-->
+                                                    <label class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" />
                                                         <span class="form-check-label">Administrasi</span>
                                                     </label>
                                                     <!--end::Checkbox-->
@@ -242,7 +440,7 @@
                         <button type="submit" class="btn btn-primary" data-kt-roles-modal-action="submit">
                             <span class="indicator-label">Submit</span>
                             <span class="indicator-progress">Please wait...
-                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
                     </div>
                     <!--end::Actions-->
