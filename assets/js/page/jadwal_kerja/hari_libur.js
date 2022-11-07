@@ -1,3 +1,4 @@
+
 const element = document.getElementById("kt_docs_fullcalendar_basic");
 
 var todayDate = moment().startOf("day");
@@ -9,9 +10,8 @@ var TOMORROW = todayDate.clone().add(1, "day").format("YYYY-MM-DD");
 var calendarEl = document.getElementById("kt_docs_fullcalendar_basic");
 var calendar = new FullCalendar.Calendar(calendarEl, {
     headerToolbar: {
-        left: "prev,next today",
-        center: "title",
-        right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth"
+        right: "title",
+        left: "prev,next today"
     },
 
     height: 800,
@@ -52,3 +52,5 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
 });
 
 calendar.render();
+
+$("#kt_datepicker_2").flatpickr();
