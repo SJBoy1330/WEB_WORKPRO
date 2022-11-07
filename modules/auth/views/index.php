@@ -33,6 +33,8 @@ License: For each use you must have a valid license purchased only from above li
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
     <link href="<?= base_url(); ?>assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url(); ?>assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <!-- Link Font Awesome -->
+    <script src="https://kit.fontawesome.com/a2309adc07.js" crossorigin="anonymous"></script>
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -139,7 +141,8 @@ License: For each use you must have a valid license purchased only from above li
                         <!--begin::Action-->
                         <div class="d-flex justify-content-center align-items-center">
                             <!-- <a class="btn btn-lg btn-white me-2" data-bs-toggle="modal" href="#modalDaftar" role="button"><span class="text-primary">Daftar</span></a> -->
-                            <a class="btn btn-lg btn-white ms-2" data-bs-toggle="modal" href="#modalDaftar" role="button"><span class="text-primary">Masuk</span></a>
+                            <a class="btn btn-lg btn-white ms-2" style="border: 2px solid white" data-bs-toggle="modal" href="#modalMasuk" role="button"><span class="text-primary">Masuk</span></a>
+                            <a class="btn btn-lg btn-primary ms-2" style="border: 2px solid white" data-bs-toggle="modal" href="#modalDaftar" role="button"><span class="text-white">Daftar</span></a>
                         </div>
                         <!--end::Action-->
                     </div>
@@ -1445,7 +1448,7 @@ License: For each use you must have a valid license purchased only from above li
 </html>
 
 <!-- Modal Daftar & Masuk -->
-<div class="modal fade" id="modalDaftar" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modalMasuk" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-450px">
         <!--begin::Modal content-->
@@ -1507,6 +1510,198 @@ License: For each use you must have a valid license purchased only from above li
                         </span>
                     </div>
                     <div class="text-danger mx-4 fw-bold" data-field="password"></div>
+                </div>
+                <a href="<?= base_url('home') ?>" type="button" class="btn btn-lg btn-primary" style="width: 100%">Masuk
+                    <span class="svg-icon svg-icon-3 ms-1 me-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
+                            <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+
+<div class="modal fade" id="modalDaftar" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-600px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Daftar WorkPro</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body pb-lg-10 px-lg-10" style="height: 500px; overflow-y: scroll;">
+                <div class="fv-row mb-5">
+                    <div class="col-12">
+                        <h2 class="text-center">Data Superadmin</h2>
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="nama">
+                        <span class="">Nama</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="nama" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <i class="fa-solid fa-user fs-3"></i>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="text" name="nama" autocomplete="off" placeholder="Masukkan nama" aria-placeholder="">
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="email">
+                        <span class="">Email</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="email" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <i class="fa-solid fa-envelope fs-3"></i>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="text" name="email" autocomplete="off" placeholder="Masukkan email" aria-placeholder="">
+                    </div>
+                </div>
+                <div class="fv-row mb-5" data-kt-password-meter="true">
+                    <label class="form-label fs-6 fw-bold" for="password">
+                        <span class="">Kata Sandi</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="password" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <defs>
+                                </defs>
+                                <path fill="currentColor" class="fa-primary" d="M160 144C160 64.47 224.5 0 304 0C383.5 0 448 64.47 448 144C448 223.5 383.5 288 304 288C224.5 288 160 223.5 160 144zM304 224C348.2 224 384 188.2 384 144C384 99.82 348.2 64 304 64C259.8 64 224 99.82 224 144C224 188.2 259.8 224 304 224z"></path>
+                                <path fill="currentColor" class="fa-secondary" d="M227.3 265.9L141.3 352L182.6 393.4C195.1 405.9 195.1 426.1 182.6 438.6C170.1 451.1 149.9 451.1 137.4 438.6L96 397.3L77.25 416L118.6 457.4C131.1 469.9 131.1 490.1 118.6 502.6C106.1 515.1 85.87 515.1 73.37 502.6L9.372 438.6C-3.124 426.1-3.124 405.9 9.372 393.4L182.1 220.7C193.6 238.9 209.1 254.4 227.3 265.9V265.9z"></path>
+                            </svg>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="password" name="password" autocomplete="off" placeholder="Masukkan kata sandi" aria-placeholder="">
+                        <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                            <i class="bi bi-eye-slash fs-2"></i>
+                            <i class="bi bi-eye fs-2 d-none"></i>
+                        </span>
+                    </div>
+                    <div class="text-danger mx-4 fw-bold" data-field="re-password"></div>
+                </div>
+                <div class="fv-row mb-10" data-kt-password-meter="true">
+                    <label class="form-label fs-6 fw-bold" for="password">
+                        <span class="">Konfirmasi Kata Sandi</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="re-password" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <defs>
+                                </defs>
+                                <path fill="currentColor" class="fa-primary" d="M160 144C160 64.47 224.5 0 304 0C383.5 0 448 64.47 448 144C448 223.5 383.5 288 304 288C224.5 288 160 223.5 160 144zM304 224C348.2 224 384 188.2 384 144C384 99.82 348.2 64 304 64C259.8 64 224 99.82 224 144C224 188.2 259.8 224 304 224z"></path>
+                                <path fill="currentColor" class="fa-secondary" d="M227.3 265.9L141.3 352L182.6 393.4C195.1 405.9 195.1 426.1 182.6 438.6C170.1 451.1 149.9 451.1 137.4 438.6L96 397.3L77.25 416L118.6 457.4C131.1 469.9 131.1 490.1 118.6 502.6C106.1 515.1 85.87 515.1 73.37 502.6L9.372 438.6C-3.124 426.1-3.124 405.9 9.372 393.4L182.1 220.7C193.6 238.9 209.1 254.4 227.3 265.9V265.9z"></path>
+                            </svg>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="password" name="re-password" autocomplete="off" placeholder="Konfirmasi kata sandi" aria-placeholder="">
+                        <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                            <i class="bi bi-eye-slash fs-2"></i>
+                            <i class="bi bi-eye fs-2 d-none"></i>
+                        </span>
+                    </div>
+                    <div class="text-danger mx-4 fw-bold" data-field="password"></div>
+                </div>
+                <div class="fv-row mb-5">
+                    <div class="col-12">
+                        <h2 class="text-center">Data Perusahaan</h2>
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="nama">
+                        <span class="">Nama Perusahaan</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="nama" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <i class="fa-solid fa-building fs-3"></i>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="text" name="nama" autocomplete="off" placeholder="Masukkan nama perusahaan" aria-placeholder="">
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="bidang_usaha">
+                        <span class="">Bidang Usaha</span>
+                    </label>
+                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih bidang usaha">
+                        <option></option>
+                        <option value="1">Asuransi</option>
+                        <option value="2">Elektronika</option>
+                        <option value="2">Informasi</option>
+                        <option value="2">Otomotif</option>
+                        <option value="2">Kesehatan</option>
+                    </select>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="jumlah_personil">
+                        <span class="">Jumlah Personil</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="jumlah_personil" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <i class="fa-duotone fa-user-tie fs-3"></i>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="number" name="nama" autocomplete="off" placeholder="Masukkan jumlah personil" aria-placeholder="">
+                    </div>
+                </div>
+                <div class="fv-row mb-10">
+                    <label class="form-label fs-6 fw-bold" for="alamat">
+                        <span class="">Alamat</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <textarea class="form-control form-control-solid" name="alamat" placeholder="Masukkan alamat" rows="5" aria-placeholder=""></textarea>
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="kode_pos">
+                        <span class="">Kode Pos</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="kode_pos" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <i class="fa-solid fa-mailbox fs-3"></i>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="number" name="nama" autocomplete="off" placeholder="Masukkan kode pos" aria-placeholder="">
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="zona_waktu">
+                        <span class="">Zona Waktu</span>
+                    </label>
+                    <select class="form-select form-select-solid" data-control="select2" data-placeholder="Pilih zona waktu">
+                        <option></option>
+                        <option value="1">WIB</option>
+                        <option value="2">WIT</option>
+                        <option value="2">WITA</option>
+                    </select>
+                </div>
+                <div class="fv-row mb-5">
+                    <label class="form-label fs-6 fw-bold" for="kode_pos">
+                        <span class="">No Telepon</span>
+                    </label>
+                    <div class="position-relative d-flex align-items-center">
+                        <span data-field-icon="kode_pos" class="svg-icon svg-icon-2 position-absolute mx-4">
+                            <i class="fa-solid fa-phone fs-3"></i>
+                        </span>
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="number" name="nama" autocomplete="off" placeholder="Masukkan no telepon" aria-placeholder="">
+                    </div>
                 </div>
                 <a href="<?= base_url('home') ?>" type="button" class="btn btn-lg btn-primary" style="width: 100%">Masuk
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
