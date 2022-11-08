@@ -1,5 +1,5 @@
 $(function() {
-    $("#kt_table_karyawan").on("click", function() {
+    $("#kt_table_divisi").on("click", function() {
       $("#deleteall").toggle($(this).find(".deletebox:checked").length > 0);
       if($(this).find(".deletebox:checked").length < ($(this).find(".deletebox").length)){
           $('input[name="maincheckbox"]').prop('checked', false);

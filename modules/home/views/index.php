@@ -127,9 +127,9 @@
                         <!--end::Radio-->
                     </div>
                     <!--begin::Body-->
-                    <div class="card-body pt-5" style="overflow-y: scroll; height: 375px;">
+                    <div class="card-body" style="overflow-y: scroll; height: 375px;">
                         <!--end::Wrapper-->
-                        <div id="content-presensi" class="tabcontent mb-7">
+                        <div id="content-presensi" class="tabcontent mb-7 pt-0">
                             <div class="card-header border-0 pb-3 px-0">
                                 <div class="d-flex align-items-center position-relative my-1 pe-2">
                                     <span class="svg-icon svg-icon-1 position-absolute ms-3">
@@ -141,28 +141,40 @@
                                     <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                 </div>
                                 <div class="card-toolbar">
-                                    <span class="text-muted fw-normal fs-6 me-5"><i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i> Dalam Jangkauan</span>
-                                    <span class="text-muted fw-normal fs-6 me-3"><i class="fa-duotone fa-location-dot text-warning fs-3 me-2"></i> Diluar Jangkauan</span>
-                                    <button type="button" class="btn btn-icon btn-sm btn-light-success btn-active-primary">
-                                        <span class="svg-icon svg-icon-2 me-0">
-                                            <i class="fa-duotone fa-file-excel fs-3"></i>
-                                        </span>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
-                                        <span class="svg-icon svg-icon-2 me-0">
-                                            <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
-                                        </span>
-                                        Hapus</button>
+                                    <div id="tab_penjelasan">
+                                        <span class="text-muted fw-normal fs-6 me-5"><i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i> Dalam Jangkauan</span>
+                                        <span class="text-muted fw-normal fs-6 me-3"><i class="fa-duotone fa-location-dot text-warning fs-3 me-2"></i> Diluar Jangkauan</span>
+                                        <button type="button" class="btn btn-icon btn-sm btn-light-success btn-active-primary">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-file-excel fs-3"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div id="tab_persetujuan" class="d-none">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-sm btn-light-success me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                            </span>
+                                            Terima</button>
+                                            <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                            </span>
+                                            Tolak</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table align-middle gs-0 gy-4">
+                                <table class="table align-middle gs-0 gy-4" id="kt_table_content_presensi">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bolder text-muted bg-light">
                                             <th class="ps-4 w-25px rounded-start">
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                <input class="form-check-input" name="maincheckbox" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_content_presensi .form-check-input" value="1" />
                                                 </div>
                                             </th>
                                             <th class="w-50px">No</th>
@@ -395,25 +407,42 @@
                         </div>
 
                         <div id="tukar-shift" class="tabcontent mb-7">
-                            <div class="card-toolbar">
-                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                            <div class="card-header border-0 pb-3 px-0">
+                                <div class="d-flex align-items-center position-relative my-1 pe-2">
                                     <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                             <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                         </svg>
                                     </span>
-                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                </div>
+                                <div class="card-toolbar">
+                                    <div id="delete_tukar_shift" style="display: none;">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-sm btn-light-success me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                            </span>
+                                            Terima</button>
+                                            <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                            </span>
+                                            Tolak</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table align-middle gs-0 gy-4">
+                                <table class="table align-middle gs-0 gy-4" id="kt_table_tukar_shift">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bolder text-muted bg-light">
                                             <th class="ps-4 w-25px rounded-start">
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                <input class="form-check-input" name="maincheckbox_tukar_shift" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_tukar_shift .form-check-input" value="1" />
                                                 </div>
                                             </th>
                                             <th class="w-50px">No</th>
@@ -431,7 +460,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_tukar_shift" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -466,7 +495,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_tukar_shift" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -501,7 +530,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_tukar_shift" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -536,7 +565,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_tukar_shift" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -571,7 +600,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_tukar_shift" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -610,25 +639,42 @@
                         </div>
 
                         <div id="reimbursement" class="tabcontent mb-7">
-                            <div class="card-toolbar">
-                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                            <div class="card-header border-0 pb-3 px-0">
+                                <div class="d-flex align-items-center position-relative my-1 pe-2">
                                     <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                             <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                         </svg>
                                     </span>
-                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                </div>
+                                <div class="card-toolbar">
+                                    <div id="delete_reimbursement" style="display: none;">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-sm btn-light-success me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                            </span>
+                                            Terima</button>
+                                            <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                            </span>
+                                            Tolak</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table align-middle gs-0 gy-4">
+                                <table class="table align-middle gs-0 gy-4" id="kt_table_reimbursement">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bolder text-muted bg-light">
                                             <th class="ps-4 w-25px rounded-start">
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                <input class="form-check-input" name="maincheckbox_reimbursement" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_reimbursement .form-check-input" value="1" />
                                                 </div>
                                             </th>
                                             <th class="w-50px">No</th>
@@ -648,7 +694,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_reimbursement" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -689,7 +735,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_reimbursement" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -730,7 +776,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_reimbursement" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -771,7 +817,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_reimbursement" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -812,7 +858,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_reimbursement" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -857,25 +903,42 @@
                         </div>
 
                         <div id="lembur" class="tabcontent mb-7">
-                            <div class="card-toolbar">
-                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                            <div class="card-header border-0 pb-3 px-0">
+                                <div class="d-flex align-items-center position-relative my-1 pe-2">
                                     <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                             <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                         </svg>
                                     </span>
-                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                </div>
+                                <div class="card-toolbar">
+                                    <div id="delete_lembur" style="display: none;">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-sm btn-light-success me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                            </span>
+                                            Terima</button>
+                                            <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                            </span>
+                                            Tolak</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table align-middle gs-0 gy-4">
+                                <table class="table align-middle gs-0 gy-4" id="kt_table_lembur">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bolder text-muted bg-light">
                                             <th class="ps-4 w-25px rounded-start">
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                <input class="form-check-input" name="maincheckbox_lembur" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_lembur .form-check-input" value="1" />
                                                 </div>
                                             </th>
                                             <th class="w-50px">No</th>
@@ -894,7 +957,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -932,7 +995,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -970,7 +1033,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -1008,7 +1071,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -1046,7 +1109,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -1088,25 +1151,42 @@
                         </div>
 
                         <div id="izin-kerja" class="tabcontent mb-7">
-                            <div class="card-toolbar">
-                                <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                            <div class="card-header border-0 pb-3 px-0">
+                                <div class="d-flex align-items-center position-relative my-1 pe-2">
                                     <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                             <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                             <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                         </svg>
                                     </span>
-                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                </div>
+                                <div class="card-toolbar">
+                                    <div id="delete_izin_kerja" style="display: none;">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-sm btn-light-success me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                            </span>
+                                            Terima</button>
+                                            <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                            <span class="svg-icon svg-icon-2 me-0">
+                                                <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                            </span>
+                                            Tolak</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table align-middle gs-0 gy-4">
+                                <table class="table align-middle gs-0 gy-4" id="kt_table_izin_kerja">
                                     <!--begin::Table head-->
                                     <thead>
                                         <tr class="fw-bolder text-muted bg-light">
                                             <th class="ps-4 w-25px rounded-start">
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="checkbox" value="1">
+                                                <input class="form-check-input" name="maincheckbox_izin_kerja" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_izin_kerja .form-check-input" value="1" />
                                                 </div>
                                             </th>
                                             <th class="w-50px">No</th>
@@ -1126,7 +1206,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -1167,7 +1247,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -1208,7 +1288,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -1249,7 +1329,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>
@@ -1290,7 +1370,7 @@
                                         <tr>
                                             <td>
                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                    <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                    <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
                                                 </div>
                                             </td>
                                             <td>

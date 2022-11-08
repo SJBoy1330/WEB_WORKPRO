@@ -21,13 +21,13 @@
                         </span>
                         Jadwal Shift</a>
                     </button>
-                    <button type="button" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    <button type="button" class="btn btn-sm btn-light btn-active-primary me-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-plus fs-3"></i>
                         </span>
                         Tambah
                     </button>
-                    <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-light-danger" id="deleteall" style="display: none;">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
                         </span>
@@ -40,13 +40,13 @@
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <table class="table align-middle gs-0 gy-4" id="kt_table_kategori">
+                    <table class="table align-middle gs-0 gy-4" id="kt_table_shift">
                         <!--begin::Table head-->
                         <thead>
                             <tr class="fw-bolder text-muted bg-light">
                                 <th class="ps-4 w-25px rounded-start">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
+                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_shift .form-check-input" value="1">
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
@@ -333,15 +333,22 @@
                 </div>
                 <div class="row mb-5">
                     <div class="col-6">
-                        <div class="table-responsive" style="oveflow-y: scroll; height: 300px;">
+                        <div class="table-responsive pe-3" style="oveflow-y: scroll; height: 300px;">
+                            <div class="card-toolbar d-flex justify-content-end mb-3">
+                                <button type="button" class="btn btn-sm btn-light-danger" id="delete_jadwal_shift" style="display: none;">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                    </span>
+                                    Hapus</button>
+                            </div>
                             <!--begin::Table-->
-                            <table class="table align-middle gs-0 gy-4" id="kt_table_kategori">
+                            <table class="table align-middle gs-0 gy-4" id="kt_table_jadwal_shift">
                                 <!--begin::Table head-->
                                 <thead>
                                     <tr class="fw-bolder text-muted bg-light">
                                         <th class="ps-4 w-25px rounded-start">
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
+                                                <input class="form-check-input" type="checkbox" name="maincheckbox_jadwal_shift" data-kt-check="true" data-kt-check-target="#kt_table_jadwal_shift .form-check-input" value="1">
                                             </div>
                                         </th>
                                         <th class="w-50px">No</th>
@@ -356,7 +363,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                <input class="form-check-input deletebox_jadwal_shift" type="checkbox" value="1" />
                                             </div>
                                         </td>
                                         <td>
@@ -379,7 +386,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                <input class="form-check-input deletebox_jadwal_shift" type="checkbox" value="1" />
                                             </div>
                                         </td>
                                         <td>
@@ -402,7 +409,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                <input class="form-check-input deletebox_jadwal_shift" type="checkbox" value="1" />
                                             </div>
                                         </td>
                                         <td>
@@ -425,7 +432,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                <input class="form-check-input deletebox_jadwal_shift" type="checkbox" value="1" />
                                             </div>
                                         </td>
                                         <td>
@@ -448,7 +455,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                <input class="form-check-input deletebox_jadwal_shift" type="checkbox" value="1" />
                                             </div>
                                         </td>
                                         <td>
@@ -471,7 +478,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                                <input class="form-check-input deletebox_jadwal_shift" type="checkbox" value="1" />
                                             </div>
                                         </td>
                                         <td>
@@ -530,7 +537,7 @@
                                                 <path fill="currentColor" class="fa-secondary" d="M207.1 0C93.12 0-.0002 93.13-.0002 208S93.12 416 207.1 416s208-93.13 208-208S322.9 0 207.1 0zM207.1 336c-70.58 0-128-57.42-128-128c0-70.58 57.42-128 128-128s128 57.42 128 128C335.1 278.6 278.6 336 207.1 336z"></path>
                                             </svg>
                                         </span>
-                                        <input type="text" class="form-control form-control-solid w-175px ps-14" placeholder="Cari">
+                                        <input type="text" class="form-control form-control-solid w-350px ps-14" placeholder="Cari">
                                     </div>
                                 </div>
                                 <div class="card-toolbar">
@@ -603,44 +610,21 @@
                                     <!--end::Menu-->
                                 </div>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body pt-1">
                                 <div class="table-responsive" style="oveflow-y: scroll; height: 200px;">
                                     <!--begin::Table-->
-                                    <table class="table align-middle gs-0 gy-4" id="kt_table_kategori">
-                                        <!--begin::Table head-->
-                                        <thead>
-                                            <tr class="fw-bolder text-muted bg-light">
-                                                <th class="ps-4 w-25px rounded-start">
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
-                                                    </div>
-                                                </th>
-                                                <th class="w-50px">No</th>
-                                                <th class="w-175px">Nama</th>
-                                                <th class="w-100px">Divisi</th>
-                                                <th class="pe-4 min-w-100px text-end rounded-end">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <!--end::Table head-->
+                                    <table class="table align-middle gs-0 gy-4">
                                         <!--begin::Table body-->
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
+                                                    <div class="d-flex justify-content-start flex-column" style="margin-left: 13px;">
                                                         <span class="text-dark fw-bolder fs-6">1</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <span class="text-dark fw-bolder d-block fs-6">Saka Dana Asmara</span>
                                                 </td>
-                                                <td>
-                                                    <span class="text-dark fw-bolder d-block fs-6">Designer</span>
-                                                </td>
                                                 <td class="text-end pe-2">
                                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                         <i class="fa-duotone fa-plus fs-5"></i>
@@ -649,21 +633,13 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
+                                                    <div class="d-flex justify-content-start flex-column" style="margin-left: 13px;">
                                                         <span class="text-dark fw-bolder fs-6">2</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <span class="text-dark fw-bolder d-block fs-6">Sidatata Al Jennar</span>
                                                 </td>
-                                                <td>
-                                                    <span class="text-dark fw-bolder d-block fs-6">Programmer</span>
-                                                </td>
                                                 <td class="text-end pe-2">
                                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                         <i class="fa-duotone fa-plus fs-5"></i>
@@ -672,21 +648,13 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
+                                                    <div class="d-flex justify-content-start flex-column" style="margin-left: 13px;">
                                                         <span class="text-dark fw-bolder fs-6">3</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <span class="text-dark fw-bolder d-block fs-6">Moh Ramadan</span>
                                                 </td>
-                                                <td>
-                                                    <span class="text-dark fw-bolder d-block fs-6">QA</span>
-                                                </td>
                                                 <td class="text-end pe-2">
                                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                         <i class="fa-duotone fa-plus fs-5"></i>
@@ -695,21 +663,13 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
+                                                    <div class="d-flex justify-content-start flex-column" style="margin-left: 13px;">
                                                         <span class="text-dark fw-bolder fs-6">4</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <span class="text-dark fw-bolder d-block fs-6">Erwin</span>
                                                 </td>
-                                                <td>
-                                                    <span class="text-dark fw-bolder d-block fs-6">QA</span>
-                                                </td>
                                                 <td class="text-end pe-2">
                                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                         <i class="fa-duotone fa-plus fs-5"></i>
@@ -718,20 +678,12 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex justify-content-start flex-column">
+                                                    <div class="d-flex justify-content-start flex-column" style="margin-left: 13px;">
                                                         <span class="text-dark fw-bolder fs-6">5</span>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <span class="text-dark fw-bolder d-block fs-6">Aris Naraya</span>
-                                                </td>
-                                                <td>
-                                                    <span class="text-dark fw-bolder d-block fs-6">Designer</span>
                                                 </td>
                                                 <td class="text-end pe-2">
                                                     <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">

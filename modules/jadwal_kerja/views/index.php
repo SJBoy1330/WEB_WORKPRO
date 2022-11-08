@@ -21,13 +21,13 @@
                         </span>
                         Jadwal Flat</a>
                     </button>
-                    <button type="button" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    <button type="button" class="btn btn-sm btn-light btn-active-primary me-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-plus fs-3"></i>
                         </span>
                         Tambah
                     </button>
-                    <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-light-danger" id="deleteall" style="display: none;">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
                         </span>
@@ -40,17 +40,17 @@
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <table class="table align-middle gs-0 gy-4" id="kt_table_kategori">
+                    <table class="table align-middle gs-0 gy-4" id="kt_table_pola_kerja">
                         <!--begin::Table head-->
                         <thead>
                             <tr class="fw-bolder text-muted bg-light">
                                 <th class="ps-4 w-25px rounded-start">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
+                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_pola_kerja .form-check-input" value="1">
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
-                                <th class="w-100px">Nama</th>
+                                <th class="w-100px">Nama</th> 
                                 <th class="w-175px">Toleransi Terlambat</th>
                                 <th class="min-w-150px text-center">Toleransi Pulang Awal</th>
                                 <th class="min-w-125px text-center">WFH</th>
@@ -563,7 +563,7 @@
                         <!--end::Menu-->
                     </div>
                 </div>
-                <div class="btn-group w-100 tab mb-7 flex-wrap">
+                <div class="btn-group w-100 tab flex-wrap">
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
                         <!--begin::Input-->
@@ -620,8 +620,8 @@
                 </div>
 
                 <div id="senin" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header border-0 px-0 d-flex justify-content-between">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
@@ -630,15 +630,22 @@
                             </span>
                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                         </div>
+                        <div class="card-toolbar">
+                            <button type="button" class="btn btn-sm btn-light-danger" id="delete_jadwal_senin" style="display: none;">
+                                <span class="svg-icon svg-icon-2 me-0">
+                                    <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                </span>
+                                Hapus</button>
+                        </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_jadwal_senin">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_jadwal_senin" data-kt-check="true" data-kt-check-target="#kt_table_jadwal_senin .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -653,7 +660,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_jadwal_senin" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -682,8 +689,8 @@
                 </div>
 
                 <div id="selasa" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header border-0 px-0 d-flex justify-content-between">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
@@ -692,15 +699,22 @@
                             </span>
                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                         </div>
+                        <div class="card-toolbar">
+                            <button type="button" class="btn btn-sm btn-light-danger" id="delete_jadwal_selasa" style="display: none;">
+                                <span class="svg-icon svg-icon-2 me-0">
+                                    <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                </span>
+                                Hapus</button>
+                        </div>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive" id="kt_table_jadwal_selasa">
                         <table class="table align-middle gs-0 gy-4">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_jadwal_selasa" data-kt-check="true" data-kt-check-target="#kt_table_jadwal_selasa .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -715,7 +729,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_jadwal_selasa" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -744,8 +758,8 @@
                 </div>
 
                 <div id="rabu" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header border-0 px-0 d-flex justify-content-between">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
@@ -754,15 +768,22 @@
                             </span>
                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                         </div>
+                        <div class="card-toolbar">
+                            <button type="button" class="btn btn-sm btn-light-danger" id="delete_jadwal_rabu" style="display: none;">
+                                <span class="svg-icon svg-icon-2 me-0">
+                                    <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                </span>
+                                Hapus</button>
+                        </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_jadwal_rabu">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_jadwal_rabu" data-kt-check="true" data-kt-check-target="#kt_table_jadwal_rabu .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -777,7 +798,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_jadwal_rabu" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -806,8 +827,8 @@
                 </div>
 
                 <div id="kamis" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header border-0 px-0 d-flex justify-content-between">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
@@ -816,15 +837,22 @@
                             </span>
                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                         </div>
+                        <div class="card-toolbar">
+                            <button type="button" class="btn btn-sm btn-light-danger" id="delete_jadwal_kamis" style="display: none;">
+                                <span class="svg-icon svg-icon-2 me-0">
+                                    <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                </span>
+                                Hapus</button>
+                        </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_jadwal_kamis">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_jadwal_kamis" data-kt-check="true" data-kt-check-target="#kt_table_jadwal_kamis .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -839,7 +867,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_jadwal_kamis" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -867,8 +895,8 @@
                     </div>
                 </div>
                 <div id="jumat" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header border-0 px-0 d-flex justify-content-between">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
@@ -877,15 +905,22 @@
                             </span>
                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                         </div>
+                        <div class="card-toolbar">
+                            <button type="button" class="btn btn-sm btn-light-danger" id="delete_jadwal_jumat" style="display: none;">
+                                <span class="svg-icon svg-icon-2 me-0">
+                                    <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                </span>
+                                Hapus</button>
+                        </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_jadwal_jumat">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_jadwal_jumat" data-kt-check="true" data-kt-check-target="#kt_table_jadwal_jumat .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -900,7 +935,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_jadwal_jumat" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -928,8 +963,8 @@
                     </div>
                 </div>
                 <div id="sabtu" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header border-0 px-0 d-flex justify-content-between">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
@@ -938,15 +973,22 @@
                             </span>
                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                         </div>
+                        <div class="card-toolbar">
+                            <button type="button" class="btn btn-sm btn-light-danger" id="delete_jadwal_sabtu" style="display: none;">
+                                <span class="svg-icon svg-icon-2 me-0">
+                                    <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                </span>
+                                Hapus</button>
+                        </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_jadwal_sabtu">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_jadwal_sabtu" data-kt-check="true" data-kt-check-target="#kt_table_jadwal_sabtu .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -961,7 +1003,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_jadwal_sabtu" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>

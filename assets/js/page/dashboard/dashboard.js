@@ -85,3 +85,95 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
 calendar.render();
 
 $("#kt_datepicker_2").flatpickr();
+
+
+$(function() {
+    var tab_penjelasan = document.getElementById('tab_penjelasan');
+    var tab_persetujuan = document.getElementById('tab_persetujuan');
+    $("#kt_table_content_presensi").on("click", function() {
+      $("#delete_tukar_shift").toggle($(this).find(".deletebox:checked").length > 0);
+      if($(this).find(".deletebox:checked").length < ($(this).find(".deletebox").length)){
+          $('input[name="maincheckbox"]').prop('checked', false);
+      }else if($(this).find(".deletebox:checked").length = ($(this).find(".deletebox").length)){
+        $('input[name="maincheckbox"]').prop('checked', true);
+    }
+  })
+  $('input[name="maincheckbox"]').on("click", function() {
+    // console.log('ok');
+    if (this.checked) {
+        tab_persetujuan.classList.remove('d-none');
+        tab_penjelasan.classList.add('d-none');
+    }else{
+        tab_persetujuan.classList.add('d-none');
+        tab_penjelasan.classList.remove('d-none');
+    }
+      $('.deletebox').prop('checked', this.checked);
+  });
+  
+});
+
+$(function() {
+    $("#kt_table_tukar_shift").on("click", function() {
+      $("#delete_tukar_shift").toggle($(this).find(".deletebox_tukar_shift:checked").length > 0);
+      if($(this).find(".deletebox_tukar_shift:checked").length < ($(this).find(".deletebox_tukar_shift").length)){
+          $('input[name="maincheckbox_tukar_shift"]').prop('checked', false);
+      }else if($(this).find(".deletebox_tukar_shift:checked").length = ($(this).find(".deletebox_tukar_shift").length)){
+        $('input[name="maincheckbox_tukar_shift"]').prop('checked', true);
+    }
+  })
+  $('input[name="maincheckbox_tukar_shift"]').on("click", function() {
+      $('.deletebox_tukar_shift').prop('checked', this.checked);
+  });
+  
+});
+
+$(function() {
+    $("#kt_table_reimbursement").on("click", function() {
+      $("#delete_reimbursement").toggle($(this).find(".deletebox_reimbursement:checked").length > 0);
+      if($(this).find(".deletebox_reimbursement:checked").length < ($(this).find(".deletebox_reimbursement").length)){
+          $('input[name="maincheckbox_reimbursement"]').prop('checked', false);
+      }else if($(this).find(".deletebox_reimbursement:checked").length = ($(this).find(".deletebox_reimbursement").length)){
+        $('input[name="maincheckbox_reimbursement"]').prop('checked', true);
+    }
+  })
+  $('input[name="maincheckbox_reimbursement"]').on("click", function() {
+      $('.deletebox_reimbursement').prop('checked', this.checked);
+  });
+  
+});
+
+$(function() {
+    $("#kt_table_lembur").on("click", function() {
+      $("#delete_lembur").toggle($(this).find(".deletebox_lembur:checked").length > 0);
+      if($(this).find(".deletebox_lembur:checked").length < ($(this).find(".deletebox_lembur").length)){
+          $('input[name="maincheckbox_lembur"]').prop('checked', false);
+      }else if($(this).find(".deletebox_lembur:checked").length = ($(this).find(".deletebox_lembur").length)){
+        $('input[name="maincheckbox_lembur"]').prop('checked', true);
+    }
+  })
+  $('input[name="maincheckbox_lembur"]').on("click", function() {
+      $('.deletebox_lembur').prop('checked', this.checked);
+  });
+  
+});
+
+$(function() {
+    $("#kt_table_izin_kerja").on("click", function() {
+      $("#delete_izin_kerja").toggle($(this).find(".deletebox_izin_kerja:checked").length > 0);
+      if($(this).find(".deletebox_izin_kerja:checked").length < ($(this).find(".deletebox_izin_kerja").length)){
+          $('input[name="maincheckbox_izin_kerja"]').prop('checked', false);
+      }else if($(this).find(".deletebox_izin_kerja:checked").length = ($(this).find(".deletebox_izin_kerja").length)){
+        $('input[name="maincheckbox_izin_kerja"]').prop('checked', true);
+    }
+  })
+  $('input[name="maincheckbox_izin_kerja"]').on("click", function() {
+      $('.deletebox_izin_kerja').prop('checked', this.checked);
+  });
+  
+});
+
+  
+  
+  
+  
+  
