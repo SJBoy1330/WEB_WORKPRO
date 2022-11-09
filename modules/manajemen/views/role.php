@@ -25,7 +25,7 @@
                             <!--end::Svg Icon-->Role
                         </a>
                     </div>
-                    <button type="button" class="btn btn-sm btn-light-danger me-2 " id="deleteall" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-light-danger" id="deleteall" style="display: none;">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
                         </span>
@@ -38,13 +38,13 @@
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <table class="table align-middle gs-0 gy-4" id="kt_table_kategori">
+                    <table class="table align-middle gs-0 gy-4" id="kt_table_role">
                         <!--begin::Table head-->
                         <thead>
                             <tr class="fw-bolder text-muted bg-light">
                                 <th class="ps-4 w-25px rounded-start">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
+                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_role .form-check-input" value="1">
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>

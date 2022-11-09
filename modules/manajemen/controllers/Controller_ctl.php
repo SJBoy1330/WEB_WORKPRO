@@ -16,7 +16,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Role';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/prospek.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
@@ -55,7 +55,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Kategori Reimbursement';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/reimbursement_kategori.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('reimbursement_kategori', $mydata, TRUE);
@@ -68,7 +68,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Role';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/role.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('role', $mydata, TRUE);
@@ -81,7 +81,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Role';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/status_prospek.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('status_prospek', $mydata, TRUE);
@@ -94,7 +94,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Role';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/sumber_prospek.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('sumber_prospek', $mydata, TRUE);

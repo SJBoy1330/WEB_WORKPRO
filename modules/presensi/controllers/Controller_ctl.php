@@ -16,7 +16,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Presensi';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/presensi/data_presensi.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
@@ -29,7 +29,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Izin Kerja';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/presensi/izin_kerja.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('izin_kerja', $mydata, TRUE);

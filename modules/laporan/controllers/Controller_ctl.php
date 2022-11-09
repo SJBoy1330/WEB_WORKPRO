@@ -16,7 +16,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Data Karyawan';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/data_karyawan.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('data_karyawan', $mydata, TRUE);
@@ -29,7 +29,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Rekap Presensi';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/rekap_presensi.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('rekap_presensi', $mydata, TRUE);
@@ -42,7 +42,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Rekap Reimbursement';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/rekap_reimbursement.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('rekap_reimbursement', $mydata, TRUE);
@@ -55,7 +55,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Rekap Kunjungan';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/rekap_kunjungan.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('rekap_kunjungan', $mydata, TRUE);
@@ -68,7 +68,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Rekap Prospek';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/rekap_prospek.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('rekap_prospek', $mydata, TRUE);
@@ -81,7 +81,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Rekap Izin Kerja';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/rekap_izin_kerja.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('rekap_izin_kerja', $mydata, TRUE);
@@ -94,7 +94,7 @@ class Controller_ctl extends MY_Frontend
 		$mydata['title'] = 'Rekap Lembur';
 
 		// LOAD JS
-		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/perusahaan/lokasi_perusahaan.js"></script>';
+		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/laporan/rekap_lembur.js"></script>';
 
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('rekap_lembur', $mydata, TRUE);

@@ -92,7 +92,7 @@
                     <button type="button" class="btn btn-sm btn-light btn-active-primary me-2" data-bs-toggle="modal" data-bs-target="#modalKategori">
                         Kategori</a>
                     </button>
-                    <button type="button" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                    <button type="button" class="btn btn-sm btn-light btn-active-primary me-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-plus fs-3"></i>
                         </span>
@@ -111,13 +111,13 @@
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <table class="table align-middle gs-0 gy-4" id="kt_table_kategori">
+                    <table class="table align-middle gs-0 gy-4" id="kt_table_izin_kerja">
                         <!--begin::Table head-->
                         <thead>
                             <tr class="fw-bolder text-muted bg-light">
                                 <th class="ps-4 w-25px rounded-start">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
+                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_izin_kerja .form-check-input" value="1">
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
@@ -232,15 +232,22 @@
             <!--end::Modal header-->
             <!--begin::Modal body-->
             <div class="modal-body pb-lg-10 px-lg-10"> 
-                <div class="card-toolbar d-flex">
-                    <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                <div class="card-header d-flex justify-content-between border-0 pb-3 px-0">
+                    <div class="d-flex align-items-center position-relative my-1 pe-2">
                         <span class="svg-icon svg-icon-1 position-absolute ms-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                 <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                             </svg>
                         </span>
-                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                        <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                    </div>
+                    <div class="card-toolbar">
+                        <button type="button" class="btn btn-sm btn-light-danger" id="delete_kategori" style="display: none;">
+                        <span class="svg-icon svg-icon-2 me-0">
+                            <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                        </span>
+                        Hapus</button>
                     </div>
                 </div> 
                 <div class="table-responsive">
@@ -251,7 +258,7 @@
                             <tr class="fw-bolder text-muted bg-light">
                                 <th class="ps-4 w-25px rounded-start">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" name="maincheckbox" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
+                                        <input class="form-check-input" type="checkbox" name="maincheckbox_kategori" data-kt-check="true" data-kt-check-target="#kt_table_kategori .form-check-input" value="1">
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
@@ -265,7 +272,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                        <input class="form-check-input deletebox_kategori" type="checkbox" value="1" />
                                     </div>
                                 </td>
                                 <td>
@@ -288,7 +295,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                        <input class="form-check-input deletebox_kategori" type="checkbox" value="1" />
                                     </div>
                                 </td>
                                 <td>
@@ -352,9 +359,9 @@
                 <div class="d-flex flex-column flex-grow-1">
                     <!--begin::Stats-->
                     <div class="d-flex justify-content-between flex-wrap">
-                        <div class="d-flex">
+                        <div class="d-flex justify-content-center align-items-center flex-wrap">
                             <!--begin::Stat-->
-                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3 card-info">
                                 <!--begin::Number-->
                                 <div class="d-flex align-items-center">
                                     <span class="svg-icon svg-icon-2 svg-icon-primary me-2">
@@ -379,7 +386,7 @@
                             </div>
                             <!--end::Stat-->
                             <!--begin::Stat-->
-                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3 card-info">
                                 <!--begin::Number-->
                                 <div class="d-flex align-items-center">
                                     <span class="svg-icon svg-icon-2 svg-icon-success me-2">
@@ -404,7 +411,7 @@
                             </div>
                             <!--end::Stat-->
                             <!--begin::Stat-->
-                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                            <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3 card-info">
                                 <!--begin::Number-->
                                 <div class="d-flex align-items-center">
                                     <span class="svg-icon svg-icon-2 svg-icon-danger me-2">
@@ -431,7 +438,7 @@
                         </div>
                         <div class="text-end">
                             <!--begin::Menu-->
-                            <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder position-relative bottom-0" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                            <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder position-relative bottom-0 mb-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
                             <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -503,60 +510,77 @@
                 </div>
                 
                 <!--end::Wrapper-->
-                <div class="btn-group w-100 tab mb-7">
+                <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'presensi')">
+                    <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
                     <!--end::Input-->
                     Presensi</label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'tukar-shift')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
                     <!--end::Input-->
                     Tukar Shift</label>
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'reimbursement')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
                     <!--end::Input-->
                     Reimbursement</label>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'lembur')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
                     <!--end::Input-->
                     Lembur</label>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                     <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'izin-kerja')">
+                    <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
                     <!--end::Input-->
                     Izin Kerja</label>
                     <!--end::Radio-->
                 </div>
 
-                <div id="presensi" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                <div id="content-presensi" class="tabcontent mb-7">
+                    <div class="card-header d-flex justify-content-between border-0 pb-3 px-0">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                 </svg>
                             </span>
-                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                        </div>
+                        <div class="card-toolbar">
+                            <div id="delete_presensi" style="display: none;">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-sm btn-light-success me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                    </span>
+                                    Terima</button>
+                                    <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                    </span>
+                                    Tolak</button>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_presensi">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_presensi" data-kt-check="true" data-kt-check-target="#kt_table_presensi .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -579,7 +603,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_presensi" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -636,25 +660,42 @@
                 </div>
 
                 <div id="tukar-shift" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header d-flex justify-content-between border-0 pb-3 px-0">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                 </svg>
                             </span>
-                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                        </div>
+                        <div class="card-toolbar">
+                            <div id="delete_tukar_shift_modal" style="display: none;">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-sm btn-light-success me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                    </span>
+                                    Terima</button>
+                                    <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                    </span>
+                                    Tolak</button>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_tukar_shift_modal">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_tukar_shift_modal" data-kt-check="true" data-kt-check-target="#kt_table_tukar_shift_modal .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -672,7 +713,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_tukar_shift_modal" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -714,25 +755,42 @@
                 </div>
 
                 <div id="reimbursement" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header d-flex justify-content-between border-0 pb-3 px-0">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                 </svg>
                             </span>
-                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                        </div>
+                        <div class="card-toolbar">
+                            <div id="delete_reimbursement" style="display: none;">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-sm btn-light-success me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                    </span>
+                                    Terima</button>
+                                    <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                    </span>
+                                    Tolak</button>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_reimbursement">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_reimbursement" data-kt-check="true" data-kt-check-target="#kt_table_reimbursement .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -752,7 +810,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_reimbursement" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -800,25 +858,42 @@
                 </div>
 
                 <div id="lembur" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header d-flex justify-content-between border-0 pb-3 px-0">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                 </svg>
                             </span>
-                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                        </div>
+                        <div class="card-toolbar">
+                            <div id="delete_lembur" style="display: none;">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-sm btn-light-success me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                    </span>
+                                    Terima</button>
+                                    <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                    </span>
+                                    Tolak</button>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_lembur">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_lembur" data-kt-check="true" data-kt-check-target="#kt_table_lembur .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -837,7 +912,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
@@ -882,25 +957,42 @@
                 </div>
                 
                 <div id="izin-kerja" class="tabcontent mb-7">
-                    <div class="card-toolbar">
-                        <div class="d-flex align-items-center position-relative mb-3 pe-2">
+                    <div class="card-header d-flex justify-content-between border-0 pb-3 px-0">
+                        <div class="d-flex align-items-center position-relative my-1 pe-2">
                             <span class="svg-icon svg-icon-1 position-absolute ms-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                 </svg>
                             </span>
-                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                        </div>
+                        <div class="card-toolbar">
+                            <div id="delete_izin_kerja" style="display: none;">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-sm btn-light-success me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                    </span>
+                                    Terima</button>
+                                    <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                    <span class="svg-icon svg-icon-2 me-0">
+                                        <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                    </span>
+                                    Tolak</button>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table align-middle gs-0 gy-4">
+                        <table class="table align-middle gs-0 gy-4" id="kt_table_izin_kerja">
                             <!--begin::Table head-->
                             <thead>
                                 <tr class="fw-bolder text-muted bg-light">
                                     <th class="ps-4 w-25px rounded-start">
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1">
+                                            <input class="form-check-input" type="checkbox" name="maincheckbox_izin_kerja" data-kt-check="true" data-kt-check-target="#kt_table_izin_kerja .form-check-input" value="1">
                                         </div>
                                     </th>
                                     <th class="w-50px">No</th>
@@ -920,7 +1012,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                            <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
                                         </div>
                                     </td>
                                     <td>
