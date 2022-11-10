@@ -54,7 +54,7 @@
                                 <div class="separator border-gray-200"></div>
                                 <!--end::Menu separator-->
                                 <!--begin::Form-->
-                                <div class="px-7 py-5">
+                                <div class="px-7 py-5" >
                                     <!--begin::Input group-->
                                     <div class="mb-5">
                                         <!--begin::Label-->

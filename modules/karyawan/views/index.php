@@ -36,7 +36,7 @@
                             <div class="separator border-gray-200"></div>
                             <!--end::Menu separator-->
                             <!--begin::Form-->
-                            <div class="px-7 py-5">
+                            <div class="px-7 py-5" style="overflow-y: scroll; max-height: 225px;">
                                 <!--begin::Input group-->
                                 <div class="mb-10">
                                     <!--begin::Label-->
@@ -88,6 +88,9 @@
                                     </div>
                                     <!--end::Input-->
                                 </div>
+                            </div>
+                            <!--end::Form-->
+                            <div class="px-7 py-5">
                                 <!--end::Input group-->
                                 <div class="d-flex justify-content-end">
                                     <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
@@ -95,7 +98,6 @@
                                 </div>
                                 <!--end::Actions-->
                             </div>
-                            <!--end::Form-->
                         </div>
                         <!--end::Menu 1-->
                         <!--end::Menu-->

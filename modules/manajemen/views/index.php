@@ -36,7 +36,7 @@
                             <div class="separator border-gray-200"></div>
                             <!--end::Menu separator-->
                             <!--begin::Form-->
-                            <div class="px-7 py-5">
+                            <div class="px-7 py-5" style="overflow-y: scroll; max-height: 225px;">
                                 <div class="row">
                                     <div class="col-6">
                                         <!--begin::Input group-->
@@ -134,14 +134,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--end::Input group-->
+                            </div>
+                            <!--end::Form-->
+                            <div class="px-7 py-5" style="overflow-y: scroll; max-height: 225px;">
                                 <div class="d-flex justify-content-end">
                                     <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
                                     <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Tampilkan</button>
                                 </div>
-                                <!--end::Actions-->
                             </div>
-                            <!--end::Form-->
                         </div>
                         <!--end::Menu 1-->
                         <!--end::Menu-->
