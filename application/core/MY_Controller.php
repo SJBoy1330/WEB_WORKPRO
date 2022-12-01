@@ -139,6 +139,33 @@ class MY_Frontend extends MY_Controller
         }
     }
 }
+
+class MY_Webview extends MY_Controller
+{
+
+
+
+    public function __construct()
+    {
+
+        parent::__construct();
+
+        $this->path_theme = 'webview_frontend';
+    }
+
+
+
+    function display($routing = null)
+    {
+        if (!isset($routing)) {
+            $tpl = $this->path_theme . '/layout_single';
+
+            $this->load->view($tpl, $this->data);
+        } else {
+            echo $this->data['content'];
+        }
+    }
+}
 class MY_Welcome extends MY_Controller
 {
 
@@ -150,6 +177,7 @@ class MY_Welcome extends MY_Controller
         parent::__construct();
 
         $this->path_theme = 'welcome_frontend';
+        is_logged_in();
     }
 
 

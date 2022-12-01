@@ -151,20 +151,6 @@ function set_active($uri1, $controller, $uri2 = "", $arrtarget = array())
   }
 }
 
-function set_active_tab($uri1, $controller, $uri2 = "", $arrtarget = array())
-{
-
-  if ($uri1 == $controller) {
-    if ($uri2 != "") {
-      if (in_array($uri2, $arrtarget)) {
-        return "active show";
-      }
-    } else {
-      return "active show";
-    }
-  }
-}
-
 function encrypt_path($filename)
 {
 
@@ -392,46 +378,28 @@ function hash_my_password($id_sekolah, $username, $password)
 function is_logged_in()
 {
 
-  // $obj = &get_instance();
+  $obj = &get_instance();
 
-  // $base_url = $obj->config->item('base_url');
+  $base_url = $obj->config->item('base_url');
 
-  // $ci = get_instance();
+  $ci = get_instance();
 
-  // if ($ci->session->userdata('lms_staf_id_staf')) {
-  //   if (!in_array($ci->session->userdata('lms_staf_role'), ['staf', 'keuangan', 'admin', 'operator'])) {
-  //     redirect('auth');
-  //   }
-  // } else {
-  //   redirect('auth');
-  // }
+  if (!$ci->session->userdata('workpro_web_id_perusahaan') || !$ci->session->userdata('workpro_web_id_karyawan')) {
+    redirect('auth');
+  }
 }
 
 
-function curl_post($url, $fields = array(), $files = NULL, $multiple = false)
+
+function curl_post($url, $fields = array(), $files = NULL, $header = array())
 {
   $ch = curl_init();
   $CI = &get_instance();
   $postvars = http_build_query($fields);
   if ($files != NULL) {
-    // var_dump($files);
-    if ($multiple == true) {
-      $headers = array("Content-Type" => "multipart/form-data");
-      curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-      $i = 0;
-    }
     foreach ($files as $file => $value) {
-      if ($multiple == FALSE) {
-        $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
-        $postfile[$file] = $cfile;
-      } else {
-        $postfile[$file] = curl_file_create(
-          $value['tmp_name'][$i],
-          $value['type'][$i],
-          $value['name'][$i]
-        );
-        $i++;
-      }
+      $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
+      $postfile[$file] = $cfile;
     }
 
     $postvars = (object) array_merge((array) $fields, (array) $postfile);
@@ -442,17 +410,21 @@ function curl_post($url, $fields = array(), $files = NULL, $multiple = false)
   curl_setopt($ch, CURLOPT_POST, 1);                //0 for a get request
   curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
   curl_setopt($ch, CURLOPT_TIMEOUT, 20);
   $response = curl_exec($ch);
   curl_close($ch);
   return json_decode($response);
 }
-
-function curl_get($url, $fields = array())
+function curl_get($url, $fields = array(), $header = array())
 {
   $request_url = API_URL($url) . "?" . http_build_query($fields);
   $ch = curl_init($request_url);
+  // var_dump($header);die;
+
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
   curl_setopt($ch, CURLOPT_POST, 0);                //0 for a get request
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
@@ -464,7 +436,7 @@ function curl_get($url, $fields = array())
 
 function API_URL($path = null)
 {
-  $uri = 'https://sd.klasq.id/api/staf/';
+  $uri = 'http://localhost/git_workpro/workpro_api/';
   if ($path != null) {
     $uri .= $path;
   }
@@ -472,18 +444,19 @@ function API_URL($path = null)
 }
 
 
-function data_url($path = null, $id_sekolah = false)
+function data_url($id_perusahaan = true, $path = null)
 {
   $ci = &get_instance();
-  $uri = 'https://sd.klasq.id/linker/';
+  $uri = 'http://45.64.97.26/workpro_linker/';
   if ($path != null) {
     $uri .= $path;
   }
-  if ($id_sekolah != false) {
-    $uri .= '/' . base64url_encode($id_sekolah);
+  if ($id_perusahaan == true) {
+    $uri .= '/' . base64url_encode($id_perusahaan);
   }
   return $uri;
 }
+
 
 
 
@@ -772,4 +745,27 @@ function get_jarak($lat1, $lon1, $lat2, $lon2)
   $kilometers = $miles * 1.609344;
   $meters = $kilometers * 1000;
   return compact('miles', 'feet', 'yards', 'kilometers', 'meters');
+}
+
+function get_redis($keys = '')
+{
+
+  $obj = &get_instance();
+
+  $ci = get_instance();
+
+  $arrKeys =  $ci->oitocredis->getkeys($keys);
+  $i = 1;
+  foreach ($arrKeys as $valkey) {
+    $arrTmp[] = $ci->oitocredis->getdatastring($valkey);
+    $i++;
+  }
+
+  return $arrTmp[0];
+}
+
+function re_print_redis($nama, $value)
+{
+  $ci = get_instance();
+  $ci->oitocredis->appenddata($nama, $value, 99999999999999);
 }

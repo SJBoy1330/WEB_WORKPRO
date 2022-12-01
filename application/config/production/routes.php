@@ -179,11 +179,18 @@ $route['informasi/(:any)'] = 'informasi/controller_ctl/$1';
 $route['informasi/(:any)/(:any)'] = 'informasi/controller_ctl/$1/$2';
 
 
-$route['profil']  = 'profil/controller_ctl';
+$route['web_view']  = 'web_view/controller_ctl';
 
-$route['profil/(:any)'] = 'profil/controller_ctl/$1';
+$route['web_view/(:any)'] = 'web_view/controller_ctl/$1';
 
-$route['profil/(:any)/(:any)'] = 'profil/controller_ctl/$1/$2';
+$route['web_view/(:any)/(:any)'] = 'web_view/controller_ctl/$1/$2';
+
+$route['web_view/(:any)/(:any)/(:any)'] = 'web_view/controller_ctl/$1/$2/$3';
+
+$route['web_view/(:any)/(:any)/(:any)/(:any)'] = 'web_view/controller_ctl/$1/$2/$3/$4';
+
+$route['web_view/(:any)/(:any)/(:any)/(:any)/(:any)'] = 'web_view/controller_ctl/$1/$2/$3/$4/$5';
+
 
 
 $route['404_override'] = '';

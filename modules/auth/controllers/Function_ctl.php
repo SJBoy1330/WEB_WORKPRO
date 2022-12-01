@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Function_ctl extends MY_Frontend
+class Function_ctl extends MY_Controller
 {
     public function __construct()
     {
@@ -8,10 +8,9 @@ class Function_ctl extends MY_Frontend
         parent::__construct();
     }
 
-    public function login_proses()
+    public function index()
     {
-        $arrVar['kode_sekolah']         = 'Kode sekolah';
-        $arrVar['username']    = 'ID Pengguna';
+        $arrVar['email']    = 'Email';
         $arrVar['kata_sandi'] = 'Kata sandi';
         foreach ($arrVar as $var => $value) {
             $$var = $this->input->post($var);
@@ -24,9 +23,11 @@ class Function_ctl extends MY_Frontend
             }
         }
 
+        // var_dump($arrVar);
+        // die;
+
         if (!in_array(false, $arrAccess)) {
             // CURL POST
-            $arrPost['kode_sekolah'] = $kode_sekolah;
             $arrPost['username'] = $username;
             $arrPost['password'] = $kata_sandi;
             $response = curl_post('login', $arrPost, 0);

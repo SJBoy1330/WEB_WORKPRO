@@ -1445,8 +1445,6 @@ License: For each use you must have a valid license purchased only from above li
 </body>
 <!--end::Body-->
 
-</html>
-
 <!-- Modal Daftar & Masuk -->
 <div class="modal fade" id="modalMasuk" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
@@ -1473,8 +1471,8 @@ License: For each use you must have a valid license purchased only from above li
             </div>
             <!--end::Modal header-->
             <!--begin::Modal body-->
-            <div class="modal-body pb-lg-10 px-lg-10">
-                <div class="fv-row mb-5">
+            <form method="POST" action="<?= base_url('func_auth') ?>" id="login" class="modal-body pb-lg-10 px-lg-10">
+                <div class="fv-row mb-5" id="req_email">
                     <label class="form-label fs-6 fw-bold" for="email">
                         <span class="">Email</span>
                     </label>
@@ -1487,10 +1485,10 @@ License: For each use you must have a valid license purchased only from above li
                                 <path fill="currentColor" class="fa-secondary" d="M495.1 256.3v20.96c.0001 46.74-29.27 90.22-74.22 103C408.8 383.9 396.1 384.1 384 384v-65.31c2.672 .5651 5.164 1.621 7.1 1.621c22.06 0 40-17.96 40-40.05l0-16.16c.0001-91.97-67.02-174.3-158.6-183.2C168.6 70.76 79.1 153.4 79.1 256.3c0 87.88 64.61 160.9 148.8 174.1c15.62 2.441 27.24 15.5 27.24 31.31c-.0001 19.52-17.42 35.04-36.71 32.07c-130.2-20.08-226.1-145.2-198.5-285.9c18.34-93.45 93.57-168.8 187-187.1C361.2-9.332 495.1 107.1 495.1 256.3z"></path>
                             </svg>
                         </span>
-                        <input class="form-control form-control-lg form-control-solid ps-12" type="text" name="email" autocomplete="off" placeholder="Masukkan email" aria-placeholder="">
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="text" name="email" id="email" autocomplete="off" placeholder="Masukkan email" aria-placeholder="">
                     </div>
                 </div>
-                <div class="fv-row mb-10" data-kt-password-meter="true">
+                <div class="fv-row mb-10" data-kt-password-meter="true" id="req_kata_sandi">
                     <label class="form-label fs-6 fw-bold" for="password">
                         <span class="">Kata Sandi</span>
                     </label>
@@ -1503,7 +1501,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <path fill="currentColor" class="fa-secondary" d="M227.3 265.9L141.3 352L182.6 393.4C195.1 405.9 195.1 426.1 182.6 438.6C170.1 451.1 149.9 451.1 137.4 438.6L96 397.3L77.25 416L118.6 457.4C131.1 469.9 131.1 490.1 118.6 502.6C106.1 515.1 85.87 515.1 73.37 502.6L9.372 438.6C-3.124 426.1-3.124 405.9 9.372 393.4L182.1 220.7C193.6 238.9 209.1 254.4 227.3 265.9V265.9z"></path>
                             </svg>
                         </span>
-                        <input class="form-control form-control-lg form-control-solid ps-12" type="password" name="password" autocomplete="off" placeholder="Masukkan kata sandi" aria-placeholder="">
+                        <input class="form-control form-control-lg form-control-solid ps-12" type="password" name="kata_sandi" id="kata_sandi" autocomplete=" off" placeholder="Masukkan kata sandi" aria-placeholder="">
                         <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                             <i class="bi bi-eye-slash fs-2"></i>
                             <i class="bi bi-eye fs-2 d-none"></i>
@@ -1511,15 +1509,15 @@ License: For each use you must have a valid license purchased only from above li
                     </div>
                     <div class="text-danger mx-4 fw-bold" data-field="password"></div>
                 </div>
-                <a href="<?= base_url('home') ?>" type="button" class="btn btn-lg btn-primary" style="width: 100%">Masuk
+                <button type="submit" id="btn_login" class="btn btn-lg btn-primary" style="width: 100%">Masuk
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
                             <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
                         </svg>
                     </span>
-                </a>
-            </div>
+                </button>
+            </form>
             <!--end::Modal body-->
         </div>
         <!--end::Modal content-->
@@ -1718,3 +1716,16 @@ License: For each use you must have a valid license purchased only from above li
     </div>
     <!--end::Modal dialog-->
 </div>
+
+<script type="text/javascript">
+    var BASE_URL = '<?= base_url(); ?>';
+</script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="<?= base_url() ?>assets/vendor/evo-calendar/js/evo-calendar.min.js"></script>
+
+
+<script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
+<script src="<?= base_url('assets/js/alert/scriptalert.js?v=' . date('YmdHis')) ?>"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/page/auth/auth.js'); ?>"></script>
+
+</html>

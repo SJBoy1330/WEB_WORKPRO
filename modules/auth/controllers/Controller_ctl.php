@@ -12,13 +12,7 @@ class Controller_ctl extends MY_Controller
 	public function index()
 	{
 		// LOAD TITLE
-		$mydata['title'] = 'Splash';
-
-		// LOAD JS
-		$this->data['js_add'][] = '<script type="text/javascript">$(document).ready(function() {
-        $("body").addClass("d-flex flex-column h-100");setTimeout(function () {window.location.replace("' . base_url('auth/login') . '");}, 4000)} );</script>';
-
-		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/auth.js"></script>';
+		$mydata['title'] = 'WorkPro | Adn';
 
 		// LOAD VIEW
 		$this->load->view('index', $mydata);
@@ -35,6 +29,6 @@ class Controller_ctl extends MY_Controller
 		$this->session->unset_userdata('lms_staf_foto');
 		$this->session->unset_userdata('lms_staf_id_kelas');
 
-		redirect('auth/login');
+		redirect('auth');
 	}
 }
