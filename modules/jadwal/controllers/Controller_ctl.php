@@ -8,14 +8,17 @@ class Controller_ctl extends MY_Frontend
 		parent::__construct();
 		is_logged_in();
 	}
-
-
 	public function index()
+	{
+		redirect('jadwal/pola');
+	}
+
+	public function pola()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Pola Kerja';
 
-        // LOAD JS
+		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/pola_kerja.js"></script>';
 
 		// LOAD VIEW
@@ -31,7 +34,7 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/jadwal_kerja/shift.css') . '">';
 
-        // LOAD JS
+		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/shift.js"></script>';
 
 		// LOAD VIEW

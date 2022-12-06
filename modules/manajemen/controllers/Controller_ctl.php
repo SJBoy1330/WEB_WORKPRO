@@ -12,6 +12,11 @@ class Controller_ctl extends MY_Frontend
 
 	public function index()
 	{
+		redirect('manajemen/prospek');
+	}
+
+	public function prospek()
+	{
 		// LOAD TITLE
 		$mydata['title'] = 'Role';
 
@@ -23,7 +28,7 @@ class Controller_ctl extends MY_Frontend
 		$this->display($this->input->get('routing'));
 	}
 
-    public function kunjungan()
+	public function kunjungan()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Kunjungan';
@@ -36,7 +41,7 @@ class Controller_ctl extends MY_Frontend
 		$this->display($this->input->get('routing'));
 	}
 
-    public function reimbursement()
+	public function reimbursement()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Reimbursement';

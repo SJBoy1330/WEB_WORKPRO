@@ -11,6 +11,9 @@ class Controller_ctl extends MY_Controller
 
 	public function index()
 	{
+		if ($this->session->userdata('workpro_web_id_perusahaan') || $this->session->userdata('workpro_web_id_karyawan')) {
+			redirect('dashboard');
+		}
 		// LOAD TITLE
 		$mydata['title'] = 'WorkPro | Adn';
 
@@ -20,14 +23,12 @@ class Controller_ctl extends MY_Controller
 
 	public function logout()
 	{
-		$this->session->unset_userdata('lms_sd_staf_server');
-		$this->session->unset_userdata('lms_staf_id_staf');
-		$this->session->unset_userdata('lms_staf_role');
-		$this->session->unset_userdata('lms_staf_id_sekolah');
-		$this->session->unset_userdata('lms_staf_nama');
-		$this->session->unset_userdata('lms_staf_wali_kelas');
-		$this->session->unset_userdata('lms_staf_foto');
-		$this->session->unset_userdata('lms_staf_id_kelas');
+		$this->session->unset_userdata('workpro_web_api_key');
+		$this->session->unset_userdata('workpro_web_server');
+		$this->session->unset_userdata('workpro_web_akses');
+		$this->session->unset_userdata('workpro_web_id_perusahaan');
+		$this->session->unset_userdata('workpro_web_id_karyawan');
+		$this->session->unset_userdata('workpro_web_foto');
 
 		redirect('auth');
 	}

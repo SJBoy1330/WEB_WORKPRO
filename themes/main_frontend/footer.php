@@ -1,5 +1,7 @@
 <script>
+    var BASE_URL = "<?= base_url(); ?>";
     var hostUrl = "<?= base_url(); ?>assets/";
+    var css_button = 'btn btn-block btn-md';
 </script>
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="<?= base_url(); ?>assets/plugins/global/plugins.bundle.js"></script>
@@ -24,9 +26,10 @@
 <script src="<?= base_url(); ?>assets/plugins/custom/ckeditor/ckeditor-document.bundle.js"></script>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="<?= base_url('assets/js/page/function.js') ?>"></script>
 
 <script type="text/javascript">
-    function openCity(evt, cityName) {
+    function openCity(evt, cityName, id = null, text = 'unknown') {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
@@ -38,6 +41,9 @@
         }
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
+        if (id != null) {
+            $(id).text(text);
+        }
     }
     document.getElementById("defaultOpen").click();
 </script>

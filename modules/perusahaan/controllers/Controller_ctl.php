@@ -9,8 +9,11 @@ class Controller_ctl extends MY_Frontend
 		is_logged_in();
 	}
 
-
 	public function index()
+	{
+		redirect('perusahaan/profil');
+	}
+	public function profil()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Perusahaan';
@@ -23,7 +26,7 @@ class Controller_ctl extends MY_Frontend
 		$this->display($this->input->get('routing'));
 	}
 
-	public function lokasi_presensi()
+	public function cabang()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Perusahaan';

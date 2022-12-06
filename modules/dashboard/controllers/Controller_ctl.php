@@ -6,21 +6,32 @@ class Controller_ctl extends MY_Frontend
 	{
 		// Load the constructer from MY_Controller
 		parent::__construct();
-		$this->id_sekolah = $this->session->userdata('lms_staf_id_sekolah');
-		$this->id_staf = $this->session->userdata('lms_staf_id_staf');
 		// is_logged_in();
 	}
 
 
 	public function index()
 	{
-		// echo 'LAT : ' . $_COOKIE['LAT'] . ' LONG : ' . $_COOKIE['LONG'];
 		// LOAD TITLE
-		$mydata['title'] = 'Home';
+		$mydata['title'] = 'Dashboard';
+
+		// LOAD API 
+		$result = curl_get('home/web', ['id_karyawan' => $this->id_karyawan, 'status_akses' => $this->web_akses, 'akses' => $this->managemen], ['api_key: ' . $this->api_key, 'server: ' . $this->server, 'id_perusahaan: ' . $this->id_perusahaan]);
+		$mydata['result'] = $result->data;
+
 		// LOAD CSS
 		$this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/dashboard/home.css') . '">';
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/dashboard/dashboard.js"></script>';
+		$this->data['js_add'][] = '<script>
+			var tepat = ' . $result->data->presensi->tepat . ';
+			var terlambat = ' . $result->data->presensi->terlambat . ';
+			var alpha = ' . $result->data->presensi->alpha . ';
+			var izin = ' . $result->data->presensi->izin . ';
+		</script>';
+
+
+
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

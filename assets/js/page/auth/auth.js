@@ -20,6 +20,11 @@ $('#login').on('submit', function (e) {
 
         },
         success: function (data) {
+            if (data.status == 200 || data.status == true) {
+                var icon = 'success';
+            } else {
+                var icon = 'warning';
+            }
             $('.fadedin').remove();
             // console.log(data);
             $('#btn_login').prop('disabled', false);
@@ -41,7 +46,7 @@ $('#login').on('submit', function (e) {
                     }
                 }).then(function () {
                     if (data.status == true) {
-                        location.href = BASE_URL + 'home';
+                        location.href = BASE_URL + 'dashboard';
                     }
                 });
             } else {

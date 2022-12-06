@@ -28,26 +28,34 @@ class Function_ctl extends MY_Controller
 
         if (!in_array(false, $arrAccess)) {
             // CURL POST
-            $arrPost['username'] = $username;
+            $arrPost['email'] = $email;
             $arrPost['password'] = $kata_sandi;
-            $response = curl_post('login', $arrPost, 0);
+            $arrPost['kategori'] = 'web';
+            $response = curl_post('auth/', $arrPost, 0);
             if ($response->status == 200) {
-                $arrSession['lms_staf_id_staf'] = $response->data->id_staf;
-                $arrSession['lms_staf_id_sekolah'] = $response->data->id_sekolah;
-                $arrSession['lms_staf_role'] = $response->data->role;
-                $arrSession['lms_staf_nama'] = $response->data->nama;
-                $arrSession['lms_staf_wali_kelas'] = $response->data->wali_kelas;
-                if ($response->data->wali_kelas == true) {
-                    $arrSession['lms_staf_id_kelas'] = $response->data->id_kelas;
+                $arrSession['workpro_web_api_key'] = $response->data->api_key;
+                $arrSession['workpro_web_server'] = $response->data->server;
+                $arrSession['workpro_web_menu'] = $response->data->akses;
+                if ($response->data->role_akses == 'all') {
+                    $arrSession['workpro_web_akses'] = 'all';
+                } else {
+                    $arrSession['workpro_web_akses'] = $response->data->data_akses;
                 }
-                $arrSession['lms_staf_foto'] = $response->data->foto;
+
+                $arrSession['workpro_web_id_perusahaan'] = $response->data->id_perusahaan;
+                $arrSession['workpro_web_id_karyawan'] = $response->data->id_karyawan;
+                $arrSession['workpro_web_foto'] = $response->data->foto;
+                $arrSession['workpro_web_nama'] = $response->data->nama;
+                $arrSession['workpro_web_email'] = $response->data->email;
+                $arrSession['workpro_web_role'] = $response->data->role;
+                $arrSession['workpro_web_managemen'] = $response->data->managemen;
 
 
                 $this->session->set_userdata($arrSession);
                 $data['status'] = TRUE;
                 $data['alert']['title'] = 'PEMBERITAHUAN';
                 $data['alert']['message'] = $response->message;
-                $data['redirect'] = base_url('home');
+                $data['redirect'] = base_url('dashboard');
                 echo json_encode($data);
                 exit;
             } else {

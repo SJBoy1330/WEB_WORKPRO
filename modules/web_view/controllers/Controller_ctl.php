@@ -16,9 +16,9 @@ class Controller_ctl extends MY_Webview
 		if (!in_array($_SERVER['HTTP_HOST'], ['localhost']) || $server == '') {
 			if ($id_pengumuman != NULL && $id_perusahaan != NULL && $id_karyawan != NULL) {
 				$api_key = get_redis('api_key_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
-				$server = get_redis('server_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
+				$server = (!$server) ? get_redis('server_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan) : $server;
 				$result = curl_get('pengumuman/single/', ['id_pengumuman' => $id_pengumuman], ['api_key: ' . $api_key, 'server: ' . $server]);
-				$mydata['result'] = $result->data;
+				$mydata['result'] = (isset($result->data)) ? $result->data : '';;
 			} else {
 				$mydata['result'] = '';
 			}
@@ -43,10 +43,10 @@ class Controller_ctl extends MY_Webview
 		if (!in_array($_SERVER['HTTP_HOST'], ['localhost']) || $server == '') {
 			if ($id_notifikasi != NULL && $id_perusahaan != NULL && $id_karyawan != NULL) {
 				$api_key = get_redis('api_key_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
-				$server = get_redis('server_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
+				$server = (!$server) ? get_redis('server_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan) : $server;
 				$result = curl_get('notifikasi/', ['id_notifikasi' => $id_notifikasi, 'id_karyawan' => $id_karyawan], ['api_key: ' . $api_key, 'server: ' . $server]);
 				// var_dump($result);die;
-				$mydata['result'] = $result->data;
+				$mydata['result'] = (isset($result->data)) ? $result->data : '';;
 			} else {
 				$mydata['result'] = '';
 			}
@@ -77,17 +77,23 @@ class Controller_ctl extends MY_Webview
 			$api_key = get_redis('api_key_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
 			$server = get_redis('server_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
 			$akses = get_redis('akses_admin_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
-			$result = curl_get('persetujuan/count/', NULL, ['api_key: ' . $api_key, 'server: ' . $server]);
-			$mydata['result'] = $result->data;
+			$result = curl_get('persetujuan/count/', array('tanggal' => date('Y-m-d')), ['api_key: ' . $api_key, 'server: ' . $server]);
+			$mydata['result'] = (isset($result->data)) ? $result->data : '';
+
+			// var_dump($result);die;
+			// var_dump($api_key);die;
 			$mydata['akses'] = json_decode($akses);
 		} else {
 			$mydata['akses'] = '';
 			$mydata['result'] = '';
 		}
+
 		$mydata['api_key'] = $api_key;
 		$mydata['server'] = $server;
 		$mydata['id_perusahaan'] = $id_perusahaan;
 		$mydata['id_karyawan'] = $id_karyawan;
+
+		// var_dump($mydata);die;
 
 		$this->data['content'] = $this->load->view('main_persetujuan', $mydata, TRUE);
 		$this->display();
@@ -158,14 +164,12 @@ class Controller_ctl extends MY_Webview
 			$api_key = get_redis('api_key_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
 			$server = (!$server) ? get_redis('server_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan) : $server;
 			$result = curl_get('jadwal', ['id_karyawan' => $id_karyawan, 'tanggal' => $tanggal], ['api_key: ' . $api_key, 'server: ' . $server, 'akses: ' . true]);
-			$mydata['result'] = $result->data;
+			$mydata['result'] = (isset($result->data)) ? $result->data : '';
 		} else {
 			$mydata['result'] = '';
 		}
 
 
-
-		// var_dump($mydata['result']);die;
 		$mydata['api_key'] = $api_key;
 		$mydata['server'] = $server;
 		$mydata['id_perusahaan'] = $id_perusahaan;
@@ -236,7 +240,7 @@ class Controller_ctl extends MY_Webview
 	{
 		if ($id_bantuan != NULL && $id_perusahaan != NULL && $id_karyawan != NULL) {
 			$result = curl_get('bantuan/', ['id_bantuan' => $id_bantuan, 'kategori' => 'apk']);
-			$mydata['result'] = $result->data;
+			$mydata['result'] = (isset($result->data)) ? $result->data : '';;
 		} else {
 			$mydata['result'] = '';
 		}

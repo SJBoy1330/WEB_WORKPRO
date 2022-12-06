@@ -8,9 +8,12 @@ class Controller_ctl extends MY_Frontend
 		parent::__construct();
 		is_logged_in();
 	}
-
-
 	public function index()
+	{
+		redirect('karyawan/daftar');
+	}
+
+	public function daftar()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Daftar Karyawan';

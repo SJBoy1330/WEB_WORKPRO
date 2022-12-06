@@ -14,9 +14,6 @@ function submit_form(element, id_form, num = 0, loader = 'small', color = '#FFFF
         url: url,
         method: method,
         data: form_data,
-        contentType: false,
-        cache: false,
-        processData: false,
         dataType: 'json',
         beforeSend: function () {
             $('#' + element.id).prop('disabled', true);
@@ -149,4 +146,45 @@ function preview_image(img) {
     // console.log(img);
     $('#preview_preview_image').attr('src', img);
     $('#modal_preview_all').modal('show');
+}
+
+
+function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi = null) {
+    Swal.fire({
+        title: 'KONFIRMASI',
+        html: text,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#FFC83E',
+        cancelButtonColor: '#FDE8B4',
+        confirmButtonText: "Lanjutkan",
+        cancelButtonText: "Batal",
+        reverseButtons: true
+    }).then((result) => {
+        $.ajax({
+            url: BASE_URL + 'persetujuan/approval',
+            data: { id_persetujuan: id_persetujuan, alasan: '', tipe: tipe, persetujuan: status, status: sts_presensi },
+            method: 'POST',
+            cache: false,
+            dataType: 'json',
+            beforeSend: function () {
+                $('#loading_scene').modal('show');
+            },
+            success: function (data) {
+                $('#loading_scene').modal('hide');
+                // console.log(data);
+                Swal.fire({
+                    title: data.title,
+                    html: data.message,
+                    icon: data.icon,
+                    buttonsStyling: !1,
+                    confirmButtonText: 'Ok',
+                    customClass: {
+                        confirmButton: css_button
+                    }
+                });
+                $('#display_tabel_' + tipe).load(BASE_URL + 'dashboard/ tbody#reload_tabel_' + tipe);
+            }
+        });
+    })
 }

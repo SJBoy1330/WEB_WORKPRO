@@ -9,8 +9,11 @@ class Controller_ctl extends MY_Frontend
 		is_logged_in();
 	}
 
-
 	public function index()
+	{
+		redirect('presensi/data');
+	}
+	public function data()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Presensi';
@@ -23,7 +26,7 @@ class Controller_ctl extends MY_Frontend
 		$this->display($this->input->get('routing'));
 	}
 
-	public function izin_kerja()
+	public function izin()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Izin Kerja';

@@ -122,6 +122,30 @@ class MY_Frontend extends MY_Controller
 
         parent::__construct();
 
+        $id_perusahaan = $this->session->userdata('workpro_web_id_perusahaan');
+        $id_karyawan = $this->session->userdata('workpro_web_id_karyawan');
+        if ($_SERVER['HTTP_HOST'] != 'localhost') {
+            $api = get_redis('api_key_' . base64url_decode($id_perusahaan) . '_' . $id_karyawan);
+            if ($api) {
+                $this->api_key = $api;
+            } else {
+                $this->api_key = $this->session->userdata('workpro_web_api_key');
+            }
+        } else {
+            $this->api_key = $this->session->userdata('workpro_web_api_key');
+        }
+        $this->id_perusahaan = $this->session->userdata('workpro_web_id_perusahaan');
+        $this->id_karyawan = $this->session->userdata('workpro_web_id_karyawan');
+        $this->server = $this->session->userdata('workpro_web_server');
+        $this->web_akses = $this->session->userdata('workpro_web_akses');
+        $this->managemen = $this->session->userdata('workpro_web_managemen');
+        if ($this->session->userdata('workpro_web_fcm_key')) {
+            $this->fcm_key = $this->session->userdata('workpro_web_fcm_key');
+        } else {
+            $this->fcm_key = 'NO';
+        }
+
+
         $this->path_theme = 'main_frontend';
         is_logged_in();
     }
@@ -130,6 +154,7 @@ class MY_Frontend extends MY_Controller
 
     function display($routing = null)
     {
+
         if (!isset($routing)) {
             $tpl = $this->path_theme . '/layout_single';
 

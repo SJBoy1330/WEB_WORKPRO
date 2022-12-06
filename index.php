@@ -109,7 +109,7 @@ switch (ENVIRONMENT) {
         break;
 
     case 'production':
-        ini_set('display_errors', 0);
+        ini_set('display_errors', 1);
         break;
 
     default:

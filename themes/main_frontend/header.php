@@ -42,6 +42,11 @@
 <!--begin::Body-->
 
 <body id="kt_body" class="header-extended header-fixed header-tablet-and-mobile-fixed">
+    <?php
+    $menu = $this->session->userdata('workpro_web_menu')->menu;
+    $sub_menu = $this->session->userdata('workpro_web_menu')->sub_menu;
+    $detail_sub_menu = $this->session->userdata('workpro_web_menu')->detail_sub_menu;
+    ?>
     <!--begin::Main-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
@@ -72,7 +77,7 @@
                                     </button>
                                     <!--end::Heaeder navs toggle-->
                                     <!--begin::Logo-->
-                                    <a href="<?= base_url('home'); ?>" class="d-flex align-items-center <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>">
+                                    <a class="d-flex align-items-center">
                                         <img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-white.png" class="h-25px h-lg-30px" />
                                     </a>
                                     <!--end::Logo-->
@@ -80,24 +85,53 @@
                                         <!--begin::Header tabs-->
                                         <div class="header-tabs overflow-auto mx-4 ms-lg-10 mb-5 mb-lg-0" id="kt_header_tabs" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_header_navs_wrapper', lg: '#kt_brand_tabs'}">
                                             <ul class="nav flex-nowrap">
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" data-bs-toggle="tab" href="#dashboard">Dashboard</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'perusahaan', $this->uri->segment(2), array())) ?> <?= (set_active($this->uri->segment(1), 'karyawan', $this->uri->segment(2), array('divisi'))) ?> <?= (set_active($this->uri->segment(1), 'jadwal_kerja', $this->uri->segment(2), array('shift', 'tukar_shift', 'hari_libur', 'lembur'))) ?>" data-bs-toggle="tab" href="#master">Master</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'presensi', $this->uri->segment(2), array('izin_kerja'))) ?>" data-bs-toggle="tab" href="#presensi">Presensi</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'manajemen', $this->uri->segment(2), array('prospek', 'kunjungan', 'reimbursement', 'role'))) ?>" data-bs-toggle="tab" href="#managemen">Managemen</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'laporan', $this->uri->segment(2), array('data_karyawan', 'rekap_presensi', 'rekap_reimbursement', 'rekap_kunjungan', 'rekap_prospek', 'rekap_izin_kerja', 'rekap_lembur'))) ?>" data-bs-toggle="tab" href="#laporan">Laporan</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link <?= (set_active($this->uri->segment(1), 'informasi', $this->uri->segment(2), array('bantuan'))) ?>" data-bs-toggle="tab" href="#informasi">Informasi</a>
-                                                </li>
+                                                <?php if ($menu) : ?>
+                                                    <?php foreach ($menu as $row) : ?>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link 
+                                                            <?php if ($row->tipe == 3  || $row->tipe == 1) {
+                                                                echo set_active($this->uri->segment(1), strtolower($row->link), $this->uri->segment(2), array());
+                                                            } else {
+                                                                $fil = 'a' . $row->id_menu;
+                                                                // $arr_sub = [];
+                                                                $last_link = '';
+                                                                $last_link2 = '';
+                                                                $arr_active2 = [];
+                                                                if (isset($sub_menu->$fil)) {
+                                                                    foreach ($sub_menu->$fil as $keyval) {
+                                                                        if ($keyval->tipe == 2) {
+                                                                            if ($last_link != $keyval->link) {
+                                                                                $fil3 = 'a' . $keyval->id_sub_menu;
+                                                                                $arr_active = [];
+                                                                                if (isset($detail_sub_menu->$fil3)) {
+                                                                                    foreach ($detail_sub_menu->$fil3 as $kv) {
+                                                                                        $ac = my_explode($kv->link, "/", 1);
+                                                                                        $arr_active[] = $ac;
+                                                                                    }
+                                                                                }
+                                                                                echo (set_active($this->uri->segment(1), strtolower($keyval->link), $this->uri->segment(2), $arr_active));
+                                                                            }
+                                                                            $last_link = $keyval->link;
+                                                                        } else {
+                                                                            if ($last_link2 != $keyval->link) {
+                                                                                $arr_active2 = [];
+                                                                            }
+                                                                            $posisi = strpos($keyval->link, "/");
+                                                                            $ac = my_explode($keyval->link, "/", 1);
+                                                                            $arr_active2[] = $ac;
+                                                                            if ($last_link2 != $keyval->link) {
+                                                                                echo (set_active($this->uri->segment(1), strtolower($row->link), $this->uri->segment(2), $arr_active2));
+                                                                            }
+
+                                                                            $last_link2 = $keyval->link;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            } ?>
+                                                            " <?php if ($row->tipe == 1 || $row->tipe == 3) : ?>href="<?= base_url($row->link); ?>" <?php else : ?>data-bs-toggle="tab" href="<?= '#' . $row->link; ?>" <?php endif; ?>><?= $row->nama; ?></a>
+                                                        </li>
+                                                    <?php endforeach; ?>
+                                                <?php endif; ?>
                                             </ul>
                                         </div>
                                         <!--end::Header tabs-->
@@ -112,13 +146,13 @@
                                         <div class="btn btn-flex align-items-center bg-hover-white bg-hover-opacity-10 py-2 px-2 px-md-3" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
                                             <!--begin::Name-->
                                             <div class="d-none d-md-flex flex-column align-items-end justify-content-center me-2 me-md-4">
-                                                <span class="text-white fs-6 fw-bolder lh-1 mb-1">Superadmn</span>
-                                                <span class="text-white opacity-75 fs-6 fw-bold lh-1">HRD</span>
+                                                <span class="text-white fs-6 fw-bolder lh-1 mb-1"><?= tampil_text($this->session->userdata('workpro_web_nama'), 17) ?></span>
+                                                <span class="text-white opacity-75 fs-6 fw-bold lh-1"><?= tampil_text($this->session->userdata('workpro_web_role'), 17) ?></span>
                                             </div>
                                             <!--end::Name-->
                                             <!--begin::Symbol-->
                                             <div class="symbol symbol-30px symbol-md-40px">
-                                                <img src="<?= base_url(); ?>assets/media/avatars/150-26.jpg" alt="image" />
+                                                <img src="<?= $this->session->userdata('workpro_web_foto') ?>" alt="image" />
                                             </div>
                                             <!--end::Symbol-->
                                         </div>
@@ -130,13 +164,13 @@
                                                 <div class="menu-content d-flex align-items-center px-3">
                                                     <!--begin::Avatar-->
                                                     <div class="symbol symbol-50px me-5">
-                                                        <img alt="Logo" src="<?= base_url(); ?>assets/media/avatars/150-26.jpg" />
+                                                        <img alt="Logo" src="<?= $this->session->userdata('workpro_web_foto') ?>" />
                                                     </div>
                                                     <!--end::Avatar-->
                                                     <!--begin::Username-->
                                                     <div class="d-flex flex-column">
-                                                        <div class="fw-bolder d-flex align-items-center fs-5">Max Smith</div>
-                                                        <a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+                                                        <div class="fw-bolder d-flex align-items-center fs-5"><?= tampil_text($this->session->userdata('workpro_web_nama'), 17) ?></div>
+                                                        <a href="#" class="fw-bold text-muted text-hover-primary fs-7"><?= tampil_text($this->session->userdata('workpro_web_email'), 17) ?></a>
                                                     </div>
                                                     <!--end::Username-->
                                                 </div>
@@ -147,12 +181,12 @@
                                             <!--end::Menu separator-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="<?= base_url('profil');?>" class="menu-link px-5">Profil</a>
+                                                <a href="<?= base_url('profil'); ?>" class="menu-link px-5">Profil</a>
                                             </div>
                                             <!--end::Menu item-->
                                             <!--begin::Menu item-->
                                             <div class="menu-item px-5">
-                                                <a href="#" class="menu-link px-5">Keluar</a>
+                                                <a href="<?= base_url('auth/logout'); ?>" class="menu-link px-5">Keluar</a>
                                             </div>
                                             <!--end::Menu item-->
                                         </div>
@@ -177,270 +211,122 @@
                             <div class="d-lg-flex flex-column justify-content-lg-center w-100" id="kt_header_navs_wrapper">
                                 <!--begin::Header tab content-->
                                 <div class="tab-content" data-kt-scroll="true" data-kt-scroll-activate="{default: true, lg: false}" data-kt-scroll-height="auto" data-kt-scroll-offset="70px">
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'home', $this->uri->segment(2), array())) ?>" id="dashboard">
-                                        <!--begin::Menu wrapper-->
-                                        <div class="header-menu flex-column align-items-stretch flex-lg-row">
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <a href="#pantauan" class="menu-title" data-kt-scroll-toggle>Pantauan</a>
-                                                    </span>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <a href="#karyawan" class="menu-title" data-kt-scroll-toggle>Karyawan</a>
-                                                    </span>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <a href="#kalender" class="menu-title" data-kt-scroll-toggle>Kalender</a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::Menu wrapper-->
-                                    </div>
-                                    <!--end::Tab panel-->
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane  <?= (set_active_tab($this->uri->segment(1), 'jadwal_kerja', $this->uri->segment(2), array('shift', 'tukar_shift', 'hari_libur', 'lembur'))) ?> <?= (set_active_tab($this->uri->segment(1), 'karyawan', $this->uri->segment(2), array('divisi'))) ?> <?= (set_active_tab($this->uri->segment(1), 'perusahaan', $this->uri->segment(2), array('lokasi_presensi'))) ?>" id="master">
-                                        <!--begin::Menu wrapper-->
-                                        <div class="header-menu flex-column align-items-stretch flex-lg-row">
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
-                                                <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <span class="menu-title">Perusahaan</span>
-                                                        <span class="menu-arrow"></span>
-                                                    </span>
-                                                    <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
-                                                        <div class="menu-item">
-                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-building fs-2"></i>
-                                                                </span>
-                                                                <span class="menu-title">Profil Perusahaan</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="menu-item">
-                                                            <a class="menu-link py-3" href="<?= base_url('perusahaan/lokasi_presensi') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-map-location-dot fs-2"></i>
-                                                                </span>
-                                                                <span class="menu-title">Cabang</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <span class="menu-title">Karyawan</span>
-                                                        <span class="menu-arrow"></span>
-                                                    </span>
-                                                    <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
-                                                        <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('karyawan') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-user-tie fs-3"></i>
-                                                                </span>
-                                                                <span class="menu-title">Daftar Karyawan</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('karyawan/divisi') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-group-arrows-rotate fs-3"></i>
-                                                                </span>
-                                                                <span class="menu-title">Divisi</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <span class="menu-title">Jadwal</span>
-                                                        <span class="menu-arrow"></span>
-                                                    </span>
-                                                    <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
-                                                        <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-draw-polygon fs-3"></i>
-                                                                </span>
-                                                                <span class="menu-title">Pola Kerja</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/shift') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-calendar-circle-user fs-3"></i>
-                                                                </span>
-                                                                <span class="menu-title">Shift</span>
-                                                            </a>
-                                                        </div>
+                                    <?php if ($menu) : ?>
+                                        <?php foreach ($menu as $row) : ?>
+                                            <!--begin::Tab panel-->
+                                            <div class="tab-pane 
+                                            <?php if ($row->tipe == 3  || $row->tipe == 1) {
+                                                echo set_active_tab($this->uri->segment(1), strtolower($row->link), $this->uri->segment(2), array());
+                                            } else {
+                                                $fil = 'a' . $row->id_menu;
+                                                // $arr_sub = [];
+                                                $last_link = '';
+                                                $last_link2 = '';
+                                                $arr_active2 = [];
+                                                if (isset($sub_menu->$fil)) {
+                                                    foreach ($sub_menu->$fil as $keyval) {
+                                                        if ($keyval->tipe == 2) {
+                                                            if ($last_link != $keyval->link) {
+                                                                $fil3 = 'a' . $keyval->id_sub_menu;
+                                                                $arr_active = [];
+                                                                if (isset($detail_sub_menu->$fil3)) {
+                                                                    foreach ($detail_sub_menu->$fil3 as $kv) {
+                                                                        $ac = my_explode($kv->link, "/", 1);
+                                                                        $arr_active[] = $ac;
+                                                                    }
+                                                                }
+                                                                echo (set_active_tab($this->uri->segment(1), strtolower($keyval->link), $this->uri->segment(2), $arr_active));
+                                                            }
+                                                            $last_link = $keyval->link;
+                                                        } else {
+                                                            if ($last_link2 != $keyval->link) {
+                                                                $arr_active2 = [];
+                                                            }
+                                                            $ac = my_explode($keyval->link, "/", 1);
+                                                            $arr_active2[] = $ac;
+                                                            if ($last_link2 != $keyval->link) {
+                                                                echo (set_active_tab($this->uri->segment(1), strtolower($row->link), $this->uri->segment(2), $arr_active2));
+                                                            }
 
-                                                        <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/tukar_shift') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-people-arrows fs-3"></i>
-                                                                </span>
-                                                                <span class="menu-title">Tukar Shift</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/hari_libur') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-calendar-day fs-3"></i>
-                                                                </span>
-                                                                <span class="menu-title">Hari Libur</span>
-                                                            </a>
-                                                        </div>
-                                                        <div class="menu-item menu-lg-down-accordion">
-                                                            <a class="menu-link py-3" href="<?= base_url('jadwal_kerja/lembur') ?>">
-                                                                <span class="menu-icon">
-                                                                    <i class="fa-duotone fa-timer fs-3"></i>
-                                                                </span>
-                                                                <span class="menu-title">Lembur</span>
-                                                            </a>
-                                                        </div>
+                                                            $last_link2 = $keyval->link;
+                                                        }
+                                                    }
+                                                }
+                                            } ?>
+                                            " id="<?= $row->link; ?>">
+                                                <!--begin::Menu wrapper-->
+                                                <div class="header-menu flex-column align-items-stretch flex-lg-row">
+                                                    <!--begin::Menu-->
+                                                    <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
+                                                        <?php $field = 'a' . $row->id_menu;
+                                                        if (isset($sub_menu->$field)) : ?>
+                                                            <?php foreach ($sub_menu->$field as $key) : ?>
+
+                                                                <?php if ($key->tipe == 2) : ?>
+                                                                    <div data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" class="menu-item menu-lg-down-accordion me-lg-1">
+                                                                        <?php
+                                                                        $domain = my_explode($key->link, '/', 0);
+
+                                                                        $fil3 = 'a' . $key->id_sub_menu;
+                                                                        $arr_active = [];
+                                                                        if (isset($detail_sub_menu->$fil3)) {
+                                                                            foreach ($detail_sub_menu->$fil3 as $kv) {
+                                                                                $ac = my_explode($kv->link, '/', 1);
+                                                                                $arr_active[] = $ac;
+                                                                            }
+                                                                        }
+                                                                        ?>
+                                                                        <span class="menu-link py-3 <?= set_active($this->uri->segment(1), strtolower($domain), $this->uri->segment(2), $arr_active); ?>">
+                                                                            <span class="menu-title"><?= $key->nama; ?></span>
+                                                                            <span class="menu-arrow"></span>
+                                                                        </span>
+                                                                        <?php $fiel = 'a' . $key->id_sub_menu;
+                                                                        if (isset($detail_sub_menu->$fiel)) : ?>
+                                                                            <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
+                                                                                <?php foreach ($detail_sub_menu->$fiel as $dtl) : ?>
+                                                                                    <?php
+                                                                                    $link = [];
+                                                                                    $link[] = my_explode($dtl->link, '/', 1);
+                                                                                    ?>
+                                                                                    <div class="menu-item">
+                                                                                        <a class="menu-link py-3 <?= set_active($this->uri->segment(1), strtolower($domain), $this->uri->segment(2), $link); ?>" href="<?= base_url($dtl->link) ?>">
+                                                                                            <span class="menu-icon">
+                                                                                                <?= icon_header($dtl->icon); ?>
+                                                                                            </span>
+                                                                                            <span class="menu-title"><?= $dtl->nama; ?></span>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                <?php endforeach; ?>
+                                                                            </div>
+                                                                        <?php endif; ?>
+                                                                    </div>
+                                                                <?php else : ?>
+                                                                    <div class="menu-item menu-lg-down-accordion me-lg-1">
+                                                                        <?php
+                                                                        $ck = my_explode($key->link, '/');
+                                                                        $link = [];
+                                                                        if (is_array($ck)) {
+                                                                            $dom = $ck[0];
+                                                                            $link[] = $ck[1];
+                                                                        } else {
+                                                                            $dom = $key->link;
+                                                                        }
+                                                                        ?>
+                                                                        <a class="menu-link py-3 <?= set_active($this->uri->segment(1), strtolower($dom), $this->uri->segment(2), $link); ?>" <?php if ($key->tipe == 1) : ?> href="<?= base_url($key->link) ?>" <?php else : ?>href="<?= $key->link; ?>" data-kt-scroll-toggle <?php endif ?>>
+                                                                            <span class="menu-title"><?= $key->nama; ?></span>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            <?php endforeach; ?>
+                                                        <?php endif; ?>
                                                     </div>
+                                                    <!--end::Menu-->
                                                 </div>
+                                                <!--end::Menu wrapper-->
                                             </div>
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::Menu wrapper-->
-                                    </div>
-                                    <!--end::Tab panel-->
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'presensi', $this->uri->segment(2), array('izin_kerja'))) ?>" id="presensi">
-                                        <!--begin::Menu wrapper-->
-                                        <div class="header-menu flex-column align-items-stretch flex-lg-row">
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('presensi') ?>">
-                                                        <span class="menu-title">Data Presensi</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('presensi/izin_kerja') ?>">
-                                                        <span class="menu-title">Izin Kerja</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::Menu wrapper-->
-                                    </div>
-                                    <!--end::Tab panel-->
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'manajemen', $this->uri->segment(2), array('prospek', 'kunjungan', 'reimbursement', 'role'))) ?>" id="managemen">
-                                        <!--begin::Menu wrapper-->
-                                        <div class="header-menu flex-column align-items-stretch flex-lg-row">
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen') ?>">
-                                                        <span class="menu-title">Prospek</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/kunjungan') ?>">
-                                                        <span class="menu-title">Kunjungan</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/reimbursement') ?>">
-                                                        <span class="menu-title">Reimbursement</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('manajemen/role') ?>">
-                                                        <span class="menu-title">Role</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::Menu wrapper-->
-                                    </div>
-                                    <!--end::Tab panel-->
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'laporan', $this->uri->segment(2), array('data_karyawan', 'rekap_presensi', 'rekap_reimbursement', 'rekap_kunjungan', 'rekap_prospek', 'rekap_izin_kerja', 'rekap_lembur'))) ?>" id="laporan">
-                                        <!--begin::Menu wrapper-->
-                                        <div class="header-menu flex-column align-items-stretch flex-lg-row">
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/data_karyawan') ?>">
-                                                        <span class="menu-title">Data Karyawan</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_presensi') ?>">
-                                                        <span class="menu-title">Rekap Presensi</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_reimbursement') ?>">
-                                                        <span class="menu-title">Rekap Reimbursement</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_kunjungan') ?>">
-                                                        <span class="menu-title">Rekap Kunjungan</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_prospek') ?>">
-                                                        <span class="menu-title">Rekap Prospek</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_izin_kerja') ?>">
-                                                        <span class="menu-title">Rekap Izin Kerja</span>
-                                                    </a>
-                                                </div>
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('laporan/rekap_lembur') ?>">
-                                                        <span class="menu-title">Rekap Lembur</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::Menu wrapper-->
-                                    </div>
-                                    <!--end::Tab panel-->
-                                    <!--begin::Tab panel-->
-                                    <div class="tab-pane <?= (set_active_tab($this->uri->segment(1), 'informasi', $this->uri->segment(2), array('bantuan'))) ?>" id="informasi">
-                                        <!--begin::Menu wrapper-->
-                                        <div class="header-menu flex-column align-items-stretch flex-lg-row">
-                                            <!--begin::Menu-->
-                                            <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('informasi') ?>">
-                                                        <span class="menu-title">Pengumuman</span>
-                                                    </a>
-                                                </div>
-                                                <!-- <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <span class="menu-link py-3">
-                                                        <span class="menu-title">Broadcast</span>
-                                                    </span>
-                                                </div> -->
-                                                <div class="menu-item menu-lg-down-accordion me-lg-1">
-                                                    <a class="menu-link py-3" href="<?= base_url('informasi/bantuan') ?>">
-                                                        <span class="menu-title">Bantuan</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!--end::Menu-->
-                                        </div>
-                                        <!--end::Menu wrapper-->
-                                    </div>
-                                    <!--end::Tab panel-->
+                                            <!--end::Tab panel-->
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
                                 </div>
                                 <!--end::Header tab content-->
                             </div>

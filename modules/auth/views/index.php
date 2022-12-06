@@ -1719,11 +1719,9 @@ License: For each use you must have a valid license purchased only from above li
 
 <script type="text/javascript">
     var BASE_URL = '<?= base_url(); ?>';
+    var css_button = 'btn btn-block btn-md';
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-<script src="<?= base_url() ?>assets/vendor/evo-calendar/js/evo-calendar.min.js"></script>
-
-
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>
 <script src="<?= base_url('assets/js/alert/scriptalert.js?v=' . date('YmdHis')) ?>"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/page/auth/auth.js'); ?>"></script>

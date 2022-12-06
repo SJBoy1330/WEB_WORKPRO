@@ -125,19 +125,6 @@ function breadcrumb($parent, $arrchild = array())
   return $str;
 }
 
-function set_active_tab($uri1, $controller, $uri2 = "", $arrtarget = array())
-{
-
-  if ($uri1 == $controller) {
-    if ($uri2 != "") {
-      if (in_array($uri2, $arrtarget)) {
-        return "active show";
-      }
-    } else {
-      return "active show";
-    }
-  }
-}
 function setmenuactive($current_url, $class)
 {
   if ($current_url == $class) {
@@ -391,28 +378,41 @@ function hash_my_password($id_sekolah, $username, $password)
 function is_logged_in()
 {
 
-  $obj = &get_instance();
+  // $obj = &get_instance();
 
-  $base_url = $obj->config->item('base_url');
+  // $base_url = $obj->config->item('base_url');
 
-  $ci = get_instance();
+  // $ci = get_instance();
 
-  if (!$ci->session->userdata('workpro_web_id_perusahaan') || !$ci->session->userdata('workpro_web_id_karyawan') || !$ci->session->userdata('workpro_web_akses') || !$ci->session->userdata('workpro_web_menu') || !$ci->session->userdata('workpro_web_api_key') || !$ci->session->userdata('workpro_web_server') || !$ci->session->userdata('workpro_web_foto') || !$ci->session->userdata('workpro_web_nama') || !$ci->session->userdata('workpro_web_email') || !$ci->session->userdata('workpro_web_managemen') || !$ci->session->userdata('workpro_web_role')) {
-    redirect('auth');
-  }
+  // if ($ci->session->userdata('lms_staf_id_staf')) {
+  //   if (!in_array($ci->session->userdata('lms_staf_role'), ['staf', 'keuangan', 'admin', 'operator'])) {
+  //     redirect('auth');
+  //   }
+  // } else {
+  //   redirect('auth');
+  // }
 }
 
 
 
-function curl_post($url, $fields = array(), $files = NULL, $header = array())
+function curl_post($url, $fields = array(), $files = NULL,$header=array())
 {
   $ch = curl_init();
   $CI = &get_instance();
   $postvars = http_build_query($fields);
   if ($files != NULL) {
     foreach ($files as $file => $value) {
-      $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
-      $postfile[$file] = $cfile;
+      if ($multiple == FALSE) {
+        $cfile = new CURLFile($value['tmp_name'], $value['type'], $value['name']);
+        $postfile[$file] = $cfile;
+      } else {
+        $postfile[$file] = curl_file_create(
+          $value['tmp_name'][$i],
+          $value['type'][$i],
+          $value['name'][$i]
+        );
+        $i++;
+      }
     }
 
     $postvars = (object) array_merge((array) $fields, (array) $postfile);
@@ -430,31 +430,26 @@ function curl_post($url, $fields = array(), $files = NULL, $header = array())
   curl_close($ch);
   return json_decode($response);
 }
-function curl_get($url, $fields = array(), $header = array())
+function curl_get($url, $fields = array(),$header = array())
 {
-  if (count($fields) > 0) {
     $request_url = API_URL($url) . "?" . http_build_query($fields);
-  } else {
-    $request_url = API_URL($url);
-  }
+    $ch = curl_init($request_url);
+    // var_dump($header);die;
 
-  $ch = curl_init($request_url);
-  // var_dump($header);die;
-
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-  curl_setopt($ch, CURLOPT_POST, 0);                //0 for a get request
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
-  curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-  $response = curl_exec($ch);
-  curl_close($ch);
-  return json_decode($response);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_POST, 0);                //0 for a get request
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    return json_decode($response);
 }
 
 function API_URL($path = null)
 {
-  $uri = 'http://localhost/git_workpro/workpro_api/';
+  $uri = 'http://45.64.97.26/workpro_api/';
   if ($path != null) {
     $uri .= $path;
   }
@@ -768,48 +763,24 @@ function get_jarak($lat1, $lon1, $lat2, $lon2)
 function get_redis($keys = '')
 {
 
-  $obj = &get_instance();
+    $obj = &get_instance();
 
-  $ci = get_instance();
+    $ci = get_instance();
 
-  $arrKeys =  $ci->oitocredis->getkeys($keys);
-  $i = 1;
-  foreach ($arrKeys as $valkey) {
-    $arrTmp[] = $ci->oitocredis->getdatastring($valkey);
-    $i++;
-  }
+    $arrKeys =  $ci->oitocredis->getkeys($keys);
+    $i = 1;
+    foreach ($arrKeys as $valkey) {
+        $arrTmp[] = $ci->oitocredis->getdatastring($valkey);
+        $i++;
+    }
 
-  return $arrTmp[0];
+    return $arrTmp[0];
 }
 
 function re_print_redis($nama, $value)
 {
-  $ci = get_instance();
-  $ci->oitocredis->appenddata($nama, $value, 99999999999999);
+   $ci = get_instance();
+  $this->oitocredis->appenddata($nama, $value, 99999999999999);
 }
 
 
-function icon_header($var = 'fa-building')
-{
-  $html = ' <i class="fa-duotone ' . $var . ' fs-2"></i>';
-
-  return $html;
-}
-
-
-function my_explode($var, $belah, $index = '')
-{
-  $pos = strpos($var, $belah);
-  if ($pos) {
-    $c = explode($belah, $var);
-    if ($index == '') {
-      $ac = $c;
-    } else {
-      $ac = $c[$index];
-    }
-  } else {
-    $ac = $var;
-  }
-
-  return $ac;
-}

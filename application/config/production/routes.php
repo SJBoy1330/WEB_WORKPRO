@@ -116,11 +116,17 @@ $route['func_auth/(:any)'] = 'auth/function_ctl/$1';
 $route['func_auth/(:any)/(:any)'] = 'auth/function_ctl/$1/$2';
 
 
-$route['home']  = 'home/controller_ctl';
+$route['dashboard']  = 'dashboard/controller_ctl';
 
-$route['home/(:any)'] = 'home/controller_ctl/$1';
+$route['dashboard/(:any)'] = 'dashboard/controller_ctl/$1';
 
-$route['home/(:any)/(:any)'] = 'home/controller_ctl/$1/$2';
+$route['dashboard/(:any)/(:any)'] = 'dashboard/controller_ctl/$1/$2';
+
+$route['profil']  = 'profil/controller_ctl';
+
+$route['profil/(:any)'] = 'profil/controller_ctl/$1';
+
+$route['profil/(:any)/(:any)'] = 'profil/controller_ctl/$1/$2';
 
 
 $route['perusahaan']  = 'perusahaan/controller_ctl';
@@ -137,11 +143,11 @@ $route['karyawan/(:any)'] = 'karyawan/controller_ctl/$1';
 $route['karyawan/(:any)/(:any)'] = 'karyawan/controller_ctl/$1/$2';
 
 
-$route['jadwal_kerja']  = 'jadwal_kerja/controller_ctl';
+$route['jadwal']  = 'jadwal/controller_ctl';
 
-$route['jadwal_kerja/(:any)'] = 'jadwal_kerja/controller_ctl/$1';
+$route['jadwal/(:any)'] = 'jadwal/controller_ctl/$1';
 
-$route['jadwal_kerja/(:any)/(:any)'] = 'jadwal_kerja/controller_ctl/$1/$2';
+$route['jadwal/(:any)/(:any)'] = 'jadwal/controller_ctl/$1/$2';
 
 
 $route['presensi']  = 'presensi/controller_ctl';
