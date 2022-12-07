@@ -188,3 +188,70 @@ function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi =
         });
     })
 }
+
+
+function checked_action(element, display, pengganti = null, child = 'child_checkbox') {
+    var display = document.getElementById(display);
+    if (pengganti != null) {
+        var pengganti = document.getElementById(pengganti);
+    }
+    if (element.checked) {
+        display.classList.remove('d-none');
+        if (pengganti != null) {
+            pengganti.classList.add('d-none');
+        }
+        $('.' + child).prop('checked', true);
+    } else {
+        display.classList.add('d-none');
+        if (pengganti != null) {
+            pengganti.classList.remove('d-none');
+        }
+        $('.' + child).prop('checked', false);
+    }
+
+
+}
+
+
+function child_action(element, id_main_checkbox, display, pengganti = null, child = 'child_checkbox') {
+    var display = document.getElementById(display);
+    if (pengganti != null) {
+        var pengganti = document.getElementById(pengganti);
+    }
+    var total = $('.' + child).length;
+    var total_checked = $('input.' + child + ':checked').length;
+    // console.log(total, total_checked);
+    // console.log(cek);
+    if (element.checked) {
+        if (total_checked > 0) {
+            display.classList.remove('d-none');
+            if (pengganti != null) {
+                pengganti.classList.add('d-none');
+            }
+            if (total_checked == total) {
+                $('#' + id_main_checkbox).prop('checked', true);
+            } else {
+                $('#' + id_main_checkbox).prop('checked', false);
+            }
+        } else {
+            display.classList.add('d-none');
+            if (pengganti != null) {
+                pengganti.classList.remove('d-none');
+            }
+        }
+
+    } else {
+        if (total_checked > 0) {
+            display.classList.remove('d-none');
+            if (total_checked == total) {
+                $('#' + id_main_checkbox).prop('checked', true);
+            } else {
+                $('#' + id_main_checkbox).prop('checked', false);
+            }
+        } else {
+            display.classList.add('d-none');
+        }
+    }
+
+
+}

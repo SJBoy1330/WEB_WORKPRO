@@ -111,65 +111,65 @@ $(function () {
 
 });
 
-$(function () {
-    $("#kt_table_tukar_shift").on("click", function () {
-        $("#delete_tukar_shift").toggle($(this).find(".deletebox_tukar_shift:checked").length > 0);
-        if ($(this).find(".deletebox_tukar_shift:checked").length < ($(this).find(".deletebox_tukar_shift").length)) {
-            $('input[name="maincheckbox_tukar_shift"]').prop('checked', false);
-        } else if ($(this).find(".deletebox_tukar_shift:checked").length = ($(this).find(".deletebox_tukar_shift").length)) {
-            $('input[name="maincheckbox_tukar_shift"]').prop('checked', true);
-        }
-    })
-    $('input[name="maincheckbox_tukar_shift"]').on("click", function () {
-        $('.deletebox_tukar_shift').prop('checked', this.checked);
-    });
+// $(function () {
+//     $("#kt_table_tukar_shift").on("click", function () {
+//         $("#delete_tukar_shift").toggle($(this).find(".deletebox_tukar_shift:checked").length > 0);
+//         if ($(this).find(".deletebox_tukar_shift:checked").length < ($(this).find(".deletebox_tukar_shift").length)) {
+//             $('input[name="maincheckbox_tukar_shift"]').prop('checked', false);
+//         } else if ($(this).find(".deletebox_tukar_shift:checked").length = ($(this).find(".deletebox_tukar_shift").length)) {
+//             $('input[name="maincheckbox_tukar_shift"]').prop('checked', true);
+//         }
+//     })
+//     $('input[name="maincheckbox_tukar_shift"]').on("click", function () {
+//         $('.deletebox_tukar_shift').prop('checked', this.checked);
+//     });
 
-});
+// });
 
-$(function () {
-    $("#kt_table_reimbursement").on("click", function () {
-        $("#delete_reimbursement").toggle($(this).find(".deletebox_reimbursement:checked").length > 0);
-        if ($(this).find(".deletebox_reimbursement:checked").length < ($(this).find(".deletebox_reimbursement").length)) {
-            $('input[name="maincheckbox_reimbursement"]').prop('checked', false);
-        } else if ($(this).find(".deletebox_reimbursement:checked").length = ($(this).find(".deletebox_reimbursement").length)) {
-            $('input[name="maincheckbox_reimbursement"]').prop('checked', true);
-        }
-    })
-    $('input[name="maincheckbox_reimbursement"]').on("click", function () {
-        $('.deletebox_reimbursement').prop('checked', this.checked);
-    });
+// $(function () {
+//     $("#kt_table_reimbursement").on("click", function () {
+//         $("#delete_reimbursement").toggle($(this).find(".deletebox_reimbursement:checked").length > 0);
+//         if ($(this).find(".deletebox_reimbursement:checked").length < ($(this).find(".deletebox_reimbursement").length)) {
+//             $('input[name="maincheckbox_reimbursement"]').prop('checked', false);
+//         } else if ($(this).find(".deletebox_reimbursement:checked").length = ($(this).find(".deletebox_reimbursement").length)) {
+//             $('input[name="maincheckbox_reimbursement"]').prop('checked', true);
+//         }
+//     })
+//     $('input[name="maincheckbox_reimbursement"]').on("click", function () {
+//         $('.deletebox_reimbursement').prop('checked', this.checked);
+//     });
 
-});
+// });
 
-$(function () {
-    $("#kt_table_lembur").on("click", function () {
-        $("#delete_lembur").toggle($(this).find(".deletebox_lembur:checked").length > 0);
-        if ($(this).find(".deletebox_lembur:checked").length < ($(this).find(".deletebox_lembur").length)) {
-            $('input[name="maincheckbox_lembur"]').prop('checked', false);
-        } else if ($(this).find(".deletebox_lembur:checked").length = ($(this).find(".deletebox_lembur").length)) {
-            $('input[name="maincheckbox_lembur"]').prop('checked', true);
-        }
-    })
-    $('input[name="maincheckbox_lembur"]').on("click", function () {
-        $('.deletebox_lembur').prop('checked', this.checked);
-    });
+// $(function () {
+//     $("#kt_table_lembur").on("click", function () {
+//         $("#delete_lembur").toggle($(this).find(".deletebox_lembur:checked").length > 0);
+//         if ($(this).find(".deletebox_lembur:checked").length < ($(this).find(".deletebox_lembur").length)) {
+//             $('input[name="maincheckbox_lembur"]').prop('checked', false);
+//         } else if ($(this).find(".deletebox_lembur:checked").length = ($(this).find(".deletebox_lembur").length)) {
+//             $('input[name="maincheckbox_lembur"]').prop('checked', true);
+//         }
+//     })
+//     $('input[name="maincheckbox_lembur"]').on("click", function () {
+//         $('.deletebox_lembur').prop('checked', this.checked);
+//     });
 
-});
+// });
 
-$(function () {
-    $("#kt_table_izin_kerja").on("click", function () {
-        $("#delete_izin_kerja").toggle($(this).find(".deletebox_izin_kerja:checked").length > 0);
-        if ($(this).find(".deletebox_izin_kerja:checked").length < ($(this).find(".deletebox_izin_kerja").length)) {
-            $('input[name="maincheckbox_izin_kerja"]').prop('checked', false);
-        } else if ($(this).find(".deletebox_izin_kerja:checked").length = ($(this).find(".deletebox_izin_kerja").length)) {
-            $('input[name="maincheckbox_izin_kerja"]').prop('checked', true);
-        }
-    })
-    $('input[name="maincheckbox_izin_kerja"]').on("click", function () {
-        $('.deletebox_izin_kerja').prop('checked', this.checked);
-    });
+// $(function () {
+//     $("#kt_table_izin_kerja").on("click", function () {
+//         $("#delete_izin_kerja").toggle($(this).find(".deletebox_izin_kerja:checked").length > 0);
+//         if ($(this).find(".deletebox_izin_kerja:checked").length < ($(this).find(".deletebox_izin_kerja").length)) {
+//             $('input[name="maincheckbox_izin_kerja"]').prop('checked', false);
+//         } else if ($(this).find(".deletebox_izin_kerja:checked").length = ($(this).find(".deletebox_izin_kerja").length)) {
+//             $('input[name="maincheckbox_izin_kerja"]').prop('checked', true);
+//         }
+//     })
+//     $('input[name="maincheckbox_izin_kerja"]').on("click", function () {
+//         $('.deletebox_izin_kerja').prop('checked', this.checked);
+//     });
 
-});
+// });
 
 
 

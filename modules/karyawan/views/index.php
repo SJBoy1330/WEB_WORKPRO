@@ -18,13 +18,14 @@
                     <div class="me-2">
                         <!--begin::Menu-->
                         <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                        <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                        <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->Filter</a>
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+                            <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->Filter
+                        </a>
                         <!--begin::Menu 1-->
                         <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61bc33c4ee0dc">
                             <!--begin::Header-->
@@ -108,7 +109,7 @@
                         </span>
                         Tambah
                     </button>
-                    <button type="button" class="btn btn-sm btn-light-danger" id="deleteall" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-light-danger d-none" id="display_hide">
                         <span class="svg-icon svg-icon-2 me-0">
                             <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
                         </span>
@@ -127,7 +128,7 @@
                             <tr class="fw-bolder text-muted bg-light">
                                 <th class="ps-4 w-25px rounded-start">
                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                    <input class="form-check-input" name="maincheckbox" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_karyawan .form-check-input" value="1" />
+                                        <input class="form-check-input" name="main_checkbox" onchange="checked_action(this,'display_hide')" id="main_checkbox" type="checkbox" value="1" />
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
@@ -145,7 +146,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                        <input class="form-check-input child_checkbox" onchange="child_action(this,'main_checkbox')" type="checkbox" value="1" />
                                     </div>
                                 </td>
                                 <td>
@@ -157,14 +158,62 @@
                                     <div class="d-flex align-items-center">
                                         <!--begin::Avatar-->
                                         <div class="symbol symbol-45px me-5">
-                                            <img alt="Pic" src="<?=base_url()?>assets/media/avatars/150-1.jpg">
+                                            <img alt="Pic" src="<?= base_url() ?>assets/media/avatars/150-1.jpg">
                                         </div>
                                         <!--end::Avatar-->
                                         <!--begin::Name-->
                                         <div class="d-flex justify-content-start flex-column">
                                             <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Superadmin</a>
                                             <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
-                                            <span class="text-dark">Email</span>: superadmin@gmail.com</a>
+                                                <span class="text-dark">Email</span>: superadmin@gmail.com</a>
+                                        </div>
+                                        <!--end::Name-->
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="text-dark fw-bolder d-block fs-6">Bussiness Superadmin</span>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-light">Rekap Presensi</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-light">Rekap Jadwal</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-light">Rekap Reimbursment</a>
+                                </td>
+                                <td class="text-end">
+                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                        <i class="fa-duotone fa-pencil fs-5"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                        <i class="fa-duotone fa-trash fs-5"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                        <input class="form-check-input child_checkbox" onchange="child_action(this,'main_checkbox','display_hide')" type="checkbox" value="1" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start flex-column">
+                                        <span class="text-dark fw-bolder fs-6">1</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <!--begin::Avatar-->
+                                        <div class="symbol symbol-45px me-5">
+                                            <img alt="Pic" src="<?= base_url() ?>assets/media/avatars/150-1.jpg">
+                                        </div>
+                                        <!--end::Avatar-->
+                                        <!--begin::Name-->
+                                        <div class="d-flex justify-content-start flex-column">
+                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Superadmin</a>
+                                            <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
+                                                <span class="text-dark">Email</span>: superadmin@gmail.com</a>
                                         </div>
                                         <!--end::Name-->
                                     </div>
@@ -251,31 +300,35 @@
                 <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-umum')">
-                    <!--end::Input-->
-                    Informasi Umum</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-umum')">
+                        <!--end::Input-->
+                        Informasi Umum
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-ktp')">
-                    <!--end::Input-->
-                    Alamat KTP</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-ktp')">
+                        <!--end::Input-->
+                        Alamat KTP
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-karyawan')">
-                    <!--end::Input-->
-                    Info Kekaryawaan</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-karyawan')">
+                        <!--end::Input-->
+                        Info Kekaryawaan
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-domisili')">
-                    <!--end::Input-->
-                    Alamat Domisili</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-domisili')">
+                        <!--end::Input-->
+                        Alamat Domisili
+                    </label>
                     <!--end::Radio-->
                 </div>
 
@@ -382,7 +435,7 @@
                                         <i class="fa-duotone fa-calendar-days fs-5"></i>
                                     </span>
                                     <!--end::Icon-->
-                                    <input type="date" class="form-control form-control-solid ps-12" placeholder="Masukkan tanggal"/>
+                                    <input type="date" class="form-control form-control-solid ps-12" placeholder="Masukkan tanggal" />
                                 </div>
                             </div>
                         </div>
