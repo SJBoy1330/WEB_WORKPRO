@@ -128,13 +128,13 @@ License: For each use you must have a valid license purchased only from above li
                 <!--begin::Landing hero-->
                 <div class="d-flex flex-column flex-center w-100 min-h-350px min-h-lg-500px px-9">
                     <!--begin::Heading-->
-                    <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
+                    <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20 frame-auth">
                         <!--begin::Title-->
                         <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-7">Solusi Kelola Absensi Karyawan
                             <br />with
                             <span class="text-dark">Secara efisien dan Terautomasi</span>
                         </h1>
-                        <h2 class="text-white lh-base fw-normal mb-15" style="width: 750px;">
+                        <h2 class="text-white lh-base fw-normal mb-15">
                             Aplikasi absensi online Workpro dirancang untuk memberikan kemudahan bagi perusahaan, agar dapat meningkatkan kinerja karyawan yang mengakomodir sistem WFH/WFO dan Shift.
                         </h2>
                         <!--end::Title-->
@@ -142,7 +142,7 @@ License: For each use you must have a valid license purchased only from above li
                         <div class="d-flex justify-content-center align-items-center">
                             <!-- <a class="btn btn-lg btn-white me-2" data-bs-toggle="modal" href="#modalDaftar" role="button"><span class="text-primary">Daftar</span></a> -->
                             <a class="btn btn-lg btn-white ms-2" style="border: 2px solid white" data-bs-toggle="modal" href="#modalMasuk" role="button"><span class="text-primary">Masuk</span></a>
-                            <a class="btn btn-lg btn-primary ms-2" style="border: 2px solid white" data-bs-toggle="modal" href="#modalDaftar" role="button"><span class="text-white">Daftar</span></a>
+                            <a class="btn btn-lg btn-primary ms-2" style="border: 2px solid white" data-bs-toggle="modal" href="#modalDaftar" role="button">Daftar</a>
                         </div>
                         <!--end::Action-->
                     </div>
@@ -266,7 +266,7 @@ License: For each use you must have a valid license purchased only from above li
                 </div>
                 <!--end::Row-->
                 <!--begin::Product slider-->
-                <div class="tns tns-default">
+                <div class="tns tns-default d-none">
                     <!--begin::Slider-->
                     <div data-tns="true" data-tns-loop="true" data-tns-swipe-angle="false" data-tns-speed="2000" data-tns-autoplay="true" data-tns-autoplay-timeout="18000" data-tns-controls="true" data-tns-nav="false" data-tns-items="1" data-tns-center="false" data-tns-dots="false" data-tns-prev-button="#kt_team_slider_prev1" data-tns-next-button="#kt_team_slider_next1">
                         <!--begin::Item-->
@@ -322,14 +322,14 @@ License: For each use you must have a valid license purchased only from above li
         <!--begin::Statistics Section-->
         <div class="mt-sm-n10">
             <!--begin::Curve top-->
-            <div class="landing-curve landing-dark-color">
+            <div class="landing-curve landing-dark-color mt-20">
                 <svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z" fill="currentColor"></path>
                 </svg>
             </div>
             <!--end::Curve top-->
             <!--begin::Wrapper-->
-            <div class="pb-15 pt-18 landing-dark-bg" style="background-color: #FFB600;">
+            <div class="pb-15 pt-1 landing-dark-bg" style="background-color: #FFB600;">
                 <!--begin::Container-->
                 <div class="container">
                     <!--begin::Heading-->
@@ -352,7 +352,7 @@ License: For each use you must have a valid license purchased only from above li
                         </div>
                         <!--end::Nav group-->
                         <!--begin::Row-->
-                        <div class="row g-10">
+                        <div class="row g-10 row-paket">
                             <!--begin::Col-->
                             <div class="col-xl-4">
                                 <div class="d-flex h-100 align-items-center">
@@ -1509,12 +1509,10 @@ License: For each use you must have a valid license purchased only from above li
                     </div>
                     <div class="text-danger mx-4 fw-bold" data-field="password"></div>
                 </div>
-                <button type="submit" id="btn_login" class="btn btn-lg btn-primary" style="width: 100%">Masuk
+                <button type="submit" id="btn_login" class="btn btn-lg btn-modal-alert">Masuk
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                            <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                        </svg>
+                        <i class="fa-duotone fa-arrow-right" style="color: #FFB600;"></i>
+                    </span>
                     </span>
                 </button>
             </form>
@@ -1701,12 +1699,9 @@ License: For each use you must have a valid license purchased only from above li
                         <input class="form-control form-control-lg form-control-solid ps-12" type="number" name="nama" autocomplete="off" placeholder="Masukkan no telepon" aria-placeholder="">
                     </div>
                 </div>
-                <a href="<?= base_url('home') ?>" type="button" class="btn btn-lg btn-primary" style="width: 100%">Masuk
+                <a href="<?= base_url('home') ?>" type="button" class="btn btn-lg btn-modal-alert" style="width: 100%">Masuk
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
-                            <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
-                        </svg>
+                        <i class="fa-duotone fa-arrow-right" style="color: #FFB600;"></i>
                     </span>
                 </a>
             </div>
@@ -1719,7 +1714,7 @@ License: For each use you must have a valid license purchased only from above li
 
 <script type="text/javascript">
     var BASE_URL = '<?= base_url(); ?>';
-    var css_button = 'btn btn-block btn-md';
+    var css_button = 'btn btn-block btn-md btn-alert';
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script src="<?= base_url('assets/js/alert/sweetalert2.all.min.js') ?>"></script>

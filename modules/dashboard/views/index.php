@@ -99,6 +99,12 @@
                                     Persetujuan&nbsp;<div id="manipulasi_tab">Presensi</div></span>
                                 <span class="text-muted mt-1 fw-bold fs-7">Karyawan menunggu persetujuan</span>
                             </h3>
+                            <div>
+                                <h3 class="d-flex text-end flex-column">
+                                    <span class="fw-bolder text-muted mb-0 fs-7">Bulan</span>
+                                    <span class="text-dark mt-1 fw-bold fs-5">Desember</span>
+                                </h3>
+                            </div>
                         </div>
                         <!--end::Header-->
                         <div class="btn-group w-100 tab mt-5 px-10 tab-presensi">
@@ -1204,77 +1210,79 @@
                     </div>
                     <!--end::Header-->
                     <!--begin::Body-->
-                    <div class="card-body d-flex pt-5">
-                        <div class="col-xl-7 pe-xl-7">
-                            <div id="kt_docs_fullcalendar_basic"></div>
-                        </div>
-                        <div class="col-xl-5 ps-xl-7">
-                            <h3 class="card-title d-flex align-items-start flex-column flex-wrap mb-3">
-                                <span class="card-label fw-bolder text-dark fs-1">Keterangan</span>
-                            </h3>
-                            <div class="card shadow-sm mb-4">
-                                <div class="card-body p-6 d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2">
-                                            <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                    <div class="card-body pt-5">
+                        <div class="row d-flex">
+                            <div class="col-xl-7 pe-xl-7">
+                                <div id="kt_docs_fullcalendar_basic"></div>
+                            </div>
+                            <div class="col-xl-5 ps-xl-7">
+                                <h3 class="card-title d-flex align-items-start flex-column flex-wrap mb-3">
+                                    <span class="card-label fw-bolder text-dark fs-1">Keterangan</span>
+                                </h3>
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body p-6 d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2">
+                                                <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                                            </div>
+                                            <div class="ms-2">
+                                                <h5 class="mb-0">Hari libur nasional</h5>
+                                                <span class="text-muted mt-0 mb-0 fw-bold fs-7">01 November 2022</span>
+                                            </div>
                                         </div>
-                                        <div class="ms-2">
-                                            <h3 class="mb-0">Hari libur nasional</h3>
-                                            <span class="text-muted mt-0 mb-0 fw-bold fs-7">01 November 2022</span>
+                                        <div class="d-flex">
+                                            <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
+                                                <i class="fa-duotone fa-pen fs-5"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
+                                                <i class="fa-duotone fa-trash fs-5"></i>
+                                            </a>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
-                                            <i class="fa-duotone fa-pen fs-5"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
-                                            <i class="fa-duotone fa-trash fs-5"></i>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card shadow-sm mb-4">
-                                <div class="card-body p-6 d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2">
-                                            <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body p-6 d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2">
+                                                <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                                            </div>
+                                            <div class="ms-2">
+                                                <h5 class="mb-0">Hari libur nasional</h5>
+                                                <span class="text-muted mt-0 mb-0 fw-bold fs-7">02 November 2022</span>
+                                            </div>
                                         </div>
-                                        <div class="ms-2">
-                                            <h3 class="mb-0">Hari libur nasional</h3>
-                                            <span class="text-muted mt-0 mb-0 fw-bold fs-7">02 November 2022</span>
+                                        <div class="d-flex">
+                                            <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
+                                                <i class="fa-duotone fa-pen fs-5"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
+                                                <i class="fa-duotone fa-trash fs-5"></i>
+                                            </a>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
-                                            <i class="fa-duotone fa-pen fs-5"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
-                                            <i class="fa-duotone fa-trash fs-5"></i>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card shadow-sm mb-4">
-                                <div class="card-body p-6 d-flex justify-content-between align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="me-2">
-                                            <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                                <div class="card shadow-sm mb-4">
+                                    <div class="card-body p-6 d-flex justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <div class="me-2">
+                                                <i class="fa-duotone fa-memo-circle-info fs-1"></i>
+                                            </div>
+                                            <div class="ms-2">
+                                                <h5 class="mb-0">Hari libur nasional</h5>
+                                                <span class="text-muted mt-0 mb-0 fw-bold fs-7">02 November 2022</span>
+                                            </div>
                                         </div>
-                                        <div class="ms-2">
-                                            <h3 class="mb-0">Hari libur nasional</h3>
-                                            <span class="text-muted mt-0 mb-0 fw-bold fs-7">02 November 2022</span>
+                                        <div class="d-flex">
+                                            <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
+                                                <i class="fa-duotone fa-pen fs-5"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
+                                                <i class="fa-duotone fa-trash fs-5"></i>
+                                            </a>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm me-1">
-                                            <i class="fa-duotone fa-pen fs-5"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-icon bg-light btn-active-color-primary btn-sm">
-                                            <i class="fa-duotone fa-trash fs-5"></i>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>  
                         </div>
                     </div>
                     <!--end::Body-->

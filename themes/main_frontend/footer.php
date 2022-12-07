@@ -1,7 +1,7 @@
 <script>
     var BASE_URL = "<?= base_url(); ?>";
     var hostUrl = "<?= base_url(); ?>assets/";
-    var css_button = 'btn btn-block btn-md';
+    var css_button = 'btn btn-block btn-md btn-alert';
 </script>
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="<?= base_url(); ?>assets/plugins/global/plugins.bundle.js"></script>

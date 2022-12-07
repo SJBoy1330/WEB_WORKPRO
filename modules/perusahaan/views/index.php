@@ -46,7 +46,7 @@
                     <div class="d-flex flex-center mb-10">
                         <!--begin::Item-->
                         <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2">
-                            <img src="assets/media/logos/logo_workpro.png" width="100">
+                            <img src="<?= base_url()?>assets/media/logos/logo_workpro.png" width="150">
                         </div>
                         <!--end::Item-->
                         <!--begin::Item-->

@@ -33152,9 +33152,9 @@ a:hover {
 .btn.btn-primary:focus:not(.btn-active),
 .btn.btn-primary:hover:not(.btn-active),
 .show > .btn.btn-primary {
-  color: #fff;
+  color: #FFB600 !important;
   border-color: #0095e8;
-  background-color: #0095e8 !important;
+  background-color: #FFFFFF;
 }
 .btn-check:active + .btn.btn-primary i,
 .btn-check:checked + .btn.btn-primary i,
@@ -50407,4 +50407,44 @@ a.menu-link{
 a.menu-link:hover{
   background-color: #FFFFFF;
   color: black;
+}
+
+/* CSS Auth */
+
+button.btn.btn-modal-alert{
+  width: 100%;
+  background-color: transparent;
+  font-weight: bold;
+  color: #FFB600;
+  border: 2px solid #FFB600 !important;
+}
+
+a.btn.btn-modal-alert{
+  width: 100%;
+  background-color: transparent;
+  font-weight: bold;
+  color: #FFB600;
+  border: 2px solid #FFB600 !important;
+}
+
+.btn-alert{
+  width: 50%;
+  background-color: #FFB600;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.frame-auth{
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .frame-auth{
+    width: 100%;
+  }
+
+  .row-paket{
+    height: 500px;
+    overflow-y: scroll;
+  }
 }
