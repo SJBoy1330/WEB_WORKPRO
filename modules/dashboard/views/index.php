@@ -588,7 +588,7 @@
                                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
-                                            <div id="delete_izin_kerja" style="display: none;">
+                                            <div id="delete_izin_kerja" class="d-none">
                                                 <div class="col-12">
                                                     <button type="button" class="btn btn-sm btn-light-success me-2">
                                                         <span class="svg-icon svg-icon-2 me-0">
