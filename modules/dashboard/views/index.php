@@ -202,7 +202,7 @@
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_presensi" onchange="checked_action(this,'tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" id="presensi_main_checkbox" type="checkbox" value="1" />
+                                                            <input class="form-check-input" name="maincheckbox_presensi" onchange="checked_action(this,'tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" id="presensi_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->presensi) : ?> readonly <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
@@ -319,7 +319,7 @@
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_tukar_shift" onchange="checked_action(this,'display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" id="tukar_shift_main_checkbox" type="checkbox" value="1" />
+                                                            <input class="form-check-input" name="maincheckbox_tukar_shift" onchange="checked_action(this,'display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" id="tukar_shift_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->tukar_shift) : ?> readonly <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
@@ -392,7 +392,7 @@
                                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
-                                            <div id="delete_reimbursement" style="display: none;">
+                                            <div id="delete_reimbursement" class="d-none">
                                                 <div class="col-12">
                                                     <button type="button" class="btn btn-sm btn-light-success me-2">
                                                         <span class="svg-icon svg-icon-2 me-0">
@@ -416,14 +416,14 @@
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_reimbursement" type="checkbox" onchange="checked_action(this,'delete_reimbursement',null,'rembes.child_checkbox')" id="rembes_main_checkbox" value="1" />
+                                                            <input class="form-check-input" name="maincheckbox_reimbursement" type="checkbox" onchange="checked_action(this,'delete_reimbursement',null,'rembes.child_checkbox')" id="rembes_main_checkbox" value="1" <?php if (!$result->persetujuan->rembes) : ?> readonly <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
                                                     <th class="min-w-125px text-center">Tanggal</th>
                                                     <th class="min-w-125px text-center">Nama</th>
                                                     <th class="min-w-125px text-center">Kategori</th>
-                                                    <th class="min-w-125px text-center">Dokumen</th>
+                                                    <th class="min-w-125px text-center">Detail</th>
                                                     <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
                                                 </tr>
                                             </thead>
@@ -492,7 +492,7 @@
                                             <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
-                                            <div id="delete_lembur" style="display: none;">
+                                            <div id="delete_lembur" class="d-none">
                                                 <div class="col-12">
                                                     <button type="button" class="btn btn-sm btn-light-success me-2">
                                                         <span class="svg-icon svg-icon-2 me-0">
@@ -516,212 +516,59 @@
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_lembur" type="checkbox" value="1" />
+                                                            <input class="form-check-input" name="maincheckbox_lembur" type="checkbox" onchange="checked_action(this,'delete_lembur',null,'lembur.child_checkbox')" id="lembur_main_checkbox" value="1" <?php if (!$result->persetujuan->lembur) : ?> readonly <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
-                                                    <th class="min-w-125px text-center">Kode</th>
-                                                    <th class="min-w-150px text-center">Tanggal Lembur</th>
+                                                    <th class="min-w-150px text-center">Tanggal</th>
                                                     <th class="min-w-125px text-center">Nama</th>
-                                                    <th class="min-w-125px text-center">Penyetuju</th>
-                                                    <th class="min-w-175px text-center">Status</th>
-                                                    <th class="min-w-125px text-center">Dokumen</th>
+                                                    <th class="min-w-125px text-center">Detail</th>
                                                     <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_lembur" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                                <?php if ($result->persetujuan->lembur) : ?>
+                                                    <?php $no = 1;
+                                                    foreach ($result->persetujuan->lembur as $row) : $num = $no++; ?>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                                    <input class="form-check-input lembur child_checkbox" type="checkbox" onchange="child_action(this,'lembur_main_checkbox','delete_lembur',null,'lembur.child_checkbox')" value="<?= $row->id_lembur; ?>" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-start flex-column">
+                                                                    <span class="text-dark fw-bolder fs-6"><?= $num; ?></span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= date('d', strtotime($row->tanggal)) . ' ' . month_from_number(date('m', strtotime($row->tanggal))); ?></span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->karyawan; ?></span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                                            </td>
+                                                            <td class="text-end">
+                                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                                </a>
+                                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                <?php else : ?>
+                                                    <tr>
+                                                        <td colspan="6">
+                                                            <center>Tidak ada pengajuan lembur bulan ini</center>
+                                                        </td>
+                                                    </tr>
+                                                <?php endif; ?>
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -765,16 +612,13 @@
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_izin_kerja" type="checkbox" value="1" />
+                                                            <input class="form-check-input" name="maincheckbox_izin_kerja" type="checkbox" value="1" onchange="checked_action(this,'delete_izin_kerja',null,'izin_kerja.child_checkbox')" id="izin_kerja_main_checkbox" <?php if (!$result->persetujuan->izin) : ?> readonly <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
-                                                    <th class="min-w-125px text-center">Kode</th>
-                                                    <th class="min-w-150px text-center">Tanggal Izin</th>
+                                                    <th class="min-w-150px text-center">Tanggal</th>
                                                     <th class="min-w-125px text-center">Nama</th>
                                                     <th class="min-w-125px text-center">Kategori</th>
-                                                    <th class="min-w-175px text-center">Penyetuju</th>
-                                                    <th class="min-w-125px text-center">Status</th>
                                                     <th class="min-w-125px text-center">Dokumen</th>
                                                     <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
                                                 </tr>
@@ -782,211 +626,49 @@
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
                                             <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                            <input class="form-check-input deletebox_izin_kerja" type="checkbox" value="1" />
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex justify-content-start flex-column">
-                                                            <span class="text-dark fw-bolder fs-6">1</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-sm btn-light-warning">Berhasil</a>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                            <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                            <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                                <?php if ($result->persetujuan->izin) : ?>
+                                                    <?php $no = 1;
+                                                    foreach ($result->persetujuan->izin as $row) : $num = $no++; ?>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                                    <input class="form-check-input izin_kerja child_checkbox" type="checkbox" onchange="child_action(this,'izin_kerja_main_checkbox','delete_izin_kerja',null,'izin_kerja.child_checkbox')" value="<?= $row->id_izin; ?>" />
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-start flex-column">
+                                                                    <span class="text-dark fw-bolder fs-6"><?= $num; ?></span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= date('d', strtotime($row->tanggal)) . ' ' . month_from_number(date('m', strtotime($row->tanggal))); ?></span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->karyawan; ?></span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->kategori; ?></span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                                            </td>
+                                                            <td class="text-end">
+                                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                                </a>
+                                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                <?php else : ?>
+                                                    <tr>
+                                                        <td colspan="7">
+                                                            <center>Tidak ada pengajuan izin bulan ini</center>
+                                                        </td>
+                                                    </tr>
+                                                <?php endif; ?>
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
