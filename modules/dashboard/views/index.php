@@ -416,7 +416,7 @@
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_reimbursement" type="checkbox" value="1" />
+                                                            <input class="form-check-input" name="maincheckbox_reimbursement" type="checkbox" onchange="checked_action(this,'delete_reimbursement',null,'rembes.child_checkbox')" id="rembes_main_checkbox" value="1" />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
@@ -430,27 +430,28 @@
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
                                             <tbody>
-                                                <?php if ($result->persetujuan->tukar_shift) : ?>
-                                                    <?php foreach ($result->persetujuan->tukar_shift as $row) : ?>
+                                                <?php if ($result->persetujuan->rembes) : ?>
+                                                    <?php $no = 0;
+                                                    foreach ($result->persetujuan->rembes as $row) : $num = $no++; ?>
                                                         <tr>
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                                    <input class="form-check-input deletebox_reimbursement" type="checkbox" value="1" />
+                                                                    <input class="form-check-input rembes child_checkbox" type="checkbox" onchange="child_action(this,'rembes_main_checkbox','delete_reimbursement',null,'rembes.child_checkbox')" value="<?= $row->id_rembes; ?>" />
                                                                 </div>
                                                             </td>
                                                             <td>
                                                                 <div class="d-flex justify-content-start flex-column">
-                                                                    <span class="text-dark fw-bolder fs-6">1</span>
+                                                                    <span class="text-dark fw-bolder fs-6"><?= $num; ?></span>
                                                                 </div>
                                                             </td>
                                                             <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6">5 Nov 2022</span>
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= date('d', strtotime($row->tanggal)) . ' ' . month_from_number(date('m', strtotime($row->tanggal))); ?></span>
                                                             </td>
                                                             <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->karyawan; ?></span>
                                                             </td>
                                                             <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6">Nginep Hotel</span>
+                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->kategori; ?></span>
                                                             </td>
                                                             <td class="text-center">
                                                                 <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
@@ -467,7 +468,7 @@
                                                     <?php endforeach; ?>
                                                 <?php else : ?>
                                                     <tr>
-                                                        <td>
+                                                        <td colspan="7">
                                                             <center>Tidak terdapat pengajuan rembes bulan ini</center>
                                                         </td>
                                                     </tr>
@@ -1282,7 +1283,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>
                     <!--end::Body-->
