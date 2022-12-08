@@ -299,36 +299,36 @@
             <div class="modal-body pb-lg-10 px-lg-10">
                 <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'info-umum','#manipulasi_tab','Info Umum')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" id="defaultOpen" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-umum')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Informasi Umum
-                    </label>
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'alamat-ktp','#manipulasi_tab','Alamat KTP')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-ktp')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Alamat KTP
-                    </label>
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'info-karyawan','#manipulasi_tab','Info Karyawan')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-karyawan')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
-                        Info Kekaryawaan
-                    </label>
+                        Info Karyawan
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'alamat-domisili','#manipulasi_tab','Alamat Domisili')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-domisili')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Alamat Domisili
-                    </label>
+                    </a>
                     <!--end::Radio-->
                 </div>
 

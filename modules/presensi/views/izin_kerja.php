@@ -512,35 +512,40 @@
                 <!--end::Wrapper-->
                 <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks active" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check" id="defaultOpen" type="radio" onclick="openCity(event, 'content-presensi')">
-                    <!--end::Input-->
-                    Presensi</label>
+                    <a onclick="openCity(event, 'content-presensi','#manipulasi_tab','Presensi')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" id="defaultOpen" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio">
+                        <!--end::Input-->
+                        Presensi
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check" type="radio" onclick="openCity(event, 'tukar-shift')">
-                    <!--end::Input-->
-                    Tukar Shift</label>
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check" type="radio" onclick="openCity(event, 'reimbursement')">
-                    <!--end::Input-->
-                    Reimbursement</label>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'tukar-shift','#manipulasi_tab','Tukar Shift')" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio">
+                        <!--end::Input-->
+                        Tukar Shift
+                    </a>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'reimbursement','#manipulasi_tab','Reimbursement')" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio">
+                        <!--end::Input-->
+                        Reimbursement
+                    </a>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check" type="radio" onclick="openCity(event, 'lembur')">
-                    <!--end::Input-->
-                    Lembur</label>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'lembur','#manipulasi_tab','Lembur')" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio">
+                        <!--end::Input-->
+                        Lembur
+                    </a>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check" type="radio" onclick="openCity(event, 'izin-kerja')">
-                    <!--end::Input-->
-                    Izin Kerja</label>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'izin-kerja','#manipulasi_tab','Izin')" data-kt-button="true">
+                        <!--begin::Input-->
+                        <input class="btn-check" type="radio">
+                        <!--end::Input-->
+                        Izin Kerja
+                    </a>
                     <!--end::Radio-->
                 </div>
 

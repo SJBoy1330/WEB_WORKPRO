@@ -130,13 +130,13 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Heading-->
                     <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20 frame-auth">
                         <!--begin::Title-->
-                        <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-7">Solusi Kelola Absensi Karyawan
+                        <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-2x mb-7">Solusi Kelola Absensi Karyawan
                             <br />with
                             <span class="text-dark">Secara efisien dan Terautomasi</span>
                         </h1>
-                        <h2 class="text-white lh-base fw-normal mb-15">
+                        <h3 class="text-white lh-base fw-normal mb-15">
                             Aplikasi absensi online Workpro dirancang untuk memberikan kemudahan bagi perusahaan, agar dapat meningkatkan kinerja karyawan yang mengakomodir sistem WFH/WFO dan Shift.
-                        </h2>
+                        </h3>
                         <!--end::Title-->
                         <!--begin::Action-->
                         <div class="d-flex justify-content-center align-items-center">

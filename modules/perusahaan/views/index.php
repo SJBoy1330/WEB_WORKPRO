@@ -43,7 +43,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex flex-center mb-10">
+                    <div class="d-flex flex-center my-5">
                         <!--begin::Item-->
                         <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2">
                             <img src="<?= base_url()?>assets/media/logos/logo_workpro.png" width="150">
@@ -54,9 +54,9 @@
                     <!--begin::Wrapper-->
                     <div class="d-flex flex-center">
                         <!--begin::Items-->
-                        <div class="d-flex justify-content-between mb-10 mx-auto w-xl-900px">
+                        <div class="d-flex justify-content-between mb-10 mx-auto w-xl-900px octagon-wrapper">
                             <!--begin::Item-->
-                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2">
+                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2 mb-5">
                                 <!--begin::Content-->
                                 <div class="text-center">
                                     <!--begin::Symbol-->
@@ -82,7 +82,7 @@
                             </div>
                             <!--end::Item-->
                             <!--begin::Item-->
-                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2">
+                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2 mb-5">
                                 <!--begin::Content-->
                                 <div class="text-center">
                                     <!--begin::Symbol-->
@@ -108,7 +108,7 @@
                             </div>
                             <!--end::Item-->
                             <!--begin::Item-->
-                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2">
+                            <div class="octagon d-flex flex-center h-200px w-200px bg-body mx-2 mb-5">
                                 <!--begin::Content-->
                                 <div class="text-center">
                                     <!--begin::Symbol-->
@@ -141,14 +141,14 @@
                     <div class="row">
                         <div class="col-12">
                             <!--begin::More channels-->
-                            <div class="card-rounded bg-opacity-5 p-10">
+                            <div class="card-rounded bg-opacity-5 p-5">
                                 <!--begin::Title-->
                                 <h2 class="text-dark fw-bolder mb-10">Detail Profil</h2>
                                 <!--end::Title-->
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-xxl-6 col-sm-12">
                                         <!--begin::Item-->
-                                        <div class="d-flex align-items-center mb-10">
+                                        <div class="d-flex mb-5">
                                             <!--begin::Icon-->
                                             <i class="fa-solid fa-buildings text-primary fs-1 me-5"></i>
                                             <!--end::SymIconbol-->
@@ -167,7 +167,7 @@
                                         </div>
                                         <!--end::Item-->
                                         <!--begin::Item-->
-                                        <div class="d-flex align-items-center mb-10">
+                                        <div class="d-flex mb-5">
                                             <!--begin::Icon-->
                                             <i class="fa-solid fa-at text-primary fs-1 me-5"></i>
                                             <!--end::SymIconbol-->
@@ -186,7 +186,7 @@
                                         </div>
                                         <!--end::Item-->
                                         <!--begin::Item-->
-                                        <div class="d-flex align-items-center mb-10">
+                                        <div class="d-flex mb-5">
                                             <!--begin::Icon-->
                                             <i class="fa-solid fa-phone text-primary fs-1 me-5"></i>
                                             <!--end::SymIconbol-->
@@ -205,7 +205,7 @@
                                         </div>
                                         <!--end::Item-->
                                         <!--begin::Item-->
-                                        <div class="d-flex align-items-center">
+                                        <div class="d-flex mb-5">
                                             <!--begin::Icon-->
                                             <i class="fa-solid fa-location-dot text-primary fs-1 me-5"></i>
                                             <!--end::SymIconbol-->
@@ -224,9 +224,9 @@
                                         </div>
                                         <!--end::Item-->
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-xxl-6 col-sm-12">
                                         <!--begin::Item-->
-                                        <div class="d-flex align-items-center mb-10">
+                                        <div class="d-flex mb-5">
                                             <!--begin::Icon-->
                                             <i class="fa-solid fa-user text-primary fs-1 me-5"></i>
                                             <!--end::SymIconbol-->
@@ -245,7 +245,7 @@
                                         </div>
                                         <!--end::Item-->
                                         <!--begin::Item-->
-                                        <div class="d-flex align-items-center mb-10">
+                                        <div class="d-flex mb-5">
                                             <!--begin::Icon-->
                                             <i class="fa-solid fa-calendar-days text-primary fs-1 me-5"></i>
                                             <!--end::SymIconbol-->
@@ -264,7 +264,7 @@
                                         </div>
                                         <!--end::Item-->
                                         <!--begin::Item-->
-                                        <div class="d-flex align-items-center mb-10">
+                                        <div class="d-flex mb-5">
                                             <!--begin::Icon-->
                                             <i class="fa-sharp fa-solid fa-right-to-bracket text-primary fs-1 me-5"></i>
                                             <!--end::SymIconbol-->

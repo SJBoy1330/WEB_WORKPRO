@@ -565,57 +565,57 @@
                 </div>
                 <div class="btn-group w-100 tab flex-wrap">
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'senin','#manipulasi_tab','Senin')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" id="defaultOpen" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'senin')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Senin
-                    </label>
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'selasa','#manipulasi_tab','Selasa')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'selasa')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Selasa
-                    </label>
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'rabu','#manipulasi_tab','Rabu')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'rabu')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Rabu
-                    </label>
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'kamis','#manipulasi_tab','Kamis')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'kamis')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Kamis
-                    </label>
+                    </a>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'jumat','#manipulasi_tab','Jumat')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'jumat')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Jum'at
-                    </label>
+                    </a>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'sabtu','#manipulasi_tab','Sabtu')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'sabtu')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
                         Sabtu
-                    </label>
+                    </a>
                     <!--end::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
+                    <a onclick="openCity(event, 'minggu','#manipulasi_tab','Minggu')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" data-kt-button="true">
                         <!--begin::Input-->
-                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'minggu')">
+                        <input class="btn-check" type="radio">
                         <!--end::Input-->
-                        Minggu
-                    </label>
+                        Sabtu
+                    </a>
                     <!--end::Radio-->
                 </div>
 

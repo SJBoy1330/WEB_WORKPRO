@@ -50448,3 +50448,17 @@ a.btn.btn-modal-alert{
     overflow-y: scroll;
   }
 }
+
+.octagon-wrapper{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .octagon-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
