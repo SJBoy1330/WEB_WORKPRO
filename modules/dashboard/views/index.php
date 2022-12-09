@@ -101,8 +101,8 @@
                             </h3>
                             <div>
                                 <h3 class="d-flex text-end flex-column">
-                                    <span class="fw-bolder text-muted mb-0 fs-7">Bulan</span>
-                                    <span class="text-dark mt-1 fw-bold fs-5">Desember</span>
+                                    <span class="fw-bolder text-muted mb-0 fs-7">Tanggal</span>
+                                    <span class="text-dark mt-1 fw-bold fs-5"><?= day_from_number(date('N')) . ', ' . date('d') . ' ' . month_from_number(date('m')) . ' ' . date('Y') ?></span>
                                 </h3>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
                                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                                 </svg>
                                             </span>
-                                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                            <input type="text" onkeyup="search(this,'tr.presensi.target_search','#no_data_presensi')" id="cari_presensi" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
                                             <div id="tab_penjelasan">
@@ -196,7 +196,7 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table align-middle gs-0 gy-4" id="kt_table_content_presensi">
+                                        <table class="table align-middle gs-0 gy-4">
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted bg-light">
@@ -220,7 +220,7 @@
                                                 <?php if ($result->persetujuan->presensi) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->presensi as $row) : $num = $no++; ?>
-                                                        <tr>
+                                                        <tr class="presensi target_search">
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                                     <input class="form-check-input presensi child_checkbox" type="checkbox" onchange="child_action(this,'presensi_main_checkbox','tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" value="<?= $row->id_presensi; ?>" />
@@ -268,13 +268,16 @@
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
-                                                <?php else : ?>
-                                                    <tr>
-                                                        <td colspan="7">
-                                                            <center>Tidak ada data presensi</center>
-                                                        </td>
-                                                    </tr>
                                                 <?php endif; ?>
+                                                <tr id="no_data_presensi" class="<?php if ($result->persetujuan->presensi) {
+                                                                                        echo 'hiding';
+                                                                                    } else {
+                                                                                        echo 'showing';
+                                                                                    } ?>">
+                                                    <td colspan="7">
+                                                        <center>Tidak ada data presensi</center>
+                                                    </td>
+                                                </tr>
                                             </tbody>
 
                                             <!--end::Table body-->
@@ -292,7 +295,7 @@
                                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                                 </svg>
                                             </span>
-                                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                            <input type="text" onkeyup="search(this,'tr.tukar_shift.target_search','#no_data_tukar_shift')" id="cari_tukar_shift" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
                                             <div id="display_hide_tukar_shift" class="d-none">
@@ -335,7 +338,7 @@
                                                 <?php if ($result->persetujuan->tukar_shift) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->tukar_shift as $row) : $num = $no++; ?>
-                                                        <tr>
+                                                        <tr class="tukar_shift target_search">
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                                     <input class="form-check-input tukar_shift child_checkbox" onchange="child_action(this,'tukar_shift_main_checkbox','display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" type="checkbox" value="<?= $row->id_tukar_shift; ?>" />
@@ -365,13 +368,17 @@
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
-                                                <?php else : ?>
-                                                    <tr>
-                                                        <td colspan="6">
-                                                            <center>Tidak ada pengajuan tukar shift</center>
-                                                        </td>
-                                                    </tr>
+
                                                 <?php endif; ?>
+                                                <tr id="no_data_tukar_shift" class="<?php if ($result->persetujuan->tukar_shift) {
+                                                                                        echo 'hiding';
+                                                                                    } else {
+                                                                                        echo 'showing';
+                                                                                    } ?>">
+                                                    <td colspan=" 6">
+                                                        <center>Tidak ada pengajuan tukar shift</center>
+                                                    </td>
+                                                </tr>
                                             </tbody>
 
                                             <!--end::Table body-->
@@ -389,7 +396,7 @@
                                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                                 </svg>
                                             </span>
-                                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                            <input type="text" onkeyup="search(this,'tr.rembes.target_search','#no_data_rembes')" id="cari_rembes" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
                                             <div id="delete_reimbursement" class="d-none">
@@ -431,9 +438,9 @@
                                             <!--begin::Table body-->
                                             <tbody>
                                                 <?php if ($result->persetujuan->rembes) : ?>
-                                                    <?php $no = 0;
+                                                    <?php $no = 1;
                                                     foreach ($result->persetujuan->rembes as $row) : $num = $no++; ?>
-                                                        <tr>
+                                                        <tr class="rembes target_search">
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                                     <input class="form-check-input rembes child_checkbox" type="checkbox" onchange="child_action(this,'rembes_main_checkbox','delete_reimbursement',null,'rembes.child_checkbox')" value="<?= $row->id_rembes; ?>" />
@@ -466,13 +473,16 @@
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
-                                                <?php else : ?>
-                                                    <tr>
-                                                        <td colspan="7">
-                                                            <center>Tidak terdapat pengajuan rembes bulan ini</center>
-                                                        </td>
-                                                    </tr>
                                                 <?php endif; ?>
+                                                <tr id="no_data_rembes" class="<?php if ($result->persetujuan->rembes) {
+                                                                                    echo 'hiding';
+                                                                                } else {
+                                                                                    echo 'showing';
+                                                                                } ?>">
+                                                    <td colspan="7">
+                                                        <center>Pengajuan rembes tidak ditemukan</center>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -489,7 +499,7 @@
                                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                                 </svg>
                                             </span>
-                                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                            <input type="text" onkeyup="search(this,'tr.lembur.target_search','#no_data_lembur')" id="cari_lembur" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
                                             <div id="delete_lembur" class="d-none">
@@ -532,7 +542,7 @@
                                                 <?php if ($result->persetujuan->lembur) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->lembur as $row) : $num = $no++; ?>
-                                                        <tr>
+                                                        <tr class="lembur target_search">
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                                     <input class="form-check-input lembur child_checkbox" type="checkbox" onchange="child_action(this,'lembur_main_checkbox','delete_lembur',null,'lembur.child_checkbox')" value="<?= $row->id_lembur; ?>" />
@@ -562,13 +572,16 @@
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
-                                                <?php else : ?>
-                                                    <tr>
-                                                        <td colspan="6">
-                                                            <center>Tidak ada pengajuan lembur bulan ini</center>
-                                                        </td>
-                                                    </tr>
                                                 <?php endif; ?>
+                                                <tr id="no_data_lembur" class="<?php if ($result->persetujuan->lembur) {
+                                                                                    echo 'hiding';
+                                                                                } else {
+                                                                                    echo 'showing';
+                                                                                } ?>">
+                                                    <td colspan="6">
+                                                        <center>Pengajuan lembur tidak di temukan</center>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -585,7 +598,7 @@
                                                     <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                                                 </svg>
                                             </span>
-                                            <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
+                                            <input type="text" onkeyup="search(this,'tr.izin.target_search','#no_data_izin')" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                         </div>
                                         <div class="card-toolbar">
                                             <div id="delete_izin_kerja" class="d-none">
@@ -629,7 +642,7 @@
                                                 <?php if ($result->persetujuan->izin) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->izin as $row) : $num = $no++; ?>
-                                                        <tr>
+                                                        <tr class="izin target_search">
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                                     <input class="form-check-input izin_kerja child_checkbox" type="checkbox" onchange="child_action(this,'izin_kerja_main_checkbox','delete_izin_kerja',null,'izin_kerja.child_checkbox')" value="<?= $row->id_izin; ?>" />
@@ -662,13 +675,16 @@
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
-                                                <?php else : ?>
-                                                    <tr>
-                                                        <td colspan="7">
-                                                            <center>Tidak ada pengajuan izin bulan ini</center>
-                                                        </td>
-                                                    </tr>
                                                 <?php endif; ?>
+                                                <tr id="no_data_izin" <?php if ($result->persetujuan->izin) {
+                                                                            echo 'hiding';
+                                                                        } else {
+                                                                            echo 'showing';
+                                                                        } ?>>
+                                                    <td colspan="7">
+                                                        <center>Pengajuan izin tidak ditemukan</center>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>

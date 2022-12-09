@@ -102,9 +102,11 @@ function submit_form(element, id_form, num = 0, loader = 'small', color = '#FFFF
 
 }
 function search(element, property = 'tbody tr', backup = null) {
+
     let cards = document.querySelectorAll(property)
 
     let search_query = element.value;
+    console.log(search_query);
 
     //Use innerText if all contents are visible
     //Use textContent for including hidden elements
@@ -123,7 +125,7 @@ function search(element, property = 'tbody tr', backup = null) {
     if (backup != null) {
         var vector = document.querySelector(backup);
         let jumlah = document.querySelectorAll(property + '.showing').length;
-        // console.log(jumlah);
+        console.log(jumlah);
         if (jumlah < 1) {
             vector.classList.remove('hiding');
             vector.classList.add('showing');
@@ -141,6 +143,7 @@ function search(element, property = 'tbody tr', backup = null) {
     clearTimeout(typingTimer);
     // typingTimer = setTimeout(liveSearch, 0);
 }
+
 
 function preview_image(img) {
     // console.log(img);

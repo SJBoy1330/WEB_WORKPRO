@@ -24,7 +24,15 @@
     <link href="<?= base_url(); ?>assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="<?= base_url(); ?>assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+    <style>
+        .showing {
+            animation: animate 0.4s ease;
+        }
 
+        .hiding {
+            display: none;
+        }
+    </style>
     <!-- Link Font Awesome -->
     <script src="https://kit.fontawesome.com/a2309adc07.js" crossorigin="anonymous"></script>
     <?php
@@ -207,7 +215,7 @@
                     <div class="header-navs d-flex align-items-stretch flex-stack h-lg-70px w-100 py-5 py-lg-0" id="kt_header_navs" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_header_navs_toggle" data-kt-swapper="true" data-kt-swapper-mode="append" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header'}">
                         <!--begin::Container-->
                         <div class="d-lg-flex container-xxl w-100">
-                            <!--begin::Wrapper-->   
+                            <!--begin::Wrapper-->
                             <div class="d-lg-flex flex-column justify-content-lg-center w-100" id="kt_header_navs_wrapper">
                                 <!--begin::Header tab content-->
                                 <div class="tab-content" data-kt-scroll="true" data-kt-scroll-activate="{default: true, lg: false}" data-kt-scroll-height="auto" data-kt-scroll-offset="70px">
@@ -312,7 +320,8 @@
                                                                             $dom = $key->link;
                                                                         }
                                                                         ?>
-                                                                        <a class="menu-link py-3 <?= set_active($this->uri->segment(1), strtolower($dom), $this->uri->segment(2), $link); ?>" <?php if ($key->tipe == 1) : ?> href="<?= base_url($key->link) ?>" <?php else : ?>href="<?= $key->link; ?>" data-kt-scroll-toggle <?php endif ?>>
+                                                                        <!-- JANCUK GA MARI MARI -->
+                                                                        <a class="menu-link py-3 <?= set_active($this->uri->segment(1), strtolower($dom), $this->uri->segment(2), $link); ?>" <?php if ($key->tipe == 1) : ?> href="<?= base_url($key->link) ?>" <?php else : ?>href="<?= $key->link; ?>" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true" <?php endif ?>>
                                                                             <span class="menu-title"><?= $key->nama; ?></span>
                                                                         </a>
                                                                     </div>
