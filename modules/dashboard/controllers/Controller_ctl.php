@@ -28,6 +28,9 @@ class Controller_ctl extends MY_Frontend
 			var terlambat = ' . $result->data->presensi->terlambat . ';
 			var alpha = ' . $result->data->presensi->alpha . ';
 			var izin = ' . $result->data->presensi->izin . ';
+			$(function() {
+				$("table[onload]").trigger("onload");
+			});
 		</script>';
 
 

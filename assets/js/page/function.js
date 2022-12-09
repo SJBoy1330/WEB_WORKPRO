@@ -153,20 +153,29 @@ function preview_image(img) {
 
 
 function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi = null) {
+
+    var alasan = '';
     Swal.fire({
         title: 'KONFIRMASI',
         html: text,
         icon: 'question',
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
         showCancelButton: true,
         confirmButtonColor: '#FFC83E',
         cancelButtonColor: '#FDE8B4',
         confirmButtonText: "Lanjutkan",
         cancelButtonText: "Batal",
-        reverseButtons: true
+        reverseButtons: true,
+        preConfirm: (alasan) => {
+            var alasan = alasan
+        }
     }).then((result) => {
         $.ajax({
             url: BASE_URL + 'persetujuan/approval',
-            data: { id_persetujuan: id_persetujuan, alasan: '', tipe: tipe, persetujuan: status, status: sts_presensi },
+            data: { id_persetujuan: id_persetujuan, alasan: alasan, tipe: tipe, persetujuan: status, status: sts_presensi },
             method: 'POST',
             cache: false,
             dataType: 'json',
@@ -186,7 +195,21 @@ function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi =
                         confirmButton: css_button
                     }
                 });
-                $('#display_tabel_' + tipe).load(BASE_URL + 'dashboard/ tbody#reload_tabel_' + tipe);
+                if (data.status == 200 || data.status == true) {
+                    if (tipe == 1) {
+                        $('#row_' + tipe + '_' + status + '_' + id_persetujuan).remove();
+                    } else {
+                        $('#row_' + tipe + '_' + id_persetujuan).remove();
+                    }
+
+                    var cek = $("#parent_" + tipe).find(".number_" + tipe);
+                    for (let i = 0; i < cek.length; i++) {
+                        var v = cek[i].id;
+                        $('#' + v).text(i + 1);
+                    }
+
+                }
+                // $('#display_tabel_' + tipe).load(BASE_URL + 'dashboard/ tbody#reload_tabel_' + tipe);
             }
         });
     })
@@ -258,3 +281,30 @@ function child_action(element, id_main_checkbox, display, pengganti = null, chil
 
 
 }
+
+function openCity(evt, cityName, id = null, text = 'unknown', pagination = null) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    if (id != null) {
+        $(id).text(text);
+    }
+    if (pagination != null) {
+        var pg_active = document.querySelector('.pgn.muncul');
+        pg_active.classList.add('d-none');
+        pg_active.classList.remove('muncul');
+        var pg = document.getElementById(pagination);
+        pg.classList.remove('d-none');
+        pg.classList.add('muncul');
+
+    }
+}
+document.getElementById("defaultOpen").click();

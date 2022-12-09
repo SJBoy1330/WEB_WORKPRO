@@ -27,26 +27,8 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="<?= base_url('assets/js/page/function.js') ?>"></script>
+<script type="text/javascript" src="<?= base_url(); ?>assets/js/pagination.js?v=<?= date('YmdHis'); ?>"></script>
 
-<script type="text/javascript">
-    function openCity(evt, cityName, id = null, text = 'unknown') {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-        if (id != null) {
-            $(id).text(text);
-        }
-    }
-    document.getElementById("defaultOpen").click();
-</script>
 <!--end::Page Custom Javascript-->
 <?php
 

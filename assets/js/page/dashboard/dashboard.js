@@ -176,6 +176,30 @@ $(function () {
 
 
 
-function manipulasi_text(text = 'Presensi') {
-    $('#manipulasi_tab').text(text)
+function manipulasi_tab(text = 'Presensi', pagination = null) {
+    $('#manipulasi_tab').text(text);
+    if (pagination != null) {
+        var pg_active = document.querySelector('.pagination.muncul');
+        var pg = document.getElementById(pagination);
+        pg.classList.remove('d-none');
+        pg.classList.add('muncul');
+        pg_active.classList.add('d-none');
+        pg_active.classList.remove('muncul');
+    }
+}
+
+// $('#pagination_presensi').pagination({
+//     dataSource: [1, 2, 3, 4, 5, 6, 7, ... , 100],
+//     pageSize: 5,
+//     showPrevious: false,
+//     showNext: false,
+//     callback: function (data, pagination) {
+//         // template method of yourself
+//         var html = template(data);
+//         dataContainer.html(html);
+//     }
+// })
+
+function cek() {
+    console.log('bisa bestieh');
 }

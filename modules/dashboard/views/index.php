@@ -110,7 +110,7 @@
                         <div class="btn-group w-100 tab mt-5 px-10 tab-presensi">
                             <?php if ($this->web_akses == 'all' || $this->managemen->presensi == true) : ?>
                                 <!--begin::Radio-->
-                                <a onclick="openCity(event, 'content-presensi','#manipulasi_tab','Presensi')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" id="defaultOpen" data-kt-button="true">
+                                <a onclick="openCity(event, 'content-presensi','#manipulasi_tab','Presensi','pagination-presensi')" class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" id="defaultOpen" data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -120,7 +120,7 @@
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->tukar_shift == true) : ?>
                                 <!--begin::Radio-->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'tukar-shift','#manipulasi_tab','Tukar Shift')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'tukar-shift','#manipulasi_tab','Tukar Shift','pagination_tukar_shift')" data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -130,7 +130,7 @@
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->reimbursement == true) : ?>
                                 <!-- begin::radio -->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'reimbursement','#manipulasi_tab','Reimbursement')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'reimbursement','#manipulasi_tab','Reimbursement','pagination_rembes')" data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -140,7 +140,7 @@
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->lembur == true) : ?>
                                 <!-- begin::radio -->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'lembur','#manipulasi_tab','Lembur')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'lembur','#manipulasi_tab','Lembur','pagination_lembur')" data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -150,7 +150,7 @@
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->izin == true) : ?>
                                 <!-- begin::radio -->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'izin-kerja','#manipulasi_tab','Izin')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'izin-kerja','#manipulasi_tab','Izin','pagination_izin')" data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -196,31 +196,30 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table align-middle gs-0 gy-4">
+                                        <table onload="pagination('parent_1','.presensi.target_search','parent-pagination-presensi',5)" class="table align-middle gs-0 gy-4">
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_presensi" onchange="checked_action(this,'tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" id="presensi_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->presensi) : ?> readonly <?php endif; ?> />
+                                                            <input class="form-check-input" name="maincheckbox_presensi" onchange="checked_action(this,'tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" id="presensi_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->presensi) : ?> disabled <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
                                                     <th class="min-w-125px text-center">Nama</th>
                                                     <!-- <th class="min-w-125px text-center">Tipe Kerja</th> -->
                                                     <th class="min-w-125px text-center">Scan</th>
-                                                    <th class="min-w-125px text-center">Terlambat</th>
-                                                    <th class="min-w-125px text-center">Pulang Cepat</th>
+                                                    <th class="min-w-125px text-center">Terlambat / Pulang Cepat</th>
                                                     <th class="pe-4 min-w-125px text-end rounded-end">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
-                                            <tbody>
+                                            <tbody id="parent_1">
                                                 <?php if ($result->persetujuan->presensi) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->presensi as $row) : $num = $no++; ?>
-                                                        <tr class="presensi target_search">
+                                                        <tr class="presensi target_search" id="row_1_<?= $row->status ?>_<?= $row->id_presensi ?>">
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                                     <input class="form-check-input presensi child_checkbox" type="checkbox" onchange="child_action(this,'presensi_main_checkbox','tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" value="<?= $row->id_presensi; ?>" />
@@ -228,7 +227,7 @@
                                                             </td>
                                                             <td>
                                                                 <div class="d-flex justify-content-start flex-column">
-                                                                    <span class="text-dark fw-bolder fs-6"><?= $num; ?></span>
+                                                                    <span class="text-dark fw-bolder fs-6 number_1" id="num_presensi_<?= $row->status; ?>_<?= $row->id_presensi; ?>"><?= $num; ?></span>
                                                                 </div>
                                                             </td>
                                                             <td class="text-center">
@@ -248,21 +247,14 @@
                                                                 <?php if ($row->status == 1) : ?>
                                                                     <span class="text-danger fw-bolder d-block fs-6"><?= ($row->terlambat) ? $row->terlambat . ' menit' : ' - '; ?></span>
                                                                 <?php else : ?>
-                                                                    <span class="text-danger fw-bolder d-block fs-6"> - </span>
-                                                                <?php endif; ?>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <?php if ($row->status == 0) : ?>
                                                                     <span class="text-success fw-bolder d-block fs-6"><?= ($row->pulang_cepat) ? $row->pulang_cepat . ' menit' : '  - '; ?></span>
-                                                                <?php else : ?>
-                                                                    <span class="text-success fw-bolder d-block fs-6"> - </span>
                                                                 <?php endif; ?>
                                                             </td>
                                                             <td class="text-end">
-                                                                <a role="button" onclick="approval(1,1,<?= $row->id_presensi ?>,'Anda yakin akan menyetujui presensi atas nama <?= $row->karyawan; ?> ?',<?= $row->status; ?>)" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                                <a role="button" onclick="approval(1,1,<?= $row->id_presensi ?>,'Anda yakin akan menyetujui presensi atas nama <?= $row->karyawan; ?> ?</br> Sertakan alasan anda',<?= $row->status; ?>)" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
                                                                     <i class="fa-duotone fa-check fs-5 text-success"></i>
                                                                 </a>
-                                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                                <a role="button" onclick="approval(1,2,<?= $row->id_presensi ?>,'Anda yakin akan menolak presensi atas nama <?= $row->karyawan; ?> ?</br> Sertakan alasan anda',<?= $row->status; ?>)" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
                                                                     <i class="fa-duotone fa-xmark fs-5 text-danger"></i>
                                                                 </a>
                                                             </td>
@@ -274,7 +266,7 @@
                                                                                     } else {
                                                                                         echo 'showing';
                                                                                     } ?>">
-                                                    <td colspan="7">
+                                                    <td colspan="6">
                                                         <center>Tidak ada data presensi</center>
                                                     </td>
                                                 </tr>
@@ -316,13 +308,13 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table align-middle gs-0 gy-4" id="kt_table_tukar_shift">
+                                        <table onload="pagination('parent_4','.tukar_shift.target_search','parent-pagination-tukar_shift',5)" class="table align-middle gs-0 gy-4" id="kt_table_tukar_shift">
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_tukar_shift" onchange="checked_action(this,'display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" id="tukar_shift_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->tukar_shift) : ?> readonly <?php endif; ?> />
+                                                            <input class="form-check-input" name="maincheckbox_tukar_shift" onchange="checked_action(this,'display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" id="tukar_shift_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->tukar_shift) : ?> disabled <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
@@ -334,11 +326,11 @@
                                             </thead>
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
-                                            <tbody>
+                                            <tbody id="parent_4">
                                                 <?php if ($result->persetujuan->tukar_shift) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->tukar_shift as $row) : $num = $no++; ?>
-                                                        <tr class="tukar_shift target_search">
+                                                        <tr class="tukar_shift target_search" id="row_4_<?= $row->id_tukar_shift ?>">
                                                             <td>
                                                                 <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                                     <input class="form-check-input tukar_shift child_checkbox" onchange="child_action(this,'tukar_shift_main_checkbox','display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" type="checkbox" value="<?= $row->id_tukar_shift; ?>" />
@@ -417,13 +409,13 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table align-middle gs-0 gy-4" id="kt_table_reimbursement">
+                                        <table onload="pagination('parent_3','.rembes.target_search','parent-pagination-rembes',5)" class="table align-middle gs-0 gy-4" id="kt_table_reimbursement">
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_reimbursement" type="checkbox" onchange="checked_action(this,'delete_reimbursement',null,'rembes.child_checkbox')" id="rembes_main_checkbox" value="1" <?php if (!$result->persetujuan->rembes) : ?> readonly <?php endif; ?> />
+                                                            <input class="form-check-input" name="maincheckbox_reimbursement" type="checkbox" onchange="checked_action(this,'delete_reimbursement',null,'rembes.child_checkbox')" id="rembes_main_checkbox" value="1" <?php if (!$result->persetujuan->rembes) : ?> disabled <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
@@ -436,7 +428,7 @@
                                             </thead>
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
-                                            <tbody>
+                                            <tbody id="parent_3">
                                                 <?php if ($result->persetujuan->rembes) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->rembes as $row) : $num = $no++; ?>
@@ -520,13 +512,13 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table align-middle gs-0 gy-4" id="kt_table_lembur">
+                                        <table onload="pagination('parent_2','.lembur.target_search','parent-pagination-lembur',5)" class="table align-middle gs-0 gy-4" id="kt_table_lembur">
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_lembur" type="checkbox" onchange="checked_action(this,'delete_lembur',null,'lembur.child_checkbox')" id="lembur_main_checkbox" value="1" <?php if (!$result->persetujuan->lembur) : ?> readonly <?php endif; ?> />
+                                                            <input class="form-check-input" name="maincheckbox_lembur" type="checkbox" onchange="checked_action(this,'delete_lembur',null,'lembur.child_checkbox')" id="lembur_main_checkbox" value="1" <?php if (!$result->persetujuan->lembur) : ?> disabled <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
@@ -538,7 +530,7 @@
                                             </thead>
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
-                                            <tbody>
+                                            <tbody id="parent_2">
                                                 <?php if ($result->persetujuan->lembur) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->lembur as $row) : $num = $no++; ?>
@@ -619,13 +611,13 @@
                                         </div>
                                     </div>
                                     <div class="table-responsive">
-                                        <table class="table align-middle gs-0 gy-4" id="kt_table_izin_kerja">
+                                        <table onload="pagination('parent_5','.izin.target_search','parent-pagination-izin',5)" class="table align-middle gs-0 gy-4" id="kt_table_izin_kerja">
                                             <!--begin::Table head-->
                                             <thead>
                                                 <tr class="fw-bolder text-muted bg-light">
                                                     <th class="ps-4 w-25px rounded-start">
                                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_izin_kerja" type="checkbox" value="1" onchange="checked_action(this,'delete_izin_kerja',null,'izin_kerja.child_checkbox')" id="izin_kerja_main_checkbox" <?php if (!$result->persetujuan->izin) : ?> readonly <?php endif; ?> />
+                                                            <input class="form-check-input" name="maincheckbox_izin_kerja" type="checkbox" value="1" onchange="checked_action(this,'delete_izin_kerja',null,'izin_kerja.child_checkbox')" id="izin_kerja_main_checkbox" <?php if (!$result->persetujuan->izin) : ?> disabled <?php endif; ?> />
                                                         </div>
                                                     </th>
                                                     <th class="w-50px">No</th>
@@ -638,7 +630,7 @@
                                             </thead>
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
-                                            <tbody>
+                                            <tbody id="parent_5">
                                                 <?php if ($result->persetujuan->izin) : ?>
                                                     <?php $no = 1;
                                                     foreach ($result->persetujuan->izin as $row) : $num = $no++; ?>
@@ -676,11 +668,11 @@
                                                         </tr>
                                                     <?php endforeach; ?>
                                                 <?php endif; ?>
-                                                <tr id="no_data_izin" <?php if ($result->persetujuan->izin) {
-                                                                            echo 'hiding';
-                                                                        } else {
-                                                                            echo 'showing';
-                                                                        } ?>>
+                                                <tr id="no_data_izin" class="<?php if ($result->persetujuan->izin) {
+                                                                                    echo 'hiding';
+                                                                                } else {
+                                                                                    echo 'showing';
+                                                                                } ?>">
                                                     <td colspan="7">
                                                         <center>Pengajuan izin tidak ditemukan</center>
                                                     </td>
@@ -694,21 +686,36 @@
                         </div>
                         <!--end::Body-->
                         <div class="card-footer py-5 d-flex justify-content-end align-items-center">
-                            <nav aria-label="...">
-                                <ul class="pagination">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active" aria-current="page">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">»</a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <?php if ($this->web_akses == 'all' || $this->managemen->presensi == true) : ?>
+                                <nav class="pgn muncul" id="pagination-presensi" aria-label="...">
+                                    <ul class="pagination" id="parent-pagination-presensi">
+                                    </ul>
+                                </nav>
+                            <?php endif; ?>
+                            <?php if ($this->web_akses == 'all' || $this->managemen->tukar_shift == true) : ?>
+                                <nav id="pagination_tukar_shift" aria-label="..." class="pgn d-none">
+                                    <ul class="pagination" id="parent-pagination-tukar_shift">
+                                    </ul>
+                                </nav>
+                            <?php endif; ?>
+                            <?php if ($this->web_akses == 'all' || $this->managemen->lembur == true) : ?>
+                                <nav id="pagination_lembur" aria-label="..." class="pgn d-none">
+                                    <ul class="pagination" id="parent-pagination-lembur">
+                                    </ul>
+                                </nav>
+                            <?php endif; ?>
+                            <?php if ($this->web_akses == 'all' || $this->managemen->izin == true) : ?>
+                                <nav id="pagination_izin" aria-label="..." class="pgn d-none">
+                                    <ul class="pagination" id="parent-pagination-izin">
+                                    </ul>
+                                </nav>
+                            <?php endif; ?>
+                            <?php if ($this->web_akses == 'all' || $this->managemen->rembes == true) : ?>
+                                <nav id="pagination_rembes" aria-label="..." class="pgn d-none">
+                                    <ul class="pagination" id="parent-pagination-rembes">
+                                    </ul>
+                                </nav>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!--end::List Widget 4-->
