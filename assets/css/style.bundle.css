@@ -50462,3 +50462,12 @@ a.btn.btn-modal-alert{
     flex-direction: column;
   }
 }
+
+/* CSS Dashboard */
+img.img-detail-reimbursement{
+  height: 175px;
+  width: 175px;;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

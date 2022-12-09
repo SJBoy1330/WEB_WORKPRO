@@ -453,7 +453,7 @@
                                                                 <span class="text-dark fw-bolder d-block fs-6"><?= $row->kategori; ?></span>
                                                             </td>
                                                             <td class="text-center">
-                                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                                                <a class="btn btn-icon btn-sm btn-light" data-bs-toggle="modal" href="#modalDetailReimbursement" role="button"><i class="fa-duotone fa-file fs-5"></i></a>
                                                             </td>
                                                             <td class="text-end">
                                                                 <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
@@ -552,7 +552,7 @@
                                                                 <span class="text-dark fw-bolder d-block fs-6"><?= $row->karyawan; ?></span>
                                                             </td>
                                                             <td class="text-center">
-                                                                <a href="#" class="btn btn-icon btn-sm btn-light"><i class="fa-duotone fa-file fs-5"></i></a>
+                                                                <a class="btn btn-icon btn-sm btn-light" data-bs-toggle="modal" href="#modalDetailLembur" role="button"><i class="fa-duotone fa-file fs-5"></i></a>
                                                             </td>
                                                             <td class="text-end">
                                                                 <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
@@ -919,7 +919,7 @@
                     <div class="card-body pt-5">
                         <div class="row d-flex">
                             <div class="col-xl-7 pe-xl-7">
-                                <div id="kt_docs_fullcalendar_basic"></div>
+                                <div id="kt_docs_fullcalendar_background_events"></div>
                             </div>
                             <div class="col-xl-5 ps-xl-7">
                                 <h3 class="card-title d-flex align-items-start flex-column flex-wrap mb-3">
@@ -1170,3 +1170,128 @@
     </div>
     <!--end::Modal dialog-->
 </div>
+
+<!-- Modal Persetujuan Reimbursement -->
+<div class="modal fade" id="modalDetailReimbursement" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Detail Reimbursement</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body pb-lg-10 px-lg-10">
+                <div class="fv-row mb-5">
+                    <div class="col-12 d-flex flex-wrap">
+                        <img src="<?= base_url('assets/media/books/1.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/2.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/3.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/4.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/5.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/6.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <div class="col-12">
+                        <div class="position-relative d-flex align-items-center">
+                            <textarea class="form-control form-control-solid" rows="5" readonly>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, a, dignissimos doloribus reiciendis ipsam culpa provident sunt aliquid expedita, esse vero ipsa itaque incidunt suscipit illo perferendis tempore sint sapiente.
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Continue
+                    <span class="svg-icon svg-icon-3 ms-1 me-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
+                            <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+
+<!-- Modal Persetujuan Lembur -->
+<div class="modal fade" id="modalDetailLembur" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-650px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>Detail Lembur</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                        </svg>
+                    </span>
+                    <!--end::Svg Icon-->
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body pb-lg-10 px-lg-10">
+                <div class="fv-row mb-5">
+                    <div class="col-12 d-flex flex-wrap">
+                        <img src="<?= base_url('assets/media/books/1.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/2.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/3.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/4.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/5.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/6.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                    </div>
+                </div>
+                <div class="fv-row mb-5">
+                    <div class="col-12">
+                        <div class="position-relative d-flex align-items-center">
+                            <textarea class="form-control form-control-solid" rows="5" readonly>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, a, dignissimos doloribus reiciendis ipsam culpa provident sunt aliquid expedita, esse vero ipsa itaque incidunt suscipit illo perferendis tempore sint sapiente.
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Continue
+                    <span class="svg-icon svg-icon-3 ms-1 me-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
+                            <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="black"></path>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+

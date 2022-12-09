@@ -29,56 +29,75 @@ function drawChart() {
 $("#kt_datepicker_1").flatpickr();
 
 
-const element = document.getElementById("kt_docs_fullcalendar_basic");
+// Define colors
+var green =  KTUtil.getCssVariableValue("--bs-active-success");
+var red =  KTUtil.getCssVariableValue("--bs-active-danger");
 
-var todayDate = moment().startOf("day");
-var YM = todayDate.format("YYYY-MM");
-var YESTERDAY = todayDate.clone().subtract(1, "day").format("YYYY-MM-DD");
-var TODAY = todayDate.format("YYYY-MM-DD");
-var TOMORROW = todayDate.clone().add(1, "day").format("YYYY-MM-DD");
+// Initialize Fullcalendar -- for more info please visit the official site: https://fullcalendar.io/demos
+var calendarEl = document.getElementById("kt_docs_fullcalendar_background_events");
 
-var calendarEl = document.getElementById("kt_docs_fullcalendar_basic");
 var calendar = new FullCalendar.Calendar(calendarEl, {
     headerToolbar: {
-        right: "title",
-        left: "prev,next today"
+        left: "prev,next today",
+        right: "title"
     },
-
-    height: 800,
-    contentHeight: 780,
-    aspectRatio: 3,  // see: https://fullcalendar.io/docs/aspectRatio
-
-    nowIndicator: true,
-    now: TODAY + "T09:25:00", // just for demo
-
-    views: {
-        dayGridMonth: { buttonText: "month" },
-        timeGridWeek: { buttonText: "week" },
-        timeGridDay: { buttonText: "day" }
-    },
-
-    initialView: "dayGridMonth",
-    initialDate: TODAY,
-
+    initialDate: "2020-09-12",
+    navLinks: true, // can click day/week names to navigate views
+    businessHours: true, // display business hours
     editable: true,
-    dayMaxEvents: true, // allow "more" link when too many events
-    navLinks: true,
+    selectable: true,
+    events: [
+        {
+            title: "Business Lunch",
+            start: "2020-09-03T13:00:00",
+            constraint: "businessHours"
+        },
+        {
+            title: "Meeting",
+            start: "2020-09-13T11:00:00",
+            constraint: "availableForMeeting", // defined below
+            color: green
+        },
+        {
+            title: "Conference",
+            start: "2020-09-18",
+            end: "2020-09-20"
+        },
+        {
+            title: "Party",
+            start: "2020-09-29T20:00:00"
+        },
 
-    eventContent: function (info) {
-        var element = $(info.el);
+        // areas where "Meeting" must be dropped
+        {
+            groupId: "availableForMeeting",
+            start: "2020-09-11",
+            end: "2020-09-11",
+            display: "background",
+        },
+        {
+            groupId: "availableForMeeting",
+            start: "2020-09-13",
+            end: "2020-09-13",
+            display: "background",
+        },
 
-        if (info.event.extendedProps && info.event.extendedProps.description) {
-            if (element.hasClass("fc-day-grid-event")) {
-                element.data("content", info.event.extendedProps.description);
-                element.data("placement", "top");
-                KTApp.initPopover(element);
-            } else if (element.hasClass("fc-time-grid-event")) {
-                element.find(".fc-title").append("<div class='fc-description'> + info.event.extendedProps.description + </div>");
-            } else if (element.find(".fc-list-item-title").lenght !== 0) {
-                element.find(".fc-list-item-title").append("<div class='fc-description'> + info.event.extendedProps.description + </div>");
-            }
+        // red areas where no events can be dropped
+        {
+            start: "2020-09-24",
+            end: "2020-09-28",
+            overlap: false,
+            display: "background",
+            color: red
+        },
+        {
+            start: "2020-09-06",
+            end: "2020-09-08",
+            overlap: false,
+            display: "background",
+            color: red
         }
-    }
+    ]
 });
 
 calendar.render();
