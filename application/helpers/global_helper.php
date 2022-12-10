@@ -454,7 +454,7 @@ function curl_get($url, $fields = array(), $header = array())
 
 function API_URL($path = null)
 {
-  $uri = 'http://localhost/workpro_api/';
+  $uri = 'http://localhost/git_workpro/workpro_api/';
   if ($path != null) {
     $uri .= $path;
   }

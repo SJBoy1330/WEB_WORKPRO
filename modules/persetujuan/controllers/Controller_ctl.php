@@ -23,9 +23,14 @@ class Controller_ctl extends MY_Frontend
 		$this->display($this->input->get('routing'));
 	}
 
-	public function approval()
+	public function approval($multi = false)
 	{
-		$id_persetujuan = $this->input->post('id_persetujuan');
+		if ($multi == false) {
+			$id_persetujuan = $this->input->post('id_persetujuan');
+		} else {
+			$id_persetujuan = json_encode($this->input->post('id_persetujuan'));
+		}
+
 		$alasan = $this->input->post('alasan');
 		$tipe = $this->input->post('tipe');
 		$persetujuan = $this->input->post('persetujuan');

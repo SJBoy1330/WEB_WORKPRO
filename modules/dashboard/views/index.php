@@ -120,7 +120,7 @@
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->tukar_shift == true) : ?>
                                 <!--begin::Radio-->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'tukar-shift','#manipulasi_tab','Tukar Shift','pagination_tukar_shift')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'tukar-shift','#manipulasi_tab','Tukar Shift','pagination_tukar_shift')" <?php if ($this->managemen->presensi == false) : ?> id="defaultOpen" <?php endif; ?> data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -128,19 +128,21 @@
                                 </a>
                                 <!--end::Radio-->
                             <?php endif; ?>
-                            <?php if ($this->web_akses == 'all' || $this->managemen->reimbursement == true) : ?>
+                            <?php if ($this->web_akses == 'all' || $this->managemen->reimburse == true) : ?>
                                 <!-- begin::radio -->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'reimbursement','#manipulasi_tab','Reimbursement','pagination_rembes')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'reimbursement','#manipulasi_tab','Reimburse','pagination_rembes')" <?php if ($this->managemen->tukar_shift == false) : ?> id="defaultOpen" <?php endif; ?> data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
-                                    Reimbursement
+                                    Reimburse
                                 </a>
                                 <!--end::Radio-->
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->lembur == true) : ?>
                                 <!-- begin::radio -->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'lembur','#manipulasi_tab','Lembur','pagination_lembur')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'lembur','#manipulasi_tab','Lembur','pagination_lembur')" data-kt-button="true" <?php if ($this->managemen->reimburse == false) {
+                                                                                                                                                                                                                                                                            echo  'id="defaultOpen"';
+                                                                                                                                                                                                                                                                        } ?>>
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -150,7 +152,7 @@
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->izin == true) : ?>
                                 <!-- begin::radio -->
-                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'izin-kerja','#manipulasi_tab','Izin','pagination_izin')" data-kt-button="true">
+                                <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'izin-kerja','#manipulasi_tab','Izin','pagination_izin')" <?php if ($this->managemen->lembur == false) : ?> id="defaultOpen" <?php endif; ?> data-kt-button="true">
                                     <!--begin::Input-->
                                     <input class="btn-check" type="radio">
                                     <!--end::Input-->
@@ -163,222 +165,228 @@
                         <div class="card-body" style="overflow-y: scroll; height: 375px;">
                             <?php if ($this->web_akses == 'all' || $this->managemen->presensi == true) : ?>
                                 <div id="content-presensi" class="tabcontent mb-7 pt-0">
-                                    <div class="card-header border-0 pb-3 px-0">
-                                        <div class="d-flex align-items-center position-relative my-1 pe-2">
-                                            <span class="svg-icon svg-icon-1 position-absolute ms-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
-                                                </svg>
-                                            </span>
-                                            <input type="text" onkeyup="search(this,'tr.presensi.target_search','#no_data_presensi')" id="cari_presensi" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
-                                        </div>
-                                        <div class="card-toolbar">
-                                            <div id="tab_penjelasan">
-                                                <span class="text-muted fw-normal fs-6 me-5"><i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i> Presensi Masuk</span>
-                                                <span class="text-muted fw-normal fs-6 me-3"><i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i> Presensi Pulang</span>
+                                    <div id="reload-presensi">
+                                        <div class="card-header border-0 pb-3 px-0">
+                                            <div class="d-flex align-items-center position-relative my-1 pe-2">
+                                                <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                                        <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                                    </svg>
+                                                </span>
+                                                <input type="text" onkeyup="search(this,'tr.presensi.target_search','#no_data_presensi')" id="cari_presensi" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                             </div>
-                                            <div id="tab_persetujuan" class="d-none">
-                                                <div class="col-12">
-                                                    <button type="button" class="btn btn-sm btn-light-success me-2">
-                                                        <span class="svg-icon svg-icon-2 me-0">
-                                                            <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
-                                                        </span>
-                                                        Terima</button>
-                                                    <button type="button" class="btn btn-sm btn-light-danger me-2">
-                                                        <span class="svg-icon svg-icon-2 me-0">
-                                                            <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
-                                                        </span>
-                                                        Tolak</button>
+                                            <div class="card-toolbar">
+                                                <div id="tab_penjelasan">
+                                                    <span class="text-muted fw-normal fs-6 me-5"><i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i> Presensi Masuk</span>
+                                                    <span class="text-muted fw-normal fs-6 me-3"><i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i> Presensi Pulang</span>
                                                 </div>
-                                            </div>
+                                                <div id="tab_persetujuan" class="d-none">
+                                                    <div class="col-12">
+                                                        <a type="button" onclick="approval_all('.presensi.child_checkbox',1,1,'Anda yakin akan menyetujui pengajuan presensi di bawah ?</br> Sertakan alasan anda',1,'content-presensi','reload-presensi')" class="btn btn-sm btn-light-success me-2">
+                                                            <span class="svg-icon svg-icon-2 me-0">
+                                                                <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                                            </span>
+                                                            Terima</a>
+                                                        <a type="button" onclick="approval_all('.presensi.child_checkbox',1,2,'Anda yakin akan menolak pengajuan presensi di bawah ?</br> Sertakan alasan anda',0,'content-presensi','reload-presensi')" class="btn btn-sm btn-light-danger me-2">
+                                                            <span class="svg-icon svg-icon-2 me-0">
+                                                                <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                                            </span>
+                                                            Tolak</a>
+                                                    </div>
+                                                </div>
 
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table onload="pagination('parent_1','.presensi.target_search','parent-pagination-presensi',5)" class="table align-middle gs-0 gy-4">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <tr class="fw-bolder text-muted bg-light">
+                                                        <th class="ps-4 w-25px rounded-start">
+                                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                <input class="form-check-input" name="maincheckbox_presensi" onchange="checked_action(this,'tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" id="presensi_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->presensi) : ?> disabled <?php endif; ?> />
+                                                            </div>
+                                                        </th>
+                                                        <th class="w-50px">No</th>
+                                                        <th class="min-w-125px text-center">Nama</th>
+                                                        <!-- <th class="min-w-125px text-center">Tipe Kerja</th> -->
+                                                        <th class="min-w-125px text-center">Scan</th>
+                                                        <th class="min-w-125px text-center">Terlambat / Pulang Cepat</th>
+                                                        <th class="pe-4 min-w-125px text-end rounded-end">Aksi</th>
+                                                    </tr>
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody id="parent_1">
+                                                    <?php if ($result->persetujuan->presensi) : ?>
+                                                        <?php $no = 1;
+                                                        foreach ($result->persetujuan->presensi as $row) : $num = $no++; ?>
+                                                            <tr class="presensi target_search" id="row_1_<?= $row->status ?>_<?= $row->id_presensi ?>">
+                                                                <td>
+                                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                                        <input class="form-check-input presensi child_checkbox" type="checkbox" onchange="child_action(this,'presensi_main_checkbox','tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" value="<?= $row->status; ?>|<?= $row->id_presensi; ?>" />
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex justify-content-start flex-column">
+                                                                        <span class="text-dark fw-bolder fs-6 number_1" id="num_presensi_<?= $row->status; ?>_<?= $row->id_presensi; ?>"><?= $num; ?></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span class="text-dark fw-bolder d-block fs-6"><?= $row->karyawan; ?></span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span class="text-dark fw-bolder d-block fs-6">
+                                                                        <?php if ($row->status == 1) : ?>
+                                                                            <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>
+                                                                        <?php else : ?>
+                                                                            <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>
+                                                                        <?php endif; ?>
+                                                                        <?= $row->scan; ?>
+                                                                    </span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <?php if ($row->status == 1) : ?>
+                                                                        <span class="text-danger fw-bolder d-block fs-6"><?= ($row->terlambat) ? $row->terlambat . ' menit' : ' - '; ?></span>
+                                                                    <?php else : ?>
+                                                                        <span class="text-success fw-bolder d-block fs-6"><?= ($row->pulang_cepat) ? $row->pulang_cepat . ' menit' : '  - '; ?></span>
+                                                                    <?php endif; ?>
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <a role="button" onclick="approval(1,1,<?= $row->id_presensi ?>,'Anda yakin akan menyetujui presensi atas nama <?= $row->karyawan; ?> ?</br> Sertakan alasan anda',<?= $row->status; ?>,'content-presensi','reload-presensi')" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                                        <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                                    </a>
+                                                                    <a role="button" onclick="approval(1,2,<?= $row->id_presensi ?>,'Anda yakin akan menolak presensi atas nama <?= $row->karyawan; ?> ?</br> Sertakan alasan anda',<?= $row->status; ?>,'content-presensi','reload-presensi')" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                                        <i class="fa-duotone fa-xmark fs-5 text-danger"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
+                                                    <tr id="no_data_presensi" class="<?php if ($result->persetujuan->presensi) {
+                                                                                            echo 'hiding';
+                                                                                        } else {
+                                                                                            echo 'showing';
+                                                                                        } ?>">
+                                                        <td colspan="6">
+                                                            <center>Tidak ada data presensi</center>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                                <!--end::Table body-->
+                                            </table>
                                         </div>
                                     </div>
-                                    <div class="table-responsive">
-                                        <table onload="pagination('parent_1','.presensi.target_search','parent-pagination-presensi',5)" class="table align-middle gs-0 gy-4">
-                                            <!--begin::Table head-->
-                                            <thead>
-                                                <tr class="fw-bolder text-muted bg-light">
-                                                    <th class="ps-4 w-25px rounded-start">
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_presensi" onchange="checked_action(this,'tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" id="presensi_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->presensi) : ?> disabled <?php endif; ?> />
-                                                        </div>
-                                                    </th>
-                                                    <th class="w-50px">No</th>
-                                                    <th class="min-w-125px text-center">Nama</th>
-                                                    <!-- <th class="min-w-125px text-center">Tipe Kerja</th> -->
-                                                    <th class="min-w-125px text-center">Scan</th>
-                                                    <th class="min-w-125px text-center">Terlambat / Pulang Cepat</th>
-                                                    <th class="pe-4 min-w-125px text-end rounded-end">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
-                                            <tbody id="parent_1">
-                                                <?php if ($result->persetujuan->presensi) : ?>
-                                                    <?php $no = 1;
-                                                    foreach ($result->persetujuan->presensi as $row) : $num = $no++; ?>
-                                                        <tr class="presensi target_search" id="row_1_<?= $row->status ?>_<?= $row->id_presensi ?>">
-                                                            <td>
-                                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                                    <input class="form-check-input presensi child_checkbox" type="checkbox" onchange="child_action(this,'presensi_main_checkbox','tab_persetujuan','tab_penjelasan','presensi.child_checkbox')" value="<?= $row->id_presensi; ?>" />
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="d-flex justify-content-start flex-column">
-                                                                    <span class="text-dark fw-bolder fs-6 number_1" id="num_presensi_<?= $row->status; ?>_<?= $row->id_presensi; ?>"><?= $num; ?></span>
-                                                                </div>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->karyawan; ?></span>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6">
-                                                                    <?php if ($row->status == 1) : ?>
-                                                                        <i class="fa-duotone fa-location-dot text-success fs-3 me-2"></i>
-                                                                    <?php else : ?>
-                                                                        <i class="fa-duotone fa-location-dot text-danger fs-3 me-2"></i>
-                                                                    <?php endif; ?>
-                                                                    <?= $row->scan; ?>
-                                                                </span>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <?php if ($row->status == 1) : ?>
-                                                                    <span class="text-danger fw-bolder d-block fs-6"><?= ($row->terlambat) ? $row->terlambat . ' menit' : ' - '; ?></span>
-                                                                <?php else : ?>
-                                                                    <span class="text-success fw-bolder d-block fs-6"><?= ($row->pulang_cepat) ? $row->pulang_cepat . ' menit' : '  - '; ?></span>
-                                                                <?php endif; ?>
-                                                            </td>
-                                                            <td class="text-end">
-                                                                <a role="button" onclick="approval(1,1,<?= $row->id_presensi ?>,'Anda yakin akan menyetujui presensi atas nama <?= $row->karyawan; ?> ?</br> Sertakan alasan anda',<?= $row->status; ?>)" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                                </a>
-                                                                <a role="button" onclick="approval(1,2,<?= $row->id_presensi ?>,'Anda yakin akan menolak presensi atas nama <?= $row->karyawan; ?> ?</br> Sertakan alasan anda',<?= $row->status; ?>)" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                                    <i class="fa-duotone fa-xmark fs-5 text-danger"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                <?php endif; ?>
-                                                <tr id="no_data_presensi" class="<?php if ($result->persetujuan->presensi) {
-                                                                                        echo 'hiding';
-                                                                                    } else {
-                                                                                        echo 'showing';
-                                                                                    } ?>">
-                                                    <td colspan="6">
-                                                        <center>Tidak ada data presensi</center>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
 
-                                            <!--end::Table body-->
-                                        </table>
-                                    </div>
                                 </div>
                             <?php endif; ?>
                             <?php if ($this->web_akses == 'all' || $this->managemen->tukar_shift == true) : ?>
                                 <div id="tukar-shift" class="tabcontent mb-7">
-                                    <div class="card-header border-0 pb-3 px-0">
-                                        <div class="d-flex align-items-center position-relative my-1 pe-2">
-                                            <span class="svg-icon svg-icon-1 position-absolute ms-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
-                                                    <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
-                                                </svg>
-                                            </span>
-                                            <input type="text" onkeyup="search(this,'tr.tukar_shift.target_search','#no_data_tukar_shift')" id="cari_tukar_shift" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
-                                        </div>
-                                        <div class="card-toolbar">
-                                            <div id="display_hide_tukar_shift" class="d-none">
-                                                <div class="col-12">
-                                                    <button type="button" class="btn btn-sm btn-light-success me-2">
-                                                        <span class="svg-icon svg-icon-2 me-0">
-                                                            <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
-                                                        </span>
-                                                        Terima</button>
-                                                    <button type="button" class="btn btn-sm btn-light-danger me-2">
-                                                        <span class="svg-icon svg-icon-2 me-0">
-                                                            <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
-                                                        </span>
-                                                        Tolak</button>
-                                                </div>
+                                    <div id="reload-tukar_shift">
+                                        <div class="card-header border-0 pb-3 px-0">
+                                            <div class="d-flex align-items-center position-relative my-1 pe-2">
+                                                <span class="svg-icon svg-icon-1 position-absolute ms-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="black"></rect>
+                                                        <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
+                                                    </svg>
+                                                </span>
+                                                <input type="text" onkeyup="search(this,'tr.tukar_shift.target_search','#no_data_tukar_shift')" id="cari_tukar_shift" class="form-control form-control-solid form-control-sm w-200px ps-14" placeholder="Pencarian">
                                             </div>
+                                            <div class="card-toolbar">
+                                                <div id="display_hide_tukar_shift" class="d-none">
+                                                    <div class="col-12">
+                                                        <button type="button" class="btn btn-sm btn-light-success me-2">
+                                                            <span class="svg-icon svg-icon-2 me-0">
+                                                                <i class="fa-duotone fa-check" style="font-size: 18px;"></i>
+                                                            </span>
+                                                            Terima</button>
+                                                        <button type="button" class="btn btn-sm btn-light-danger me-2">
+                                                            <span class="svg-icon svg-icon-2 me-0">
+                                                                <i class="fa-duotone fa-trash" style="font-size: 18px;"></i>
+                                                            </span>
+                                                            Tolak</button>
+                                                    </div>
+                                                </div>
 
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table onload="pagination('parent_4','.tukar_shift.target_search','parent-pagination-tukar_shift',5)" class="table align-middle gs-0 gy-4" id="kt_table_tukar_shift">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <tr class="fw-bolder text-muted bg-light">
+                                                        <th class="ps-4 w-25px rounded-start">
+                                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                <input class="form-check-input" name="maincheckbox_tukar_shift" onchange="checked_action(this,'display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" id="tukar_shift_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->tukar_shift) : ?> disabled <?php endif; ?> />
+                                                            </div>
+                                                        </th>
+                                                        <th class="w-50px">No</th>
+                                                        <th class="min-w-125px text-center">Tanggal</th>
+                                                        <th class="min-w-125px text-center">Pemohon</th>
+                                                        <th class="min-w-125px text-center">Pengganti</th>
+                                                        <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
+                                                    </tr>
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody id="parent_4">
+                                                    <?php if ($result->persetujuan->tukar_shift) : ?>
+                                                        <?php $no = 1;
+                                                        foreach ($result->persetujuan->tukar_shift as $row) : $num = $no++; ?>
+                                                            <tr class="tukar_shift target_search" id="row_4_<?= $row->id_tukar_shift ?>">
+                                                                <td>
+                                                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                                        <input class="form-check-input tukar_shift child_checkbox" onchange="child_action(this,'tukar_shift_main_checkbox','display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" type="checkbox" value="<?= $row->id_tukar_shift; ?>" />
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="d-flex justify-content-start flex-column">
+                                                                        <span class="text-dark fw-bolder fs-6 number_4" id="num_tukar_shift_<?= $row->id_tukar_shift; ?>"><?= $num; ?></span>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span class="text-dark fw-bolder d-block fs-6"><?= date('d', strtotime($row->tanggal)) . ' ' . month_from_number(date('m', strtotime($row->tanggal))); ?></span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span class="text-dark fw-bolder d-block fs-6"><?= $row->asal_karyawan; ?></span>
+                                                                </td>
+                                                                <td class="text-center">
+                                                                    <span class="text-dark fw-bolder d-block fs-6"><?= $row->pengganti_karyawan; ?></span>
+                                                                </td>
+                                                                <td class="text-end">
+                                                                    <a role="button" onclick="approval(4,2,<?= $row->id_tukar_shift ?>,'Anda yakin akan menyetujui tukar shift atas nama <?= $row->asal_karyawan; ?> ?</br> Sertakan alasan anda',null,'tukar-shift','reload-tukar_shift')" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
+                                                                        <i class="fa-duotone fa-check fs-5 text-success"></i>
+                                                                    </a>
+                                                                    <a role="button" onclick="approval(4,3,<?= $row->id_tukar_shift ?>,'Anda yakin akan menolak tukar shift atas nama <?= $row->asal_karyawan; ?> ?</br> Sertakan alasan anda',null,'tukar-shift','reload-tukar_shift')" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
+                                                                        <i class="fa-duotone fa-trash fs-5 text-danger"></i>
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
+
+                                                    <?php endif; ?>
+                                                    <tr id="no_data_tukar_shift" class="<?php if ($result->persetujuan->tukar_shift) {
+                                                                                            echo 'hiding';
+                                                                                        } else {
+                                                                                            echo 'showing';
+                                                                                        } ?>">
+                                                        <td colspan=" 6">
+                                                            <center>Tidak ada pengajuan tukar shift</center>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                                <!--end::Table body-->
+                                            </table>
                                         </div>
                                     </div>
-                                    <div class="table-responsive">
-                                        <table onload="pagination('parent_4','.tukar_shift.target_search','parent-pagination-tukar_shift',5)" class="table align-middle gs-0 gy-4" id="kt_table_tukar_shift">
-                                            <!--begin::Table head-->
-                                            <thead>
-                                                <tr class="fw-bolder text-muted bg-light">
-                                                    <th class="ps-4 w-25px rounded-start">
-                                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                            <input class="form-check-input" name="maincheckbox_tukar_shift" onchange="checked_action(this,'display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" id="tukar_shift_main_checkbox" type="checkbox" value="1" <?php if (!$result->persetujuan->tukar_shift) : ?> disabled <?php endif; ?> />
-                                                        </div>
-                                                    </th>
-                                                    <th class="w-50px">No</th>
-                                                    <th class="min-w-125px text-center">Tanggal</th>
-                                                    <th class="min-w-125px text-center">Pemohon</th>
-                                                    <th class="min-w-125px text-center">Pengganti</th>
-                                                    <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
-                                            <tbody id="parent_4">
-                                                <?php if ($result->persetujuan->tukar_shift) : ?>
-                                                    <?php $no = 1;
-                                                    foreach ($result->persetujuan->tukar_shift as $row) : $num = $no++; ?>
-                                                        <tr class="tukar_shift target_search" id="row_4_<?= $row->id_tukar_shift ?>">
-                                                            <td>
-                                                                <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                                                    <input class="form-check-input tukar_shift child_checkbox" onchange="child_action(this,'tukar_shift_main_checkbox','display_hide_tukar_shift',null,'tukar_shift.child_checkbox')" type="checkbox" value="<?= $row->id_tukar_shift; ?>" />
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="d-flex justify-content-start flex-column">
-                                                                    <span class="text-dark fw-bolder fs-6"><?= $num; ?></span>
-                                                                </div>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6"><?= date('d', strtotime($row->tanggal)) . ' ' . month_from_number(date('m', strtotime($row->tanggal))); ?></span>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->asal_karyawan; ?></span>
-                                                            </td>
-                                                            <td class="text-center">
-                                                                <span class="text-dark fw-bolder d-block fs-6"><?= $row->pengganti_karyawan; ?></span>
-                                                            </td>
-                                                            <td class="text-end">
-                                                                <a href="#" class="btn btn-icon bg-light-success btn-active-color-primary btn-sm me-1">
-                                                                    <i class="fa-duotone fa-check fs-5 text-success"></i>
-                                                                </a>
-                                                                <a href="#" class="btn btn-icon bg-light-danger btn-active-color-primary btn-sm">
-                                                                    <i class="fa-duotone fa-trash fs-5 text-danger"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
 
-                                                <?php endif; ?>
-                                                <tr id="no_data_tukar_shift" class="<?php if ($result->persetujuan->tukar_shift) {
-                                                                                        echo 'hiding';
-                                                                                    } else {
-                                                                                        echo 'showing';
-                                                                                    } ?>">
-                                                    <td colspan=" 6">
-                                                        <center>Tidak ada pengajuan tukar shift</center>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-
-                                            <!--end::Table body-->
-                                        </table>
-                                    </div>
                                 </div>
                             <?php endif; ?>
-                            <?php if ($this->web_akses == 'all' || $this->managemen->reimbursement == true) : ?>
+                            <?php if ($this->web_akses == 'all' || $this->managemen->reimburse == true) : ?>
                                 <div id="reimbursement" class="tabcontent mb-7">
                                     <div class="card-header border-0 pb-3 px-0">
                                         <div class="d-flex align-items-center position-relative my-1 pe-2">
@@ -685,7 +693,7 @@
                             <?php endif; ?>
                         </div>
                         <!--end::Body-->
-                        <div class="card-footer py-5 d-flex justify-content-end align-items-center">
+                        <div class="card-footer py-5 d-flex justify-content-end align-items-center" id="display-pagination">
                             <?php if ($this->web_akses == 'all' || $this->managemen->presensi == true) : ?>
                                 <nav class="pgn muncul" id="pagination-presensi" aria-label="...">
                                     <ul class="pagination" id="parent-pagination-presensi">
@@ -739,160 +747,30 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-5" style="overflow-y: scroll; height: 175px;">
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-1.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Superadmin</a>
-                                    <span class="text-muted fw-bold d-block fs-7">HRD</span>
+                        <?php if ($karyawan) : ?>
+                            <?php foreach ($karyawan as $row) : ?>
+                                <div class="d-flex align-items-sm-center mb-7">
+                                    <!--begin::Symbol-->
+                                    <div class="symbol symbol-50px me-5">
+                                        <img src="assets/media/avatars/150-1.jpg" class="align-self-center" alt="">
+                                    </div>
+                                    <!--end::Symbol-->
+                                    <!--begin::Section-->
+                                    <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
+                                        <div class="flex-grow-1 me-2">
+                                            <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Superadmin</a>
+                                            <span class="text-muted fw-bold d-block fs-7">HRD</span>
+                                        </div>
+                                        <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
+                                            <span class="svg-icon svg-icon-2">
+                                                <i class="fa-duotone fa-plus fs-3"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <!--end::Section-->
                                 </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                            <!--end::Section-->
-                        </div>
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-2.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Eka Dharmawan Rasiawan</a>
-                                    <span class="text-muted fw-bold d-block fs-7">CEO</span>
-                                </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                            <!--end::Section-->
-                        </div>
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-3.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Rinaldi Usman</a>
-                                    <span class="text-muted fw-bold d-block fs-7">CTO</span>
-                                </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-4.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Reza Prasetio</a>
-                                    <span class="text-muted fw-bold d-block fs-7">VP Operation</span>
-                                </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-5.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Santo Romadhoni</a>
-                                    <span class="text-muted fw-bold d-block fs-7">Senior Developer</span>
-                                </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-5.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Sidatata Al Jennar</a>
-                                    <span class="text-muted fw-bold d-block fs-7">Senior Developer</span>
-                                </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-6.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Sidatata Al Jennar</a>
-                                    <span class="text-muted fw-bold d-block fs-7">Senior Developer</span>
-                                </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-sm-center mb-7">
-                            <!--begin::Symbol-->
-                            <div class="symbol symbol-50px me-5">
-                                <img src="assets/media/avatars/150-7.jpg" class="align-self-center" alt="">
-                            </div>
-                            <!--end::Symbol-->
-                            <!--begin::Section-->
-                            <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
-                                <div class="flex-grow-1 me-2">
-                                    <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Saka Dana Asmara</a>
-                                    <span class="text-muted fw-bold d-block fs-7">UI Designer</span>
-                                </div>
-                                <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
-                                    <span class="svg-icon svg-icon-2">
-                                        <i class="fa-duotone fa-plus fs-3"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </div>
                     <!--end::Body-->
                 </div>
@@ -1200,12 +1078,12 @@
             <div class="modal-body pb-lg-10 px-lg-10">
                 <div class="fv-row mb-5">
                     <div class="col-12 d-flex flex-wrap">
-                        <img src="<?= base_url('assets/media/books/1.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/2.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/3.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/4.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/5.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/6.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/1.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/2.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/3.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/4.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/5.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/6.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
                     </div>
                 </div>
                 <div class="fv-row mb-5">
@@ -1262,12 +1140,12 @@
             <div class="modal-body pb-lg-10 px-lg-10">
                 <div class="fv-row mb-5">
                     <div class="col-12 d-flex flex-wrap">
-                        <img src="<?= base_url('assets/media/books/1.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/2.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/3.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/4.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/5.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
-                        <img src="<?= base_url('assets/media/books/6.png')?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/1.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/2.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/3.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/4.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/5.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
+                        <img src="<?= base_url('assets/media/books/6.png') ?>" class="rounded mx-auto d-block img-detail-reimbursement mb-3">
                     </div>
                 </div>
                 <div class="fv-row mb-5">
@@ -1294,4 +1172,3 @@
     </div>
     <!--end::Modal dialog-->
 </div>
-

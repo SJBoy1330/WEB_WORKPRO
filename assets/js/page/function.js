@@ -152,7 +152,7 @@ function preview_image(img) {
 }
 
 
-function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi = null) {
+function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi = null, parent, reload) {
 
     var alasan = '';
     Swal.fire({
@@ -161,18 +161,17 @@ function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi =
         icon: 'question',
         input: 'text',
         inputAttributes: {
-            autocapitalize: 'off'
+            autocapitalize: 'off',
+            id: 'alasan_persetujuan'
         },
         showCancelButton: true,
         confirmButtonColor: '#FFC83E',
         cancelButtonColor: '#FDE8B4',
         confirmButtonText: "Lanjutkan",
         cancelButtonText: "Batal",
-        reverseButtons: true,
-        preConfirm: (alasan) => {
-            var alasan = alasan
-        }
+        reverseButtons: true
     }).then((result) => {
+        var alasan = $('#alasan_persetujuan').val();
         $.ajax({
             url: BASE_URL + 'persetujuan/approval',
             data: { id_persetujuan: id_persetujuan, alasan: alasan, tipe: tipe, persetujuan: status, status: sts_presensi },
@@ -184,7 +183,7 @@ function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi =
             },
             success: function (data) {
                 $('#loading_scene').modal('hide');
-                // console.log(data);
+                console.log(data);
                 Swal.fire({
                     title: data.title,
                     html: data.message,
@@ -196,8 +195,9 @@ function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi =
                     }
                 });
                 if (data.status == 200 || data.status == true) {
+
                     if (tipe == 1) {
-                        $('#row_' + tipe + '_' + status + '_' + id_persetujuan).remove();
+                        $('#row_' + tipe + '_' + sts_presensi + '_' + id_persetujuan).remove();
                     } else {
                         $('#row_' + tipe + '_' + id_persetujuan).remove();
                     }
@@ -207,6 +207,102 @@ function approval(tipe, status, id_persetujuan, text = 'unknown', sts_presensi =
                         var v = cek[i].id;
                         $('#' + v).text(i + 1);
                     }
+
+                    console.log(cek.length);
+
+                    if (parent && reload && cek.length <= 0) {
+                        console.log('reload');
+                        $('#' + parent).load(BASE_URL + 'dashboard/ #' + reload);
+                    }
+
+                }
+                // $('#display_tabel_' + tipe).load(BASE_URL + 'dashboard/ tbody#reload_tabel_' + tipe);
+            }
+        });
+    })
+}
+
+
+function approval_all(class_checkbox = '.child_checkbox', tipe, status, text = 'unknown', sts_presensi = null, parent = null, reload = null, pagination = null) {
+    var id_persetujuan = [];
+    var loop = document.querySelectorAll('input' + class_checkbox + ':checked');
+
+    for (var i = 0; i < loop.length; i++) {
+        id_persetujuan.push(loop[i].value);
+    }
+
+    if (id_persetujuan.length <= 0) {
+        Swal.fire({
+            title: 'PERINGATAN',
+            html: 'Data persetujuan tidak terdeteksi',
+            icon: 'warning',
+            buttonsStyling: !1,
+            confirmButtonText: 'Ok',
+            customClass: { confirmButton: css_button }
+        });
+    }
+    var alasan = '';
+    Swal.fire({
+        title: 'KONFIRMASI',
+        html: text,
+        icon: 'question',
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off',
+            id: 'alasan_persetujuan_all'
+        },
+        showCancelButton: true,
+        confirmButtonColor: '#FFC83E',
+        cancelButtonColor: '#FDE8B4',
+        confirmButtonText: "Lanjutkan",
+        cancelButtonText: "Batal",
+        reverseButtons: true
+    }).then((result) => {
+        var alasan = $('#alasan_persetujuan_all').val();
+        $.ajax({
+            url: BASE_URL + 'persetujuan/approval/true',
+            data: { id_persetujuan: id_persetujuan, alasan: alasan, tipe: tipe, persetujuan: status, status: sts_presensi },
+            method: 'POST',
+            cache: false,
+            dataType: 'json',
+            beforeSend: function () {
+                $('#loading_scene').modal('show');
+            },
+            success: function (data) {
+                $('#loading_scene').modal('hide');
+                console.log(data);
+                Swal.fire({
+                    title: data.title,
+                    html: data.message,
+                    icon: data.icon,
+                    buttonsStyling: !1,
+                    confirmButtonText: 'Ok',
+                    customClass: {
+                        confirmButton: css_button
+                    }
+                });
+                if (data.status == 200 || data.status == true) {
+                    // var jmlh = document.querySelectorAll('input' + class_checkbox);
+                    var cek = $("#parent_" + tipe).find(".number_" + tipe);
+                    // console.log(cek.length);
+
+                    for (var i = 0; i < id_persetujuan.length; i++) {
+                        if (tipe == 1) {
+                            $('#row_' + tipe + '_' + id_persetujuan[i].split("|")[0] + '_' + id_persetujuan[i].split("|")[1]).remove();
+                        } else {
+                            $('#row_' + tipe + '_' + id_persetujuan).remove();
+                        }
+                    }
+                    for (let i = 0; i < cek.length; i++) {
+                        var v = cek[i].id;
+                        $('#' + v).text(i + 1);
+                    }
+                    // console.log(cek.length);
+                    if (parent && reload && cek.length <= 0) {
+                        console.log('reload');
+                        $('#' + parent).load(BASE_URL + 'dashboard/ #' + reload);
+                    }
+
 
                 }
                 // $('#display_tabel_' + tipe).load(BASE_URL + 'dashboard/ tbody#reload_tabel_' + tipe);
