@@ -185,6 +185,13 @@ $route['informasi/(:any)'] = 'informasi/controller_ctl/$1';
 $route['informasi/(:any)/(:any)'] = 'informasi/controller_ctl/$1/$2';
 
 
+$route['func_informasi']  = 'informasi/function_ctl';
+
+$route['func_informasi/(:any)'] = 'informasi/function_ctl/$1';
+
+$route['func_informasi/(:any)/(:any)'] = 'informasi/function_ctl/$1/$2';
+
+
 $route['web_view']  = 'web_view/controller_ctl';
 
 $route['web_view/(:any)'] = 'web_view/controller_ctl/$1';

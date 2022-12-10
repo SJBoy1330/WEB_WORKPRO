@@ -18,8 +18,6 @@ class Controller_ctl extends MY_Frontend
 		// LOAD API 
 		$result = curl_get('home/web', ['id_karyawan' => $this->id_karyawan, 'status_akses' => $this->web_akses, 'akses' => $this->managemen], ['api_key: ' . $this->api_key, 'server: ' . $this->server, 'id_perusahaan: ' . $this->id_perusahaan]);
 		$karyawan = curl_get('karyawan/', [], ['api_key: ' . $this->api_key, 'server: ' . $this->server, 'id_perusahaan: ' . $this->id_perusahaan]);
-		var_dump($karyawan);
-		die;
 		$mydata['result'] = $result->data;
 		$mydata['karyawan'] = $karyawan->data;
 

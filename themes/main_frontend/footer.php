@@ -2,7 +2,10 @@
     var BASE_URL = "<?= base_url(); ?>";
     var hostUrl = "<?= base_url(); ?>assets/";
     var css_button = 'btn btn-block btn-md btn-alert';
+    var loading_scene = new bootstrap.Modal(document.getElementById("loading_scene"), {});
+    var loading = $('#loading_scene');
 </script>
+
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="<?= base_url(); ?>assets/plugins/global/plugins.bundle.js"></script>
 <script src="<?= base_url(); ?>assets/js/scripts.bundle.js"></script>

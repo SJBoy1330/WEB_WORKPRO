@@ -30,8 +30,8 @@ $("#kt_datepicker_1").flatpickr();
 
 
 // Define colors
-var green =  KTUtil.getCssVariableValue("--bs-active-success");
-var red =  KTUtil.getCssVariableValue("--bs-active-danger");
+var green = KTUtil.getCssVariableValue("--bs-active-success");
+var red = KTUtil.getCssVariableValue("--bs-active-danger");
 
 // Initialize Fullcalendar -- for more info please visit the official site: https://fullcalendar.io/demos
 var calendarEl = document.getElementById("kt_docs_fullcalendar_background_events");
@@ -219,6 +219,6 @@ function manipulasi_tab(text = 'Presensi', pagination = null) {
 //     }
 // })
 
-function cek() {
-    console.log('bisa bestieh');
+function modal_broadcast(id_karyawan) {
+    $('#id_karyawan').val(id_karyawan)
 }

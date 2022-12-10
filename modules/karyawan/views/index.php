@@ -12,7 +12,7 @@
                             <path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="black"></path>
                         </svg>
                     </span>
-                    <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
+                    <input type="text" onkeyup="search(this,'.target_search','#change')" class="form-control form-control-solid form-control-sm w-250px ps-14" placeholder="Pencarian">
                 </div>
                 <div class="card-toolbar">
                     <div class="me-2">
@@ -41,16 +41,17 @@
                                 <!--begin::Input group-->
                                 <div class="mb-10">
                                     <!--begin::Label-->
-                                    <label class="form-label fw-bold">Grup</label>
+                                    <label class="form-label fw-bold">Role</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
-                                            <option></option>
-                                            <option value="1">Grup A</option>
-                                            <option value="2">Grup B</option>
-                                            <option value="2">Grup C</option>
-                                            <option value="2">Grup D</option>
+                                        <select id="role" class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                            <option value="all">Semua</option>
+                                            <?php if ($atribut->role) : ?>
+                                                <?php foreach ($atribut->role as $row) : ?>
+                                                    <option value="<?= $row->id_role ?>"><?= $row->nama; ?></option>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
                                         </select>
                                     </div>
                                     <!--end::Input-->
@@ -63,12 +64,13 @@
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
-                                            <option></option>
-                                            <option value="1">Bussiness</option>
-                                            <option value="2">Developer</option>
-                                            <option value="2">Operation</option>
-                                            <option value="2">Alpha Media</option>
+                                        <select id="divisi" class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                            <option value="all">Semua</option>
+                                            <?php if ($atribut->divisi) : ?>
+                                                <?php foreach ($atribut->divisi as $row) : ?>
+                                                    <option value="<?= $row->id_divisi ?>"><?= $row->nama; ?></option>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
                                         </select>
                                     </div>
                                     <!--end::Input-->
@@ -81,10 +83,10 @@
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <div>
-                                        <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
-                                            <option></option>
-                                            <option value="1">Aktif</option>
-                                            <option value="2">Tidak Aktif</option>
+                                        <select id="status" class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih tipe user" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                            <option value="all">Semua</option>
+                                            <option value="Y">Aktif</option>
+                                            <option value="N">Tidak Aktif</option>
                                         </select>
                                     </div>
                                     <!--end::Input-->
@@ -94,8 +96,7 @@
                             <div class="px-7 py-5">
                                 <!--end::Input group-->
                                 <div class="d-flex justify-content-end">
-                                    <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-                                    <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Tampilkan</button>
+                                    <button type="submit" onclick="filter('change')" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Tampilkan</button>
                                 </div>
                                 <!--end::Actions-->
                             </div>
@@ -122,7 +123,7 @@
                 <!--begin::Table container-->
                 <div class="table-responsive">
                     <!--begin::Table-->
-                    <table class="table align-middle gs-0 gy-4" id="kt_table_karyawan">
+                    <table onload="pagination('parent_karyawan','.target_search','parent-pagination',5)" class="table align-middle gs-0 gy-4" id="kt_table_karyawan">
                         <!--begin::Table head-->
                         <thead>
                             <tr class="fw-bolder text-muted bg-light">
@@ -132,111 +133,65 @@
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
-                                <th class="w-300px">Nama</th>
+                                <th class="w-500px">Nama</th>
+                                <th class="min-w-125px">Role</th>
                                 <th class="min-w-125px">Divisi</th>
-                                <th class="min-w-150px text-center">Total Karyawan</th>
-                                <th class="min-w-125px text-center">Radius</th>
-                                <th class="min-w-100px text-center">Dokumen</th>
                                 <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
                             </tr>
                         </thead>
                         <!--end::Table head-->
                         <!--begin::Table body-->
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                        <input class="form-check-input child_checkbox" onchange="child_action(this,'main_checkbox')" type="checkbox" value="1" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-start flex-column">
-                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <!--begin::Avatar-->
-                                        <div class="symbol symbol-45px me-5">
-                                            <img alt="Pic" src="<?= base_url() ?>assets/media/avatars/150-1.jpg">
-                                        </div>
-                                        <!--end::Avatar-->
-                                        <!--begin::Name-->
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Superadmin</a>
-                                            <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
-                                                <span class="text-dark">Email</span>: superadmin@gmail.com</a>
-                                        </div>
-                                        <!--end::Name-->
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-dark fw-bolder d-block fs-6">Bussiness Superadmin</span>
-                                </td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-light">Rekap Presensi</a>
-                                </td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-light">Rekap Jadwal</a>
-                                </td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-light">Rekap Reimbursment</a>
-                                </td>
-                                <td class="text-end">
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                        <i class="fa-duotone fa-pencil fs-5"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                        <i class="fa-duotone fa-trash fs-5"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                        <input class="form-check-input child_checkbox" onchange="child_action(this,'main_checkbox','display_hide')" type="checkbox" value="1" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-start flex-column">
-                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <!--begin::Avatar-->
-                                        <div class="symbol symbol-45px me-5">
-                                            <img alt="Pic" src="<?= base_url() ?>assets/media/avatars/150-1.jpg">
-                                        </div>
-                                        <!--end::Avatar-->
-                                        <!--begin::Name-->
-                                        <div class="d-flex justify-content-start flex-column">
-                                            <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Superadmin</a>
-                                            <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
-                                                <span class="text-dark">Email</span>: superadmin@gmail.com</a>
-                                        </div>
-                                        <!--end::Name-->
-                                    </div>
-                                </td>
-                                <td>
-                                    <span class="text-dark fw-bolder d-block fs-6">Bussiness Superadmin</span>
-                                </td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-light">Rekap Presensi</a>
-                                </td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-light">Rekap Jadwal</a>
-                                </td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-light">Rekap Reimbursment</a>
-                                </td>
-                                <td class="text-end">
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                        <i class="fa-duotone fa-pencil fs-5"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                        <i class="fa-duotone fa-trash fs-5"></i>
-                                    </a>
+                        <tbody id="parent_karyawan">
+                            <?php if ($result) : ?>
+                                <?php $no = 1;
+                                foreach ($result as $row) : $num = $no++; ?>
+                                    <tr class="target_search showing" data-status="<?= $row->aktif; ?>" data-divisi="<?= $row->id_divisi; ?>" data-role="<?= $row->id_role; ?>">
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                <input class="form-check-input child_checkbox" onchange="child_action(this,'main_checkbox')" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <span class="text-dark fw-bolder fs-6"><?= $num; ?></span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Avatar-->
+                                                <div class="symbol symbol-45px me-5">
+                                                    <img alt="Pic" src="<?= $row->foto; ?>">
+                                                </div>
+                                                <!--end::Avatar-->
+                                                <!--begin::Name-->
+                                                <div class="d-flex justify-content-start flex-column">
+                                                    <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6"><?= $row->nama; ?></a>
+                                                    <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
+                                                        <span class="text-dark">Email</span>: <?= $row->email; ?></a>
+                                                </div>
+                                                <!--end::Name-->
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="text-dark fw-bolder d-block fs-6"><?= $row->role; ?></span>
+                                        </td>
+                                        <td>
+                                            <span class="text-dark fw-bolder d-block fs-6"><?= $row->divisi; ?></span>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                <i class="fa-duotone fa-pencil fs-5"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                <i class="fa-duotone fa-trash fs-5"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <tr id="change" class="<?php if (!$result) :  ?> showing <?php else : ?> hiding <?php endif; ?>">
+                                <td colspan="6">
+                                    <center>Tidak terdapat data karyawan</center>
                                 </td>
                             </tr>
                         </tbody>
@@ -249,18 +204,7 @@
             <!--begin::Body-->
             <div class="card-footer py-5 d-flex justify-content-end align-items-center">
                 <nav aria-label="...">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">«</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">»</a>
-                        </li>
+                    <ul class="pagination" id="parent-pagination">
                     </ul>
                 </nav>
             </div>
@@ -271,7 +215,7 @@
 </div>
 
 <!-- Modal Tambah -->
-<div class="modal fade" id="modalTambah" tabindex="-1" aria-hidden="true">
+<div class=" modal fade" id="modalTambah" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-1000px">
         <!--begin::Modal content-->

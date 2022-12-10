@@ -901,16 +901,16 @@
                                 <div class="d-flex align-items-sm-center mb-7">
                                     <!--begin::Symbol-->
                                     <div class="symbol symbol-50px me-5">
-                                        <img src="assets/media/avatars/150-1.jpg" class="align-self-center" alt="">
+                                        <img src="<?= $row->foto; ?>" class="align-self-center" alt="" load="lazy">
                                     </div>
                                     <!--end::Symbol-->
                                     <!--begin::Section-->
                                     <div class="d-flex align-items-center flex-row-fluid flex-wrap" style="width: 100px;">
                                         <div class="flex-grow-1 me-2">
-                                            <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">Superadmin</a>
-                                            <span class="text-muted fw-bold d-block fs-7">HRD</span>
+                                            <a class="text-gray-800 text-hover-primary fs-6 fw-bolder"><?= $row->nama; ?></a>
+                                            <span class="text-muted fw-bold d-block fs-7"><?= $row->role; ?></span>
                                         </div>
-                                        <a class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
+                                        <a role="button" onclick="modal_broadcast(<?= $row->id_karyawan; ?>)" class="btn btn-sm btn-icon btn-light w-40px h-40px" data-bs-toggle="modal" href="#modalTambah" role="button">
                                             <span class="svg-icon svg-icon-2">
                                                 <i class="fa-duotone fa-plus fs-3"></i>
                                             </span>
@@ -1033,7 +1033,7 @@
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
-        <div class="modal-content">
+        <form method="post" action="<?= base_url('func_informasi/tambah_notifikasi') ?>" id="tambah_notifikasi" class=" modal-content">
             <!--begin::Modal header-->
             <div class="modal-header">
                 <!--begin::Modal title-->
@@ -1056,7 +1056,8 @@
             <!--begin::Modal body-->
             <div class="modal-body pb-lg-10 px-lg-10">
                 <div class="fv-row mb-5">
-                    <div class="col-12 pe-3">
+                    <input type="hidden" name="id_karyawan" id="id_karyawan">
+                    <div class="col-12 pe-3" id="req_judul">
                         <!--begin::Label-->
                         <label class="fs-6 fw-bold mb-2" for="judul">
                             <span class="required">Judul</span>
@@ -1073,43 +1074,16 @@
                     </div>
 
                     <div class="col-12 pe-3">
-                        <div class="mb-10">
+                        <div class="mb-10" id="req_keterangan">
                             <!--begin::Label-->
                             <label class="form-label fw-bold">Keterangan</label>
-                            <!--end::Label-->
-                            <!--begin::Input-->
-                            <div>
-                                <!-- <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih karyawan">
-                                    <option></option>
-                                    <option value="1">Superadmin</option>
-                                    <option value="2">Eka Dharma Rasiawan</option>
-                                    <option value="2">Reza Prasetio</option>
-                                    <option value="2">Rinaldi Usman</option>
-                                </select> -->
 
-
-                                <textarea class="form-control form-control-solid" id="" cols="10" rows="10" placeholder="Masukkan keterangan"></textarea>
-                            </div>
-                            <!--end::Input-->
+                            <textarea name="keterangan" class="form-control form-control-solid" id="" cols="10" rows="10" placeholder="Masukkan keterangan"></textarea>
                         </div>
+                        <!--end::Input-->
                     </div>
                 </div>
-                <div class="fv-row mb-5">
-                    <textarea id="kt_docs_tinymce_plugins" name="kt_docs_tinymce_plugins" class="tox-target">
-                        <h1>Quick and Simple TinyMCE 5 Integration</h1>
-                        <p>Here goes the&nbsp;<a href="#">Minitial content of the editor</a>. Lorem Ipsum is simply dummy text of the&nbsp;<em>printing and typesetting</em>&nbsp;industry.</p>
-                        <blockquote>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</blockquote>
-                        <h3 style="text-align: right;">Flexible &amp; Powerful</h3>
-                        <p style="text-align: right;"><strong>Lorem Ipsum has been the industry's</strong>&nbsp;standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
-                        <ul>
-                            <li>List item 1</li>
-                            <li>List item 2</li>
-                            <li>List item 3</li>
-                            <li>List item 4</li>
-                        </ul>
-                    </textarea>
-                </div>
-                <button type="button" class="btn btn-lg btn-primary" style="width: 100%">Continue
+                <button type="button" onclick="submit_form(this,'#tambah_notifikasi',0,'big')" id="tambah_notif" class="btn btn-lg btn-primary" style="width: 100%">Continue
                     <span class="svg-icon svg-icon-3 ms-1 me-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="black"></rect>
@@ -1118,12 +1092,13 @@
                     </span>
                 </button>
             </div>
-            <!--end::Modal body-->
-        </div>
-        <!--end::Modal content-->
+
+        </form>
+        <!--end::Modal body-->
     </div>
-    <!--end::Modal dialog-->
+    <!--end::Modal content-->
 </div>
+<!--end::Modal dialog-->
 
 <!-- Modal Tambah Libur -->
 <div class="modal fade" id="modalTambahLibur" tabindex="-1" aria-hidden="true">

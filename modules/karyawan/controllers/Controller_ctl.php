@@ -20,7 +20,18 @@ class Controller_ctl extends MY_Frontend
 
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/karyawan/karyawan.js"></script>';
+		$this->data['js_add'][] = '<script>
+			$(function() {
+				$("table[onload]").trigger("onload");
+			});
+		</script>';
+		// LOAD API
+		$result = curl_get('karyawan/', [], ['api_key: ' . $this->api_key, 'server: ' . $this->server, 'id_perusahaan: ' . $this->id_perusahaan]);
+		$atribut = curl_get('attribut/karyawan/', [], ['api_key: ' . $this->api_key, 'server: ' . $this->server]);
 
+		// DEKLARASI MYDATA
+		$mydata['result'] = $result->data;
+		$mydata['atribut'] = $atribut->data;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

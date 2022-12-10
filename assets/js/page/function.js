@@ -9,11 +9,14 @@ function submit_form(element, id_form, num = 0, loader = 'small', color = '#FFFF
     var form = $('form')[num];
     var form_data = new FormData(form);
 
-    // console.log(form);
+    console.log(url, method, form, form_data);
     $.ajax({
         url: url,
         method: method,
         data: form_data,
+        contentType: false,
+        cache: false,
+        processData: false,
         dataType: 'json',
         beforeSend: function () {
             $('#' + element.id).prop('disabled', true);
@@ -404,3 +407,4 @@ function openCity(evt, cityName, id = null, text = 'unknown', pagination = null)
     }
 }
 document.getElementById("defaultOpen").click();
+

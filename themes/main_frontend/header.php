@@ -86,7 +86,7 @@
                                     <!--end::Heaeder navs toggle-->
                                     <!--begin::Logo-->
                                     <a class="d-flex align-items-center">
-                                        <img alt="Logo" src="<?= base_url(); ?>assets/media/logos/logo-white.png" class="h-25px h-lg-30px" />
+                                        <img alt="Logo" load="lazy" src="<?= base_url(); ?>assets/media/logos/logo-white.png" class="h-25px h-lg-30px" />
                                     </a>
                                     <!--end::Logo-->
                                     <div class="align-self-end" id="kt_brand_tabs">
@@ -160,7 +160,7 @@
                                             <!--end::Name-->
                                             <!--begin::Symbol-->
                                             <div class="symbol symbol-30px symbol-md-40px">
-                                                <img src="<?= $this->session->userdata('workpro_web_foto') ?>" alt="image" />
+                                                <img load="lazy" src="<?= $this->session->userdata('workpro_web_foto') ?>" alt="image" />
                                             </div>
                                             <!--end::Symbol-->
                                         </div>
@@ -172,7 +172,7 @@
                                                 <div class="menu-content d-flex align-items-center px-3">
                                                     <!--begin::Avatar-->
                                                     <div class="symbol symbol-50px me-5">
-                                                        <img alt="Logo" src="<?= $this->session->userdata('workpro_web_foto') ?>" />
+                                                        <img load="lazy" alt="Logo" src="<?= $this->session->userdata('workpro_web_foto') ?>" />
                                                     </div>
                                                     <!--end::Avatar-->
                                                     <!--begin::Username-->
