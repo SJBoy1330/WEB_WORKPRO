@@ -732,6 +732,155 @@
             </div>
             <!--end::Col-->
         </div>
+        <div class="row g-8 g-lg-10 mb-5">
+            <div class="col-xl-7 mb-xl-5">
+                <div class="card card-xl-stretch bgi-no-repeat mb-xl-8" style="background-position: right top; background-size: 30% auto; background-image: url(<?= base_url(); ?>assets/media/svg/shapes/abstract-2.svg">
+                    <!--begin::Header-->
+                    <div class="card-header border-0">
+                        <h3 class="card-title fw-bolder text-dark">Pengumuman</h3>
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body pt-0 d-flex pengumuman">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <!--begin::Item-->
+                                        <div class="d-flex align-items-center bg-light-warning rounded p-5" style="width: 275px;">
+                                            <!--begin::Icon-->
+                                            <span class="svg-icon svg-icon-warning me-5">
+                                                <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                                <span class="svg-icon svg-icon-1">
+                                                    <i class="fa-duotone fa-megaphone text-warning fs-2"></i>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <!--end::Icon-->
+                                            <!--begin::Title-->
+                                            <div class="flex-grow-1 me-2">
+                                                <a class="fw-bolder text-gray-800 text-hover-primary fs-6" data-bs-toggle="modal" href="#modalDetailNews" role="button">Pengumuman 1</a>
+                                                <span class="text-muted fw-bold d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Item-->
+                                    </td>
+                                    <td>
+                                        <!--begin::Item-->
+                                        <div class="d-flex align-items-center bg-light-success rounded p-5" style="width: 275px;">
+                                            <!--begin::Icon-->
+                                            <span class="svg-icon svg-icon-success me-5">
+                                                <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                                <span class="svg-icon svg-icon-1">
+                                                    <i class="fa-duotone fa-megaphone text-success fs-2"></i>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <!--end::Icon-->
+                                            <!--begin::Title-->
+                                            <div class="flex-grow-1 me-2">
+                                                <a class="fw-bolder text-gray-800 text-hover-primary fs-6" data-bs-toggle="modal" href="#modalDetailNews" role="button">Pengumuman 2</a>
+                                                <span class="text-muted fw-bold d-block">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Item-->
+                                    </td>
+                                    <td>
+                                        <!--begin::Item-->
+                                        <div class="d-flex align-items-center bg-light-danger rounded p-5" style="width: 275px;">
+                                            <!--begin::Icon-->
+                                            <span class="svg-icon svg-icon-danger me-5">
+                                                <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                                <span class="svg-icon svg-icon-1">
+                                                    <i class="fa-duotone fa-megaphone text-danger fs-2"></i>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <!--end::Icon-->
+                                            <!--begin::Title-->
+                                            <div class="flex-grow-1 me-2">
+                                                <a class="fw-bolder text-gray-800 text-hover-primary fs-6" data-bs-toggle="modal" href="#modalDetailNews" role="button">Pengumuman 3</a>
+                                                <span class="text-muted fw-bold d-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Item-->
+                                    </td>
+                                    <td>
+                                        <!--begin::Item-->
+                                        <div class="d-flex align-items-center bg-light-info rounded p-5" style="width: 275px;">
+                                            <!--begin::Icon-->
+                                            <span class="svg-icon svg-icon-info me-5">
+                                                <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                                <span class="svg-icon svg-icon-1">
+                                                    <i class="fa-duotone fa-megaphone text-info fs-2"></i>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <!--end::Icon-->
+                                            <!--begin::Title-->
+                                            <div class="flex-grow-1 me-2">
+                                                <a class="fw-bolder text-gray-800 text-hover-primary fs-6" data-bs-toggle="modal" href="#modalDetailNews" role="button">Pengumumam 4</a>
+                                                <span class="text-muted fw-bold d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Item-->
+                                    </td>
+                                    <td>
+                                        <!--begin::Item-->
+                                        <div class="d-flex align-items-center bg-light-dark rounded p-5" style="width: 275px;">
+                                            <!--begin::Icon-->
+                                            <span class="svg-icon svg-icon-info me-5">
+                                                <!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
+                                                <span class="svg-icon svg-icon-1">
+                                                    <i class="fa-duotone fa-megaphone text-dark fs-2"></i>
+                                                </span>
+                                                <!--end::Svg Icon-->
+                                            </span>
+                                            <!--end::Icon-->
+                                            <!--begin::Title-->
+                                            <div class="flex-grow-1 me-2">
+                                                <a class="fw-bolder text-gray-800 text-hover-primary fs-6" data-bs-toggle="modal" href="#modalDetailNews" role="button">Pengumuman 5</a>
+                                                <span class="text-muted fw-bold d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                                            </div>
+                                            <!--end::Title-->
+                                        </div>
+                                        <!--end::Item-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--end::Body-->
+                </div>
+            </div>
+            <div class="col-xl-5 mb-xl-5">
+                <div class="card card-xl-stretch bgi-no-repeat mb-xl-8" style="background-position: right top; background-size: 30% auto; background-image: url(<?= base_url(); ?>assets/media/svg/shapes/abstract-4.svg">
+                    <!--begin::Header-->
+                    <div class="card-header border-0">
+                        <h3 class="card-title fw-bolder text-dark">Reimburse</h3>
+                        <div>
+                            <h3 class="d-flex text-end flex-column pt-5">
+                                <span class="text-primary mt-1 fw-bold fs-5">Saka Dana Asmara</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body d-flex align-items-center">
+                        <img src="<?= base_url();?>assets/media/svg/avatars/029-boy-11.svg" class="align-self-end h-100px position-relative" style="top: -12px;">
+                        <div class="d-flex flex-column flex-grow-1 me-2 mb-10">
+                            <span class="fw-bold text-dark fs-4 mb-0 text-hover-primary">Total Reimbursement Bulan Ini</span>
+                            <span class="fw-bolder text-primary fs-1">Rp. 120.000,00</span>
+                        </div>
+                    </div>
+                    <!--end::Body-->
+                </div>
+            </div>
+        </div>
         <div class="row g-5 g-lg-10 mb-5" id="karyawan" data-kt-scroll-offset="{default: 100, lg: 150}">
             <!--begin::Col-->
             <div class="col-xl-12 mb-xl-10">

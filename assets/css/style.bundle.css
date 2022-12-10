@@ -50471,3 +50471,8 @@ img.img-detail-reimbursement{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.card-body.pengumuman{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
