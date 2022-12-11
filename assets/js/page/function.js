@@ -9,7 +9,7 @@ function submit_form(element, id_form, num = 0, loader = 'small', color = '#FFFF
     var form = $('form')[num];
     var form_data = new FormData(form);
 
-    console.log(url, method, form, form_data);
+    // console.log(url, method, form, form_data);
     $.ajax({
         url: url,
         method: method,
@@ -32,7 +32,6 @@ function submit_form(element, id_form, num = 0, loader = 'small', color = '#FFFF
 
         },
         success: function (data) {
-            // console.log(data);
 
             $('.fadedin').remove();
             if (data.etc != null) {
@@ -84,9 +83,18 @@ function submit_form(element, id_form, num = 0, loader = 'small', color = '#FFFF
                 });
             } else {
                 if (data.required) {
+                    // console.log(data.required);
                     const array = data.required.length;
                     for (var i = 0; i < array; i++) {
                         $('#' + data.required[i][0]).append('<span class="text-danger size-12 fadedin">' + data.required[i][1] + '</span>');
+                    }
+                }
+                if (data.karyawan) {
+                    var karyawan = data.karyawan.length;
+                    // console.log(karyawan);
+                    for (var i = 0; i < karyawan; i++) {
+                        // console.log(data.karyawan[i])
+                        $(data.karyawan[i]).append('<span class="bulet fadedin"></span>');
                     }
                 }
                 if (data.redirect) {

@@ -32,6 +32,15 @@
         .hiding {
             display: none;
         }
+
+        .bulet {
+            background-color: #f1416c;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            margin-top: -10px;
+            margin-left: 5px;
+        }
     </style>
     <!-- Link Font Awesome -->
     <script src="https://kit.fontawesome.com/a2309adc07.js" crossorigin="anonymous"></script>

@@ -9,13 +9,16 @@ class Controller_ctl extends MY_Frontend
 		is_logged_in();
 	}
 
-
 	public function index()
+	{
+		redirect('informasi/pengumuman');
+	}
+	public function pengumuman()
 	{
 		// LOAD TITLE
 		$mydata['title'] = 'Pengumuman';
 
-        // LOAD JS
+		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/informasi/pengumuman.js"></script>';
 
 		// LOAD VIEW
@@ -31,7 +34,7 @@ class Controller_ctl extends MY_Frontend
 		// LOAD CSS
 		// $this->data['css_add'][] = '<link rel="stylesheet" href="' . base_url('assets/css/page/jadwal_kerja/shift.css') . '">';
 
-        // LOAD JS
+		// LOAD JS
 		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/shift.js"></script>';
 
 		// LOAD VIEW
@@ -44,7 +47,7 @@ class Controller_ctl extends MY_Frontend
 		// LOAD TITLE
 		$mydata['title'] = 'Bantuan';
 
-        // LOAD JS
+		// LOAD JS
 		// $this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/jadwal_kerja/shift.js"></script>';
 
 		// LOAD VIEW

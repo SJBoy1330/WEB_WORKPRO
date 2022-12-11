@@ -142,6 +142,18 @@ $route['karyawan/(:any)'] = 'karyawan/controller_ctl/$1';
 
 $route['karyawan/(:any)/(:any)'] = 'karyawan/controller_ctl/$1/$2';
 
+$route['karyawan/(:any)/(:any)/(:any)'] = 'karyawan/controller_ctl/$1/$2/$3';
+
+$route['karyawan/(:any)/(:any)/(:any)/(:any)'] = 'karyawan/controller_ctl/$1/$2/$3/$4';
+
+
+
+$route['func_karyawan']  = 'karyawan/function_ctl';
+
+$route['func_karyawan/(:any)'] = 'karyawan/function_ctl/$1';
+
+$route['func_karyawan/(:any)/(:any)'] = 'karyawan/function_ctl/$1/$2';
+
 
 $route['jadwal']  = 'jadwal/controller_ctl';
 
