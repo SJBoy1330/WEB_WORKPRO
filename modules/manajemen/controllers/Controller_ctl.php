@@ -23,6 +23,25 @@ class Controller_ctl extends MY_Frontend
 		// LOAD JS
 		$this->data['js_add'][] = '<script src="' . base_url() . 'assets/js/page/manajemen/prospek.js"></script>';
 
+		// LOAD API
+		// $tanggal = $this->input->get('tanggal');
+		// $id_karyawan = $this->input->get('id_karyawan');
+		// if ($tanggal) {
+		// 	$w['tanggal'] = $tanggal;
+		// }
+		// if ($id_karyawan) {
+		// 	$w['id_karyawan'] = $id_karyawan;
+		// }
+		$w['status_get'] = $this->web_akses;
+		if ($this->web_akses == 'unall') {
+			$w['id_karyawan'] = $this->id_karyawan;
+		}
+		$result = curl_get('prospek/', $w, ['api_key: ' . $this->api_key, 'server: ' . $this->server, 'id_perusahaan: ' . $this->id_perusahaan]);
+		$attribut = curl_get('attribut/prospek/', [], ['api_key: ' . $this->api_key, 'server: ' . $this->server, 'id_perusahaan: ' . $this->id_perusahaan]);
+
+		// LOAD MYDATA
+		$mydata['result'] = $result->data;
+		$mydata['attr'] = $attribut->data;
 		// LOAD VIEW
 		$this->data['content'] = $this->load->view('index', $mydata, TRUE);
 		$this->display($this->input->get('routing'));

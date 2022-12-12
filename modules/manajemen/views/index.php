@@ -18,15 +18,16 @@
                     <div class="me-2">
                         <!--begin::Menu-->
                         <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder mb-2" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                        <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                        <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-                            </svg>
-                        </span>
-                        <!--end::Svg Icon-->Filter</a>
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+                            <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->Filter
+                        </a>
                         <!--begin::Menu 1-->
-                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-500px" data-kt-menu="true" id="kt_menu_61bc33c4ee0dc">
+                        <form method="GET" action="<?= base_url('manajemen/prospek') ?>" class="menu menu-sub menu-sub-dropdown w-250px w-md-500px" data-kt-menu="true" id="kt_menu_61bc33c4ee0dc">
                             <!--begin::Header-->
                             <div class="px-7 py-5">
                                 <div class="fs-5 text-dark fw-bolder">Opsi Filter</div>
@@ -38,37 +39,21 @@
                             <!--begin::Form-->
                             <div class="px-7 py-5" style="overflow-y: scroll; max-height: 225px;">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12">
                                         <!--begin::Input group-->
                                         <div class="mb-5">
                                             <!--begin::Label-->
-                                            <label class="form-label fw-bold">Grup:</label>
+                                            <label class="form-label fw-bold">Karyawan:</label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <div>
-                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih kategori" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                                <select name="id_karyawan" class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih karyawan" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
                                                     <option></option>
-                                                    <option value="1">Grup A</option>
-                                                    <option value="2">Grup B</option>
-                                                </select>
-                                            </div>
-                                            <!--end::Input-->
-                                        </div>
-                                        <!--begin::Input group-->
-                                    </div>
-                                    <div class="col-6">
-                                        <!--begin::Input group-->
-                                        <div class="mb-5">
-                                            <!--begin::Label-->
-                                            <label class="form-label fw-bold">Divisi:</label>
-                                            <!--end::Label-->
-                                            <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih kategori" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
-                                                    <option></option>
-                                                    <option value="1">Bussiness</option>
-                                                    <option value="2">Developer</option>
-                                                    <option value="3">Operation</option>
+                                                    <?php if ($attr->karyawan) : ?>
+                                                        <?php foreach ($attr->karyawan as $row) : ?>
+                                                            <option value="<?= $row->id_karyawan; ?>"><?= $row->nama; ?></option>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
                                                 </select>
                                             </div>
                                             <!--end::Input-->
@@ -85,9 +70,13 @@
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <div>
-                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih kategori" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                                <select name="status" class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih kategori" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
                                                     <option></option>
-                                                    <option value="1">Prospek</option>
+                                                    <?php if ($attr->status) : ?>
+                                                        <?php foreach ($attr->status as $row) : ?>
+                                                            <option value="<?= $row->id_status_prospek; ?>"><?= $row->nama; ?></option>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
                                                 </select>
                                             </div>
                                             <!--end::Input-->
@@ -101,10 +90,13 @@
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <div>
-                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih kategori" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                                <select name="sumber" class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih kategori" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
                                                     <option></option>
-                                                    <option value="1">BBC News</option>
-                                                    <option value="2">IDN Times</option>
+                                                    <?php if ($attr->sumber) : ?>
+                                                        <?php foreach ($attr->sumber as $row) : ?>
+                                                            <option value="<?= $row->id_sumber_prospek; ?>"><?= $row->nama; ?></option>
+                                                        <?php endforeach; ?>
+                                                    <?php endif; ?>
                                                 </select>
                                             </div>
                                             <!--end::Input-->
@@ -119,7 +111,7 @@
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <div>
-                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih range waktu" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
+                                                <!-- <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih range waktu" data-dropdown-parent="#kt_menu_61bc33c4ee0dc" data-allow-clear="true">
                                                     <option></option>
                                                     <option value="1">Hari ini</option>
                                                     <option value="2">Kemarin</option>
@@ -128,7 +120,8 @@
                                                     <option value="2">Bulan ini</option>
                                                     <option value="2">Bulan kemarin</option>
                                                     <option value="2">Custom range</option>
-                                                </select>
+                                                </select> -->
+                                                <input type="month" name="tanggal" class="form-control form-control-solid" value="" placeholder="Masukkan nama" autocomplete="off">
                                             </div>
                                             <!--end::Input-->
                                         </div>
@@ -142,14 +135,14 @@
                                     <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Tampilkan</button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                         <!--end::Menu 1-->
                         <!--end::Menu-->
                     </div>
-                    <a class="btn btn-sm btn-light btn-active-primary me-2 mb-2" href="<?= base_url('manajemen/sumber_prospek');?>">
+                    <a class="btn btn-sm btn-light btn-active-primary me-2 mb-2" href="<?= base_url('manajemen/sumber_prospek'); ?>">
                         Sumber
                     </a>
-                    <a class="btn btn-sm btn-light btn-active-primary me-2 mb-2" href="<?= base_url('manajemen/status_prospek');?>">
+                    <a class="btn btn-sm btn-light btn-active-primary me-2 mb-2" href="<?= base_url('manajemen/status_prospek'); ?>">
                         Status</a>
                     </a>
                     <button type="button" class="btn btn-sm btn-light btn-active-primary me-2 mb-2" data-bs-toggle="modal" data-bs-target="#modalTambah">
@@ -181,11 +174,10 @@
                                     </div>
                                 </th>
                                 <th class="w-50px">No</th>
-                                <th class="w-100px">Kode</th>
-                                <th class="min-w-150px text-center">Tanggal Izin</th>
+                                <th class="min-w-150px text-center">Tanggal</th>
                                 <th class="min-w-150px text-center">Nama</th>
-                                <th class="min-w-125px text-center">Kategori</th>
-                                <th class="min-w-125px text-center">Penyetuju</th>
+                                <th class="min-w-125px text-center">Sumber</th>
+                                <th class="min-w-125px text-center">Status</th>
                                 <th class="min-w-125px text-center">Dokumen</th>
                                 <th class="pe-4 min-w-150px text-end rounded-end">Aksi</th>
                             </tr>
@@ -193,45 +185,60 @@
                         <!--end::Table head-->
                         <!--begin::Table body-->
                         <tbody>
-                            <tr>
-                                <td>
-                                    <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
-                                        <input class="form-check-input deletebox" type="checkbox" value="1" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-start flex-column">
-                                        <span class="text-dark fw-bolder fs-6">1</span>
-                                    </div>
-                                </td>
-                                <td class="text-center">
-                                    <span class="text-dark fw-bolder d-block fs-6">12345</span>
-                                </td>
-                                <td class="text-center">
-                                    <span class="text-dark fw-bolder d-block fs-6">2020-08-30</span>
-                                </td>
-                                <td class="text-center">
-                                    <span class="text-dark fw-bolder d-block fs-6">Sakit</span>
-                                </td>
-                                <td class="text-center">
-                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                </td>
-                                <td class="text-center">
-                                    <span class="text-dark fw-bolder d-block fs-6">Superadmin</span>
-                                </td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-sm btn-icon btn-light"><i class="fa-duotone fa-file fs-3"></i></a>
-                                </td>
-                                <td class="text-end">
-                                <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                        <i class="fa-duotone fa-eye fs-5"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
-                                        <i class="fa-duotone fa-pen fs-5"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
-                                        <i class="fa-duotone fa-trash fs-5"></i>
-                                    </a>
+                            <?php if ($result) : ?>
+                                <?php $no = 1;
+                                foreach ($result as $row) : $num = $no++; ?>
+                                    <tr class="taget_search" data-karyawan="<?= $row->id_karyawan; ?>">
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
+                                                <input class="form-check-input deletebox" type="checkbox" value="1" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <span class="text-dark fw-bolder fs-6"><?= $num; ?></span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="text-dark fw-bolder d-block fs-6"><?= date('d', strtotime($row->tanggal)) . ' ' . month_from_number(date('m', strtotime($row->tanggal))); ?></span>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-start flex-column">
+                                                <a href="#" class="text-dark fw-bolder text-hover-primary mb-1 fs-6"><?= $row->nama; ?></a>
+                                                <a href="#" class="text-muted text-hover-primary fw-bold text-muted d-block fs-7">
+                                                    <span class="text-dark">By </span>: <?= $row->karyawan; ?></a>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="text-dark fw-bolder d-block fs-6"><?= $row->sumber_prospek; ?></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="text-dark fw-bolder d-block fs-6"><span style="padding : 2px 5px;border-radius : 10px;background-color : #<?= $row->color; ?>"><?= $row->status_prospek; ?></span></span>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" class="btn btn-sm btn-icon btn-light"><i class="fa-duotone fa-file fs-3"></i></a>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                <i class="fa-duotone fa-eye fs-5"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                <i class="fa-duotone fa-pen fs-5"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                                                <i class="fa-duotone fa-trash fs-5"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <tr class="<?php if ($result) {
+                                            echo 'hiding';
+                                        } else {
+                                            echo 'showing';
+                                        } ?>">
+                                <td colspan="8">
+                                    <center>Data prospek tidak ditemukan</center>
                                 </td>
                             </tr>
                         </tbody>
@@ -294,6 +301,25 @@
             <div class="modal-body pb-lg-10 px-lg-10">
                 <form class="form" action="#" method="post">
                     <div class="fv-row mb-5">
+                        <div class="col-12 pe-4">
+                            <div class="fv-row">
+                                <label class="form-label fw-bold">Pilih Karyawan</label>
+                                <!--end::Label-->
+                                <!--begin::Input-->
+                                <div>
+                                    <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih karyawan">
+                                        <option></option>
+                                        <?php if ($attr->karyawan) : ?>
+                                            <?php foreach ($attr->karyawan as $row) : ?>
+                                                <option value="<?= $row->id_karyawan; ?>"><?= $row->nama; ?></option>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fv-row mb-5">
                         <!--begin::Label-->
                         <label class="fs-6 fw-bold mb-2">
                             <span class="required">Nama</span>
@@ -310,21 +336,7 @@
                         <div class="text-danger mx-4 fw-bold"></div>
                     </div>
                     <div class="fv-row d-flex mb-5">
-                        <div class="col-6 pe-4">
-                            <div class="fv-row">
-                                <label class="form-label fw-bold">Pilih Karyawan</label>
-                                <!--end::Label-->
-                                <!--begin::Input-->
-                                <div>
-                                    <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Pilih karyawan">
-                                        <option></option>
-                                        <option value="1">Eka Dharma Rasiawan</option>
-                                        <option value="2">Rinaldi Usman</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 ps-4">
+                        <div class="col-12 ps-4">
                             <div class="fv-row">
                                 <label class="form-label fw-bold">Sumber Prospek</label>
                                 <!--end::Label-->
