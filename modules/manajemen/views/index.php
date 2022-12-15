@@ -188,7 +188,7 @@
                             <?php if ($result) : ?>
                                 <?php $no = 1;
                                 foreach ($result as $row) : $num = $no++; ?>
-                                    <tr class="taget_search" data-karyawan="<?= $row->id_karyawan; ?>">
+                                    <tr class="taget_search" data-karyawan="<?= $row->id_karyawan; ?>" data-status="<?= $row->id_status_prospek; ?>">
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid" style="margin-left: 13px;">
                                                 <input class="form-check-input deletebox" type="checkbox" value="1" />
