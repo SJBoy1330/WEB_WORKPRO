@@ -169,7 +169,7 @@
                                             <!--end::Name-->
                                             <!--begin::Symbol-->
                                             <div class="symbol symbol-30px symbol-md-40px">
-                                                <img load="lazy" src="<?= $this->session->userdata('workpro_web_foto') ?>" alt="image" />
+                                                <img load="lazy" src="<?= decode_link($this->session->userdata('workpro_web_foto')) ?>" alt="image" />
                                             </div>
                                             <!--end::Symbol-->
                                         </div>
