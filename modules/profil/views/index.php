@@ -21,32 +21,32 @@
             <div class="card-body py-3">
                 <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-umum')">
-                    <!--end::Input-->
-                    Informasi Umum</label>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'info-umum')" id="defaultOpen" data-kt-button="true">
+                        <!--begin::Input-->
+                        <!--end::Input-->
+                        Informasi Umum
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-ktp')">
-                    <!--end::Input-->
-                    Alamat KTP</label>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'alamat-ktp')" data-kt-button="true">
+                        <!--begin::Input-->
+                        <!--end::Input-->
+                        Alamat KTP
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-karyawan')">
-                    <!--end::Input-->
-                    Info Kekaryawaan</label>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'info-karyawan')" data-kt-button="true">
+                        <!--begin::Input-->
+                        <!--end::Input-->
+                        Info Kekaryawaan
+                    </a>
                     <!--end::Radio-->
                     <!--begin::Radio-->
-                    <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-domisili')">
-                    <!--end::Input-->
-                    Alamat Domisili</label>
+                    <a class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary tab tablinks" onclick="openCity(event, 'alamat-domisili')" data-kt-button="true">
+                        <!--begin::Input-->
+                        <!--end::Input-->
+                        Alamat Domisili
+                    </a>
                     <!--end::Radio-->
                 </div>
 
@@ -153,7 +153,7 @@
                                         <i class="fa-duotone fa-calendar-days fs-5"></i>
                                     </span>
                                     <!--end::Icon-->
-                                    <input type="date" class="form-control form-control-solid ps-12" value="2022-11-7" placeholder="Masukkan tanggal" readonly/>
+                                    <input type="date" class="form-control form-control-solid ps-12" value="2022-11-7" placeholder="Masukkan tanggal" readonly />
                                 </div>
                             </div>
                         </div>
@@ -502,7 +502,7 @@
                             </span>
                             <!--end::Icon-->
                             <!--begin::Input-->
-                            <input class="form-control form-control-lg form-control-solid ps-12" value="12345"  type="password" name="password2" autocomplete="off" placeholder="Masukkan kata sandi" readonly>
+                            <input class="form-control form-control-lg form-control-solid ps-12" value="12345" type="password" name="password2" autocomplete="off" placeholder="Masukkan kata sandi" readonly>
                             <!--end::Input-->
                             <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2">
                                 <i class="bi bi-eye-slash fs-2"></i>
@@ -682,31 +682,35 @@
                 <div class="btn-group w-100 tab mb-7 flex-wrap">
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-umum-modal')">
-                    <!--end::Input-->
-                    Informasi Umum</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-umum-modal')">
+                        <!--end::Input-->
+                        Informasi Umum
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-ktp-modal')">
-                    <!--end::Input-->
-                    Alamat KTP</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-ktp-modal')">
+                        <!--end::Input-->
+                        Alamat KTP
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-karyawan-modal')">
-                    <!--end::Input-->
-                    Info Kekaryawaan</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'info-karyawan-modal')">
+                        <!--end::Input-->
+                        Info Kekaryawaan
+                    </label>
                     <!--end::Radio-->
                     <!--begin::Radio-->
                     <label class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-primary" data-kt-button="true">
-                    <!--begin::Input-->
-                    <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-domisili-modal')">
-                    <!--end::Input-->
-                    Alamat Domisili</label>
+                        <!--begin::Input-->
+                        <input class="btn-check tablinks" type="radio" onclick="openCity(event, 'alamat-domisili-modal')">
+                        <!--end::Input-->
+                        Alamat Domisili
+                    </label>
                     <!--end::Radio-->
                 </div>
 
@@ -813,7 +817,7 @@
                                         <i class="fa-duotone fa-calendar-days fs-5"></i>
                                     </span>
                                     <!--end::Icon-->
-                                    <input type="date" class="form-control form-control-solid ps-12" placeholder="Masukkan tanggal"/>
+                                    <input type="date" class="form-control form-control-solid ps-12" placeholder="Masukkan tanggal" />
                                 </div>
                             </div>
                         </div>

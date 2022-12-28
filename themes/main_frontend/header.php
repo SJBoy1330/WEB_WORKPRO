@@ -181,7 +181,7 @@
                                                 <div class="menu-content d-flex align-items-center px-3">
                                                     <!--begin::Avatar-->
                                                     <div class="symbol symbol-50px me-5">
-                                                        <img load="lazy" alt="Logo" src="<?= $this->session->userdata('workpro_web_foto') ?>" />
+                                                        <img load="lazy" alt="Logo" src="<?= decode_link($this->session->userdata('workpro_web_foto')) ?>" alt="Foto Profil" />
                                                     </div>
                                                     <!--end::Avatar-->
                                                     <!--begin::Username-->
@@ -345,6 +345,28 @@
                                             <!--end::Tab panel-->
                                         <?php endforeach; ?>
                                     <?php endif; ?>
+
+
+                                    <!--begin::Tab panel-->
+
+                                    <?php if ($this->uri->segment(1) == 'profil') : ?>
+                                        <div class="tab-pane active show" id="profil">
+                                            <!--begin::Menu wrapper-->
+                                            <div class="header-menu flex-column align-items-stretch flex-lg-row">
+                                                <!--begin::Menu-->
+                                                <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold align-items-stretch flex-grow-1" id="#kt_header_menu" data-kt-menu="true">
+                                                    <div class="menu-item menu-lg-down-accordion me-lg-1">
+                                                        <a class="menu-link py-3 active" href="<?= base_url('profil') ?>">
+                                                            <span class="menu-title">Profil</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!--end::Menu-->
+                                            </div>
+                                            <!--end::Menu wrapper-->
+                                        </div>
+                                    <?php endif; ?>
+                                    <!--end::Tab panel-->
                                 </div>
                                 <!--end::Header tab content-->
                             </div>

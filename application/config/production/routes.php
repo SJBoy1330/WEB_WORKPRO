@@ -176,6 +176,15 @@ $route['persetujuan/(:any)'] = 'persetujuan/controller_ctl/$1';
 $route['persetujuan/(:any)/(:any)'] = 'persetujuan/controller_ctl/$1/$2';
 
 
+
+$route['linker']  = 'linker/controller_ctl';
+
+$route['linker/(:any)'] = 'linker/controller_ctl/$1';
+
+$route['linker/(:any)/(:any)'] = 'linker/controller_ctl/$1/$2';
+
+
+
 $route['manajemen']  = 'manajemen/controller_ctl';
 
 $route['manajemen/(:any)'] = 'manajemen/controller_ctl/$1';

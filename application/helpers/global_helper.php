@@ -1,4 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+define('BASE_LINK',            '/var/www/data.workpro.id/');
 function parse_raw_http_request(array &$a_data)
 {
   // read incoming data
@@ -221,16 +222,26 @@ function base64url_decode($data)
 {
   return base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT));
 }
-function image_access($path, $filename)
+function image_access($path, $filename, $default = 'default_image.png')
 {
 
   $filepath = $path . $filename;
+  $filedefault = BASE_LINK . 'global/' . $default;
   // $tmp = explode(".", $filename);
   $extfile = pathinfo($filepath, PATHINFO_EXTENSION);
-
+  $extdefault = pathinfo($default, PATHINFO_EXTENSION);
   if ($filename != '' && file_exists($filepath)) {
     $im = file_get_contents($filepath);
-    header("Content-type: image/" . $extfile);
+    if ($extfile == 'svg') {
+      $extfix = 'svg+xml';
+    } else {
+      $extfix = $extfile;
+    }
+    header("Content-type: image/" . $extfix);
+    echo $im;
+  } else {
+    $im = file_get_contents($filedefault);
+    header("Content-type: image/" . $extdefault);
     echo $im;
   }
 }
@@ -465,7 +476,13 @@ function API_URL($path = null)
 function data_url($id_perusahaan = true, $path = null)
 {
   $ci = &get_instance();
-  $uri = 'http://45.64.97.26/workpro_linker/';
+  $cek_https = (isset($_SERVER['HTTPS'])) ?  $_SERVER['HTTPS'] : 'off';
+  if ($cek_https == 'off' || $_SERVER['HTTP_HOST'] == 'localhost') {
+    $uri = 'http://linker.workpro.id/';
+  } else {
+    $uri = 'https://workpro.id/linker/';
+  }
+
   if ($path != null) {
     $uri .= $path;
   }
@@ -473,6 +490,12 @@ function data_url($id_perusahaan = true, $path = null)
     $uri .= '/' . base64url_encode($id_perusahaan);
   }
   return $uri;
+}
+
+
+function decode_link($link)
+{
+  return str_replace("http://linker.workpro.id/", "https://workpro.id/", $link);
 }
 
 

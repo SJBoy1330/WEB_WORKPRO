@@ -871,7 +871,7 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body d-flex align-items-center">
-                        <img src="<?= base_url();?>assets/media/svg/avatars/029-boy-11.svg" class="align-self-end h-100px position-relative" style="top: -12px;">
+                        <img src="<?= base_url(); ?>assets/media/svg/avatars/029-boy-11.svg" class="align-self-end h-100px position-relative" style="top: -12px;">
                         <div class="d-flex flex-column flex-grow-1 me-2 mb-10">
                             <span class="fw-bold text-dark fs-4 mb-0 text-hover-primary">Total Reimbursement Bulan Ini</span>
                             <span class="fw-bolder text-primary fs-1">Rp. 120.000,00</span>
@@ -901,7 +901,7 @@
                                 <div class="d-flex align-items-sm-center mb-7">
                                     <!--begin::Symbol-->
                                     <div class="symbol symbol-50px me-5">
-                                        <img src="<?= $row->foto; ?>" class="align-self-center" alt="" load="lazy">
+                                        <img src="<?= decode_link($row->foto); ?>" class="align-self-center" alt="Foto karyawan" load="lazy">
                                     </div>
                                     <!--end::Symbol-->
                                     <!--begin::Section-->
